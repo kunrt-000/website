@@ -1,0 +1,24 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShadyThGod/website.git"
+  },
+  "author": "shadythgod <amanharwara@gmail.com> (https://shadythgod.github.io)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ShadyThGod/website/issues"
+  },
+  "homepage": "https://github.com/ShadyThGod/website#readme",
+  "dependencies": {
+    "next": "^9.1.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
