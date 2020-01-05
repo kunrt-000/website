@@ -1,0 +1,19 @@
+[{
+    "image": "./img/altus.png",
+    "name": "Altus",
+    "tags": ["Electron", "Node.js", "JavaScript"],
+    "description": "Altus is a desktop client for WhatsApp with multiple account support and themes.",
+    "link": "https://github.com/shadythgod/altus"
+}, {
+    "image": "./img/musicstuff.jpg",
+    "name": "Music & Stuff",
+    "tags": ["Hexo", "EJS", "SASS"],
+    "description": "“Music & Stuff” is the blog that I write. It is based on the Hexo SSG, and the theme is written by me using EJS and SASS.",
+    "link": "https://amanharwara.xyz/blog"
+}, {
+    "image": "./img/beetle.png",
+    "name": "Beetle",
+    "tags": ["HTML/CSS", "JavaScript", "WebExtension"],
+    "description": "Beetle is an extension which allows you to easily grab logins for a website from BugMeNot.",
+    "link": "https://addons.mozilla.org/en-US/firefox/addon/beetle/"
+}]

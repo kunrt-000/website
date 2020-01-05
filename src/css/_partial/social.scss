@@ -1,0 +1,48 @@
+.social {
+    font-family: "Public Sans", $other-fonts;
+    margin: 0.75rem 0;
+    font-size: 1.75rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    overflow: hidden;
+
+    [class^="icon"] {
+        margin-right: 0.5rem;
+    }
+
+    .link {
+        font-size: 1.25rem;
+        text-decoration: none;
+        color: inherit;
+        position: relative;
+        word-wrap: break-word;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 0.2rem;
+            display: block;
+            background: map-get($default, $link);
+            position: absolute;
+            bottom: 10%;
+            left: 0%;
+            z-index: -2;
+            -webkit-transition: height 0.15s;
+            transition: height 0.15s;
+        }
+
+        &:hover {
+            &::after {
+                height: 0.5rem;
+            }
+        }
+    }
+}
+
+.dark .social .link::after {
+    background: map-get($dark, $link);
+}

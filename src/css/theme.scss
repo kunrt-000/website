@@ -1,0 +1,34 @@
+// String variables so it's easier to access the maps
+$bg: 'bg';
+$fg: 'fg';
+$link: 'link';
+$header: 'header';
+$projectbg: 'projectbg';
+$projecttag: 'projecttag';
+
+// Theme maps
+$default: (bg: linear-gradient(42deg, #fdfdfd, #d6e1f1),
+    fg: #000,
+    link: linear-gradient(42deg, #b8c9ff, #8cb1ff),
+    header: linear-gradient(42deg, rgba(153, 177, 255, 0.171), hsla(199, 100%, 66%, 0.562)),
+    projectbg: rgba(255, 255, 255, 0.7),
+    projecttag: #bfd4ff,
+);
+$dark: (bg: linear-gradient(42deg, #1a264d, #070a1b),
+    fg: #fff,
+    link: linear-gradient(42deg, rgba(54, 79, 161, 0.308), #5241ee),
+    header: linear-gradient(42deg, rgba(54, 79, 161, 0.11), rgba(82, 65, 238, 0.438)),
+    projectbg: rgba(54, 57, 66, 0.7),
+    projecttag: #141929,
+);
+
+$other-fonts: -apple-system,
+BlinkMacSystemFont,
+'Segoe UI',
+Roboto,
+Oxygen,
+Ubuntu,
+Cantarell,
+'Open Sans',
+'Helvetica Neue',
+sans-serif;

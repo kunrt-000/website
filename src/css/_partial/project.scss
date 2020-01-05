@@ -1,0 +1,122 @@
+.projects {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: -2rem;
+
+    @media screen and (max-width: 700px) {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        .project {
+            width: 90%;
+            margin: 1rem 0;
+        }
+    }
+}
+
+.project {
+    width: 24%;
+    border-radius: 0.35rem;
+    overflow: hidden;
+    margin: 1rem;
+    background: map-get($default, $projectbg);
+    -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.06), 0px 4px 8px rgba(0, 0, 0, 0.06), 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 24px 32px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.06), 0px 4px 8px rgba(0, 0, 0, 0.06), 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 24px 32px rgba(0, 0, 0, 0.06);
+
+    @media screen and (max-width: 1150px) {
+        width: 30%;
+    }
+
+    @media screen and (max-width: 970px) {
+        width: 50%;
+    }
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .image {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .details {
+        padding: 1rem 1.35rem;
+
+        .name {
+            font-size: 2rem;
+            color: inherit;
+            text-decoration: none;
+            position: relative;
+
+            &:hover {
+                &::after {
+                    content: '';
+                    width: 105%;
+                    height: 0.4rem;
+                    display: block;
+                    background: map-get($default, $link);
+                    position: absolute;
+                    bottom: 20%;
+                    left: -2.5%;
+                    z-index: -2;
+                }
+            }
+        }
+
+        .tags {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            width: 100%;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-top: 0.5rem;
+            margin-left: -0.25rem;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            .tag {
+                font-family: "Public Sans", $other-fonts;
+                background: map-get($default, $projecttag);
+                padding: 0.3rem 0.75rem;
+                border-radius: 1rem;
+                font-size: 0.9rem;
+                margin: 0.25rem;
+            }
+        }
+
+        .description {
+            font-family: "Public Sans", $other-fonts;
+            margin: 0.75rem 0 0.15rem;
+        }
+    }
+}
+
+.dark .project {
+    background: map-get($dark, $projectbg);
+}
+
+.dark .project .tags .tag {
+    background: map-get($dark, $projecttag);
+}
