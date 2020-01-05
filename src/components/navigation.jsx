@@ -4,12 +4,6 @@ import { Link } from 'gatsby';
 import uuid from 'uuid';
 
 const Nav = ({ navLinks, darkTheme, themeHandler }) => {
-    if (darkTheme) {
-        document.body.classList.add('dark');
-    } else {
-        document.body.classList.remove('dark');
-    }
-
     return (<div className="navbar">
         {navLinks.map(item => (
             <Link className="item" key={uuid()} to={item.href}>
