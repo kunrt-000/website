@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Helmet from "react-helmet"
 
 import Header from "./header"
 import Nav from "./navigation"
@@ -24,7 +25,10 @@ const Layout = ({ children, title, subtitle, navLinks, notIndex }) => {
   const [dark, setDark] = useState(false);
 
   return (
-    <div className={notIndex ? 'container notIndex' : 'container index'}>
+    <div className={`container ${notIndex ? 'notIndex' : 'index'}`}>
+      <Helmet bodyAttributes={{
+        class: dark ? 'dark' : ''
+      }} />
       <SEO title={title}></SEO>
       <Header title={title || data.site.siteMetadata.title} subtitle={subtitle} />
       <div className="content">
