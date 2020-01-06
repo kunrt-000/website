@@ -1,1 +1,1 @@
-/blog/* https://amansblog.netlify.com/blog/* 200!
+/blog/* https://amansblog.netlify.com/blog/:splat 200!
