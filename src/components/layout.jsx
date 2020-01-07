@@ -22,7 +22,7 @@ const Layout = ({ children, title, subtitle, navLinks, notIndex }) => {
 
   notIndex = notIndex || false;
 
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
 
   return (
     <div className={`container ${notIndex ? 'notIndex' : 'index'}`}>

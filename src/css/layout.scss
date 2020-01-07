@@ -6,10 +6,10 @@
 @import './_partial/project.scss';
 @import './icons.scss';
 @import url('https://fonts.googleapis.com/css?family=Poppins:600|Public+Sans&display=swap');
+@import 'node_modules/@glidejs/glide/src/assets/sass/glide.core';
 
 html,
 body {
-    width: 100%;
     height: 100%;
 }
 

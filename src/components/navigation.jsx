@@ -10,6 +10,7 @@ const Nav = ({ navLinks, darkTheme, themeHandler }) => {
                 {item.name}
             </Link>
         ))}
+        <a href="/blog" target="_blank" rel="noopener noreferrer" className="item">Blog</a>
         <div className="item theme-toggle" title="Toggle Theme" onClick={() => themeHandler(!darkTheme)}>
             {darkTheme ? <div className="icon-sun"></div> : <div className="icon-moon"></div>}
         </div>
@@ -23,8 +24,7 @@ Nav.propTypes = {
 Nav.defaultProps = {
     navLinks: [
         { name: "About", href: "/about" },
-        { name: "Projects", href: "/projects" },
-        { name: "Blog", href: "/blog" }
+        { name: "Projects", href: "/projects" }
     ]
 }
 

@@ -5,8 +5,7 @@ import Social from '../components/social'
 const AboutPage = () => {
     let navLinks = [
         { name: "Home", href: "/" },
-        { name: "Projects", href: "/projects" },
-        { name: "Blog", href: "/blog" }
+        { name: "Projects", href: "/projects" }
     ];
 
     return (

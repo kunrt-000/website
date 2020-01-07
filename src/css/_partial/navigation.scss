@@ -1,5 +1,5 @@
 .navbar {
-    margin: 4rem 0 0;
+    margin: 2.5rem 0 0;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -62,7 +62,7 @@
     }
 }
 
-.index .navbar {
+.navbar {
     @media screen and (max-width:600px) {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
