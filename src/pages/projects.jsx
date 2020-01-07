@@ -16,7 +16,7 @@ const ProjectPage = ({ data }) => {
 
     useEffect(() => {
         if (typeof document !== "undefined" || typeof window !== "undefined") {
-            new Glide('.glide', {
+            let projectSlider = new Glide('.glide', {
                 perView: 4,
                 gap: 35,
                 rewind: false,
@@ -32,7 +32,26 @@ const ProjectPage = ({ data }) => {
                         perView: 1
                     }
                 }
-            }).mount()
+            });
+            projectSlider.on('mount.after', () => {
+                if (projectSlider.index === 0) {
+                    document.querySelector('.glide__arrow--left').style.display = 'none';
+                }
+            });
+            projectSlider.on('run', () => {
+                let indexLength = document.querySelector('.glide__slides').children.length;
+                if (projectSlider.index > 0) {
+                    document.querySelector('.glide__arrow--left').style.display = '';
+                } else {
+                    document.querySelector('.glide__arrow--left').style.display = 'none';
+                }
+                if (projectSlider.index == indexLength - 1) {
+                    document.querySelector('.glide__arrow--right').style.display = 'none';
+                } else {
+                    document.querySelector('.glide__arrow--right').style.display = '';
+                }
+            });
+            projectSlider.mount();
         }
     }, []);
 
