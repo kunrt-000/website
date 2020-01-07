@@ -15,6 +15,12 @@ body {
 
 body {
     background: map-get($default, $bg);
+    color: map-get($default, $fg);
+    font-family: Poppins, $other-fonts;
+}
+
+#___gatsby {
+    height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -25,8 +31,6 @@ body {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    color: map-get($default, $fg);
-    font-family: Poppins, $other-fonts;
 }
 
 @media screen and (max-width: 700px) {
