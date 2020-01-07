@@ -21,7 +21,6 @@ const ProjectPage = ({ data }) => {
                 gap: 35,
                 rewind: false,
                 peek: 20,
-                bound: true,
                 breakpoints: {
                     1000: {
                         perView: 3
