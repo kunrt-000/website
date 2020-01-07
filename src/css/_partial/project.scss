@@ -104,6 +104,8 @@
     border: 0;
     cursor: pointer;
     font-size: 2rem;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
 }
 
 .dark .glide__arrow {
