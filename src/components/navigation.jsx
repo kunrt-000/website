@@ -10,7 +10,7 @@ const Nav = ({ navLinks, darkTheme, themeHandler }) => {
                 {item.name}
             </Link>
         ))}
-        <a href="/blog" target="_blank" rel="noopener noreferrer" className="item">Blog</a>
+        <a href="/blog/index.html" target="_blank" rel="noopener noreferrer" className="item">Blog</a>
         <div className="item theme-toggle" title="Toggle Theme" onClick={() => themeHandler(!darkTheme)}>
             {darkTheme ? <div className="icon-sun"></div> : <div className="icon-moon"></div>}
         </div>
