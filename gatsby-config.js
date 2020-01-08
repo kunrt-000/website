@@ -3,8 +3,10 @@ module.exports = {
     title: `Aman Harwara`,
     description: `Personal website with information about me and my projects.`,
     author: `Aman Harwara`,
+    siteUrl: `https://amanharwara.xyz`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
