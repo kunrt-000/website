@@ -45,7 +45,7 @@ const ProjectPage = ({ data }) => {
                 } else {
                     document.querySelector('.glide__arrow--left').style.display = 'none';
                 }
-                if (projectSlider.index == indexLength - 1) {
+                if (projectSlider.index === indexLength - 1) {
                     document.querySelector('.glide__arrow--right').style.display = 'none';
                 } else {
                     document.querySelector('.glide__arrow--right').style.display = '';

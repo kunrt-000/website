@@ -1,7 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
+import ThemeContext from '../context/ThemeContext'
 
 import Header from "./header"
 import Nav from "./navigation"
@@ -22,20 +23,22 @@ const Layout = ({ children, title, subtitle, navLinks, notIndex }) => {
 
   notIndex = notIndex || false;
 
-  const [dark, setDark] = useState(true);
-
   return (
-    <div className={`container ${notIndex ? 'notIndex' : 'index'}`}>
-      <Helmet bodyAttributes={{
-        class: dark ? 'dark' : ''
-      }} />
-      <SEO title={title}></SEO>
-      <Header title={title || data.site.siteMetadata.title} subtitle={subtitle} />
-      <div className="content">
-        {children}
-      </div>
-      <Nav navLinks={navLinks} darkTheme={dark} themeHandler={setDark}></Nav>
-    </div>
+    <ThemeContext.Consumer>
+      {theme => (
+        <div className={`container ${notIndex ? 'notIndex' : 'index'}`}>
+          <Helmet bodyAttributes={{
+            class: theme.dark ? 'dark' : ''
+          }} />
+          <SEO title={title}></SEO>
+          <Header title={title || data.site.siteMetadata.title} subtitle={subtitle} />
+          <div className="content">
+            {children}
+          </div>
+          <Nav navLinks={navLinks}></Nav>
+        </div>
+      )}
+    </ThemeContext.Consumer>
   )
 }
 
