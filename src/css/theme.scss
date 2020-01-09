@@ -5,11 +5,13 @@ $link: 'link';
 $header: 'header';
 $projectbg: 'projectbg';
 $projecttag: 'projecttag';
+$ctahover: 'ctahover';
 
 // Theme maps
 $default: (bg: linear-gradient(42deg, #fdfdfd, #d6e1f1),
     fg: #000,
     link: linear-gradient(42deg, #b8c9ff, #8cb1ff),
+    ctahover: linear-gradient(42deg, #a0b6ff, #6092ff),
     header: linear-gradient(42deg, rgba(153, 177, 255, 0.171), hsla(199, 100%, 66%, 0.562)),
     projectbg: rgba(255, 255, 255, 0.7),
     projecttag: #bfd4ff,
@@ -17,6 +19,7 @@ $default: (bg: linear-gradient(42deg, #fdfdfd, #d6e1f1),
 $dark: (bg: linear-gradient(42deg, #1a264d, #070a1b),
     fg: #fff,
     link: linear-gradient(42deg, rgba(54, 79, 161, 0.308), rgba(82, 65, 238, 0.59)),
+    ctahover: linear-gradient(42deg, rgba(67, 99, 202, 0.41), rgba(123, 108, 255, 0.69)),
     header: linear-gradient(42deg, rgba(54, 79, 161, 0.11), rgba(82, 65, 238, 0.438)),
     projectbg: rgba(54, 57, 66, 0.7),
     projecttag: #141929,

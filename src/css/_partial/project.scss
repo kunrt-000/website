@@ -40,20 +40,6 @@
             color: inherit;
             text-decoration: none;
             position: relative;
-
-            &:hover {
-                &::after {
-                    content: '';
-                    width: 105%;
-                    height: 0.4rem;
-                    display: block;
-                    background: map-get($default, $link);
-                    position: absolute;
-                    bottom: 20%;
-                    left: -2.5%;
-                    z-index: -2;
-                }
-            }
         }
 
         .tags {
@@ -86,6 +72,38 @@
         .description {
             font-family: "Public Sans", $other-fonts;
             margin: 0.75rem 0 0.15rem;
+        }
+
+        .cta-button {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            color: inherit;
+            text-decoration: none;
+            margin-top: 0.75rem;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            font-family: 'Public Sans', $other-fonts;
+            background: map-get($default, $link);
+            padding: 0.65rem 0.75rem;
+            border-radius: 0.15rem;
+
+            &:hover {
+                background: map-get($default, $ctahover);
+            }
+
+            .dark & {
+                background: map-get($dark, $link);
+            }
+
+            .dark &:hover {
+                background: map-get($dark, $ctahover);
+            }
+
+            [class^="icon"] {
+                margin-right: 0.5rem;
+            }
         }
     }
 }

@@ -6,9 +6,13 @@ const Project = ({ image, name, tags, description, link }) => (
     <div className="project">
         {image}
         <div className="details">
-            <a title={`${name} Product Page`} className="name" target="_blank" rel="noopener noreferrer" href={link} >{name}</a>
+            <div className="name">{name}</div>
             <div className="tags">{tags.map(tag => (<div key={uuid()} className="tag">{tag}</div>))}</div>
             <div className="description">{description}</div>
+            <a className="cta-button" target="_blank" rel="noopener noreferrer" href={link}>
+                <div className="icon-link-ext"></div>
+                <div className="text">Open In New Tab</div>
+            </a>
         </div>
     </div>
 )
