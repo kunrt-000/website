@@ -11,6 +11,12 @@
     "description": "“Music & Stuff” is the blog that I write. It is based on the Hexo SSG, and the theme is written by me using EJS and SASS.",
     "link": "https://amanharwara.xyz/blog"
 }, {
+    "image": "./img/operate.png",
+    "name": "Operate",
+    "tags": ["Parcel", "Node.js", "SASS"],
+    "description": "Operate is a primitive re-creation of an operating system inside the browser.",
+    "link": "https://shadythgod.github.io/operate"
+}, {
     "image": "./img/beetle.png",
     "name": "Beetle",
     "tags": ["HTML/CSS", "JavaScript", "WebExtension"],

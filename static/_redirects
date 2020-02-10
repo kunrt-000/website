@@ -1,1 +1,3 @@
 /blog/* https://amansblog.netlify.com/blog/:splat 200!
+
+/operate/* https://shadythgod.github.io/operate/:splat 200!
