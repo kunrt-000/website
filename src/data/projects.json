@@ -3,7 +3,7 @@
     "name": "Altus",
     "tags": ["Electron", "Node.js", "JavaScript"],
     "description": "Altus is a desktop client for WhatsApp with multiple account support and themes.",
-    "link": "https://github.com/shadythgod/altus"
+    "link": "https://github.com/amanharwara/altus"
 }, {
     "image": "./img/musicstuff.jpg",
     "name": "Music & Stuff",
@@ -15,7 +15,7 @@
     "name": "Operate",
     "tags": ["Parcel", "Node.js", "SASS"],
     "description": "Operate is a primitive re-creation of an operating system inside the browser.",
-    "link": "https://shadythgod.github.io/operate"
+    "link": "https://operate.amanharwara.xyz"
 }, {
     "image": "./img/beetle.png",
     "name": "Beetle",
