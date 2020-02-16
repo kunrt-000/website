@@ -15,7 +15,7 @@ const AboutPage = () => {
                 fontFamily: 'Public Sans, sans-serif'
             }}>I am a web developer and designer from India. I’m adept in HTML, CSS and JavaScript. Also semi-proficient in tech like Electron, React, Gatsby, Hexo. I use Figma for designing and also know Photoshop.<br /><br />Contact:</div>
             <div className="contact">
-                <Social icon="github" href="https://github.com/shadythgod" text="@shadythgod"></Social>
+                <Social icon="github" href="https://github.com/amanharwara" text="@amanharwara"></Social>
                 <Social icon="mail" href="mailto:amanharwara@gmail.com" text="amanharwara[at]gmail[dot]com"></Social>
             </div>
         </Layout >
