@@ -41,7 +41,7 @@ const Release = ({
         <meta property="og:description" content={`${current.description}`} />
         <meta
           property="og:image"
-          content={require(`../../public/music/images/${release}.jpg?original`)}
+          content={`../../public/music/images/${release}.jpg`}
         />
         <meta property="twitter:card" content="summary_large_image" />
         <meta
@@ -58,7 +58,7 @@ const Release = ({
         />
         <meta
           property="twitter:image"
-          content={require(`../../public/music/images/${release}.jpg?original`)}
+          content={`../../public/music/images/${release}.jpg`}
         />
       </Head>
       <a className="skip-link" href="#tracklist">
