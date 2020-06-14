@@ -39,7 +39,10 @@ const Release = ({
         />
         <meta property="og:title" content={`${current.title} - Aman Harwara`} />
         <meta property="og:description" content={`${current.description}`} />
-        <meta property="og:image" content={coverSizes.src} />
+        <meta
+          property="og:image"
+          content={require(`../../public/music/images/${release}.jpg?original`)}
+        />
         <meta property="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:url"
@@ -53,7 +56,10 @@ const Release = ({
           property="twitter:description"
           content={`${current.description}`}
         />
-        <meta property="twitter:image" content={coverSizes.src} />
+        <meta
+          property="twitter:image"
+          content={require(`../../public/music/images/${release}.jpg?original`)}
+        />
       </Head>
       <a className="skip-link" href="#tracklist">
         Go To Tracklist
