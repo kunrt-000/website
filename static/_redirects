@@ -1,5 +1,0 @@
-/blog/* https://amansblog.netlify.com/blog/:splat 200!
-
-kalam.amanharwara.xyz/* https://kalamapp.netlify.com/:splat 200!
-
-/altus/* https://amanharwara.github.io/altus/:splat 200!
