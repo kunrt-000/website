@@ -17,6 +17,25 @@
     margin-right: 5vw !important;
   }
 
+  .track {
+    overflow: visible;
+
+    .left {
+      overflow: hidden;
+
+      .title {
+        max-width: 80%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .track .options a {
+    padding: 1.25vh 2.25vh !important;
+  }
+
   .release {
     flex-direction: column-reverse;
     padding: 5vh 5vh 0 5vh;
@@ -31,7 +50,11 @@
     .left-column {
       width: 80vw !important;
 
-      & > .title {
+      .back-link {
+        display: none;
+      }
+
+      &>.title {
         font-size: 8vh !important;
       }
 
@@ -59,15 +82,23 @@
       align-items: center;
       justify-content: center;
 
+      .back-link {
+        display: flex;
+        position: relative;
+        width: min-content;
+        font-size: 5vh !important;
+        margin: 0 0 5vh 0 !important;
+      }
+
       .links {
         width: 80vw !important;
         margin: 5vh auto !important;
 
-        & > .button:first-child {
+        &>.button:first-child {
           border-radius: 0.75vw !important;
         }
 
-        & > .right {
+        &>.right {
           display: flex;
           align-items: center;
           margin-left: 0 !important;

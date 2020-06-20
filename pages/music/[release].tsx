@@ -6,6 +6,7 @@ import Track from "../../components/Track";
 import { Icon } from "@iconify/react";
 import bxlSpotify from "@iconify/icons-bx/bxl-spotify";
 import bxlApple from "@iconify/icons-bx/bxl-apple";
+import arrowLeft from "@iconify/icons-feather/arrow-left";
 import Head from "next/head";
 
 /**
@@ -14,7 +15,6 @@ import Head from "next/head";
  * MID - Working "back" button for this page
  * MID - Design and code a general "Music" page with all the releases.
  * MID - Song previews
- * LOW - Try blur shadow for cover image
  */
 
 const Release = ({
@@ -67,6 +67,9 @@ const Release = ({
       <div className="release">
         <div className="watermark"></div>
         <main className="left-column">
+          <a href="/music" className="back-link button icon">
+            <Icon icon={arrowLeft} />
+          </a>
           <h1 className="title">{current.title}</h1>
           <div className="info">
             <span className="genre">{current.genre}</span>
@@ -97,6 +100,9 @@ const Release = ({
           </div>
         </main>
         <aside className="right-column">
+          <a href="/music" className="back-link button icon">
+            <Icon icon={arrowLeft} />
+          </a>
           <div
             className="cover"
             style={{
@@ -120,28 +126,26 @@ const Release = ({
             >
               Download
             </a>
-            <div className="right">
-              <a
-                href={current.links.spotify}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button icon spotify"
-                title="Listen on Spotify"
-                id="spotify-release"
-              >
-                <Icon icon={bxlSpotify} />
-              </a>
-              <a
-                href={current.links.apple}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button icon apple-music"
-                title="Listen on Apple Music"
-                id="apple-release"
-              >
-                <Icon icon={bxlApple} />
-              </a>
-            </div>
+            <a
+              href={current.links.spotify}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button icon spotify"
+              title="Listen on Spotify"
+              id="spotify-release"
+            >
+              <Icon icon={bxlSpotify} />
+            </a>
+            <a
+              href={current.links.apple}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button icon apple-music"
+              title="Listen on Apple Music"
+              id="apple-release"
+            >
+              <Icon icon={bxlApple} />
+            </a>
           </div>
         </aside>
       </div>

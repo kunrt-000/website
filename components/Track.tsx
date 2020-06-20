@@ -1,6 +1,8 @@
 import { Icon } from "@iconify/react";
 import downloadIcon from "@iconify/icons-feather/download";
 import bxDotsVerticalRounded from "@iconify/icons-bx/bx-dots-vertical-rounded";
+import bxlSpotify from "@iconify/icons-bx/bxl-spotify";
+import bxlApple from "@iconify/icons-bx/bxl-apple";
 
 const Track = ({ number, title, links }: Track) => {
   return (
@@ -13,13 +15,17 @@ const Track = ({ number, title, links }: Track) => {
         <a
           href={links.download}
           rel="noopener noreferrer"
-          className="download"
+          className="download icon"
           title="Download from Bandcamp"
         >
           <Icon icon={downloadIcon} />
         </a>
         <div className="options-dropdown">
-          <label htmlFor={`options-checkbox-${number}`} title="Track Menu">
+          <label
+            className="options-dropdown-icon icon"
+            htmlFor={`options-checkbox-${number}`}
+            title="Streaming Services Menu"
+          >
             <Icon icon={bxDotsVerticalRounded} />
           </label>
           <input
@@ -34,6 +40,7 @@ const Track = ({ number, title, links }: Track) => {
                 rel="noopener noreferrer"
                 title="Listen on Spotify"
               >
+                <Icon icon={bxlSpotify} />
                 Spotify
               </a>
             </li>
@@ -43,6 +50,7 @@ const Track = ({ number, title, links }: Track) => {
                 rel="noopener noreferrer"
                 title="Listen on Apple Music"
               >
+                <Icon icon={bxlApple} />
                 Apple Music
               </a>
             </li>

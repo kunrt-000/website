@@ -1,6 +1,6 @@
 .release {
   display: flex;
-  padding: 10vh 10vh 0 10vh;
+  padding: 12.5vh 10vh 0 10vh;
   position: relative;
   z-index: 1;
 
@@ -20,8 +20,22 @@
     z-index: -1;
   }
 
+  .back-link {
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 1.5vh;
+    background: #161616 !important;
+    transition: 0.15s background;
+    color: #d3d3d3 !important;
+  }
+
+  .back-link:hover {
+    background: #292929 !important;
+  }
+
   .left-column {
     z-index: 1;
+    position: relative;
 
     &>.title {
       font-weight: 800;
@@ -49,12 +63,12 @@
     &>.description {
       font-weight: 100;
       font-size: 3.35vh;
-      width: 80%;
+      width: 90%;
       margin-bottom: 4vh;
     }
 
     &>.tracklist-container {
-      width: 80%;
+      width: 90%;
 
       &>.title {
         font-weight: bold;
@@ -73,6 +87,11 @@
 
   .right-column {
     z-index: 1;
+    position: relative;
+
+    .back-link {
+      display: none;
+    }
 
     &>.cover {
       height: 60vh;
@@ -88,16 +107,15 @@
       display: flex;
       margin-top: 2vh;
       align-items: center;
-      justify-content: stretch;
+      justify-content: space-between;
 
-      &>.button:first-child {
+      .button:first-child {
         flex-grow: 2;
+        margin-right: 0.45vw;
       }
 
-      &>.right {
-        display: flex;
-        align-items: center;
-        margin-left: 0.65vw;
+      .button:last-child {
+        margin-left: 0.45vw;
       }
     }
   }
@@ -105,6 +123,8 @@
 
 @media screen and (min-height: 768px) {
   .right-column {
+
+    &>.cover,
     &>.cover img {
       height: 50vh !important;
     }
