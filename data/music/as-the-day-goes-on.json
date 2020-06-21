@@ -1,6 +1,9 @@
 {
     "title": "As The Day Goes On",
-    "genre": "Ambient / Ambient Techno",
+    "genre": {
+        "primary": "Ambient",
+        "secondary": "Ambient Techno"
+    },
     "year": "2020",
     "type": "EP",
     "description": "“As The Day Goes On” is the debut EP from Aman Harwara. It spans 7 songs across the length of a total 20 minutes, with each song attempting to describe a part of the day.",

@@ -9,27 +9,18 @@ import bxlApple from "@iconify/icons-bx/bxl-apple";
 import arrowLeft from "@iconify/icons-feather/arrow-left";
 import Head from "next/head";
 
-/**
- * TODO
- *
- * MID - Working "back" button for this page
- * MID - Design and code a general "Music" page with all the releases.
- * MID - Song previews
- */
-
-const Release = ({
-  release,
-  current,
-}: {
+type ReleasePageProps = {
   release: string;
-  current: Release;
-}) => {
+  current: ReleasePage;
+};
+
+const Release = ({ release, current }: ReleasePageProps) => {
   const router = useRouter();
   let coverSizes = require(`../../public/music/images/${release}.jpg?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`);
   return (
     <>
       <Head>
-        <title>As The Day Goes On - Aman Harwara</title>
+        <title>{current.title} - Aman Harwara</title>
         <meta name="title" content={`${current.title} - Aman Harwara`} />
         <meta name="description" content={`${current.description}`} />
         <meta property="og:type" content="website" />
@@ -64,7 +55,7 @@ const Release = ({
       <a className="skip-link" href="#release-links">
         Go To Links
       </a>
-      <div className="release">
+      <div className="release-container">
         <div className="watermark"></div>
         <main className="left-column">
           <a href="/music" className="back-link button icon">
@@ -72,7 +63,9 @@ const Release = ({
           </a>
           <h1 className="title">{current.title}</h1>
           <div className="info">
-            <span className="genre">{current.genre}</span>
+            <span className="genre">
+              {current.genre.primary} / {current.genre.secondary}
+            </span>
             <span className="separator">·</span>
             <span className="year">{current.year}</span>
             <span className="separator">·</span>
@@ -156,7 +149,7 @@ const Release = ({
 export const getStaticProps: GetStaticProps = async (context) => {
   let { release } = context.params;
 
-  let current: Release = JSON.parse(
+  let current: ReleasePage = JSON.parse(
     fs
       .readFileSync(
         path.join(path.join(process.cwd(), "data"), "music", `${release}.json`)

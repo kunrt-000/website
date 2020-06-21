@@ -1,0 +1,34 @@
+@media screen and (max-width: 1024px) {
+  #__next {
+    padding: 3vh !important;
+  }
+
+  .header .title {
+    font-size: 4.5vh;
+    margin-left: 5vw;
+  }
+
+  .releases {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .release {
+    max-width: 100% !important;
+    align-items: center !important;
+    text-align: center !important;
+
+    .cover {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2vh !important;
+    }
+
+    .cover img {
+      width: 80% !important;
+      height: auto !important;
+      border-radius: 1vw !important;
+    }
+  }
+}

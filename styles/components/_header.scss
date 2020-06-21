@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & > * {
+    display: flex;
+    align-items: center;
+  }
+
+  .left .back-link {
+    margin: 0 2vw 0 0;
+  }
+
+  .title {
+    font-size: 5vh;
+    font-weight: bold;
+  }
+}

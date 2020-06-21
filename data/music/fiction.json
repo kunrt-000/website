@@ -1,0 +1,24 @@
+{
+    "title": "Fiction",
+    "genre": {
+        "primary": "Electronic",
+        "secondary": "Ambient"
+    },
+    "year": "2020",
+    "type": "Track",
+    "description": "",
+    "tracklist": [{
+        "number": 1,
+        "title": "Fiction",
+        "links": {
+            "download": "https://amanharwara.bandcamp.com/track/fiction?action=download",
+            "spotify": "https://open.spotify.com/track/2x67V5vxIXIZm7RTlqUWYk",
+            "apple": "https://music.apple.com/us/album/fiction-single/1519591563"
+        }
+    }],
+    "links": {
+        "download": "https://amanharwara.bandcamp.com/track/fiction?action=download",
+        "spotify": "https://open.spotify.com/track/2x67V5vxIXIZm7RTlqUWYk",
+        "apple": "https://music.apple.com/us/album/fiction-single/1519591563"
+    }
+}

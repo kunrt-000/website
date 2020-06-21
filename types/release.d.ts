@@ -10,12 +10,16 @@ type Track = {
   number: string;
 };
 
-type Release = {
+type ReleasePage = {
   title: string;
-  genre: string;
+  genre: {
+    primary: string;
+    secondary: string;
+  };
   year: string | Number;
   type: string;
   description: string;
   tracklist: Track[];
   links: Links;
+  id?: string;
 };
