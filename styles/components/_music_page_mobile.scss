@@ -1,13 +1,4 @@
 @media screen and (max-width: 1024px) {
-  #__next {
-    padding: 3vh !important;
-  }
-
-  .header .title {
-    font-size: 4.5vh;
-    margin-left: 5vw;
-  }
-
   .releases {
     flex-direction: column;
     align-items: flex-start;
@@ -29,6 +20,29 @@
       width: 80% !important;
       height: auto !important;
       border-radius: 1vw !important;
+    }
+  }
+
+  .streaming-links ul {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    li {
+      margin-right: 0;
+      margin-bottom: 2vh;
+      display: block;
+      width: 100%;
+    }
+
+    li:last-child {
+      margin-left: 0;
+      text-align: center;
+    }
+
+    a {
+      width: 100%;
+      border-radius: 1vw;
     }
   }
 }

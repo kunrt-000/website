@@ -4,10 +4,10 @@ import { useRouter } from "next/router";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Track from "../../components/Track";
 import { Icon } from "@iconify/react";
-import bxlSpotify from "@iconify/icons-bx/bxl-spotify";
-import bxlApple from "@iconify/icons-bx/bxl-apple";
-import arrowLeft from "@iconify/icons-feather/arrow-left";
+import faSpotify from "@iconify/icons-fa-brands/spotify";
+import appleMusic from "@iconify/icons-fa-brands/itunes-note";
 import Head from "next/head";
+import Header from "../../components/Header";
 
 type ReleasePageProps = {
   release: string;
@@ -55,16 +55,24 @@ const Release = ({ release, current }: ReleasePageProps) => {
       <a className="skip-link" href="#release-links">
         Go To Links
       </a>
+      <Header
+        back_link="/music"
+        title="Release"
+        show_title={false}
+        menu={[
+          { name: "Home", link: "/" },
+          { name: "Work", link: "/work" },
+          { name: "Music", link: "/music" },
+          { name: "Blog", link: "/blog" },
+        ]}
+      />
       <div className="release-container">
-        <div className="watermark"></div>
         <main className="left-column">
-          <a href="/music" className="back-link button icon">
-            <Icon icon={arrowLeft} />
-          </a>
           <h1 className="title">{current.title}</h1>
           <div className="info">
             <span className="genre">
-              {current.genre.primary} / {current.genre.secondary}
+              <span className="primary">{current.genre.primary}</span>
+              <span className="secondary"> / {current.genre.secondary}</span>
             </span>
             <span className="separator">·</span>
             <span className="year">{current.year}</span>
@@ -93,9 +101,6 @@ const Release = ({ release, current }: ReleasePageProps) => {
           </div>
         </main>
         <aside className="right-column">
-          <a href="/music" className="back-link button icon">
-            <Icon icon={arrowLeft} />
-          </a>
           <div
             className="cover"
             style={{
@@ -127,7 +132,7 @@ const Release = ({ release, current }: ReleasePageProps) => {
               title="Listen on Spotify"
               id="spotify-release"
             >
-              <Icon icon={bxlSpotify} />
+              <Icon icon={faSpotify} />
             </a>
             <a
               href={current.links.apple}
@@ -137,7 +142,7 @@ const Release = ({ release, current }: ReleasePageProps) => {
               title="Listen on Apple Music"
               id="apple-release"
             >
-              <Icon icon={bxlApple} />
+              <Icon icon={appleMusic} width="1em" height="1em" />
             </a>
           </div>
         </aside>

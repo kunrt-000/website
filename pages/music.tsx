@@ -1,11 +1,13 @@
-import { Icon } from "@iconify/react";
-import arrowLeft from "@iconify/icons-feather/arrow-left";
+import faSpotify from "@iconify/icons-fa-brands/spotify";
 import Head from "next/head";
 import fs from "fs";
 import path from "path";
 import { GetStaticProps } from "next";
 import Release from "../components/Release";
 import Header from "../components/Header";
+import Streaming from "../components/Streaming";
+import bandcamp from "@iconify/icons-fa-brands/bandcamp";
+import appleMusic from "@iconify/icons-fa-brands/itunes";
 
 type MusicPageProps = {
   releases: ReleasePage[];
@@ -21,6 +23,24 @@ const Music = ({ releases }: MusicPageProps) => {
       id: release.id,
     };
   });
+
+  let streaming_services: Streaming[] = [
+    {
+      name: "Spotify",
+      icon: faSpotify,
+      link: "https://open.spotify.com/artist/0oS1w3XT067ttzelzj67b6",
+    },
+    {
+      name: "Bandcamp",
+      icon: bandcamp,
+      link: "https://amanharwara.bandcamp.com",
+    },
+    {
+      name: "Apple Music",
+      icon: appleMusic,
+      link: "https://music.apple.com/us/artist/aman-harwara/1516521816",
+    },
+  ];
 
   return (
     <>
@@ -55,7 +75,30 @@ const Music = ({ releases }: MusicPageProps) => {
         />
       </Head>
       <div className="main-container">
-        <Header back_link="/" title="Music Releases" />
+        <Header
+          back_link="/"
+          title="All Music Releases"
+          show_title={false}
+          menu={[
+            {
+              name: "Home",
+              link: "/",
+            },
+            {
+              name: "Work",
+              link: "/work",
+            },
+            {
+              name: "Music",
+              link: "/music",
+              active: true,
+            },
+            {
+              name: "Blog",
+              link: "/blog",
+            },
+          ]}
+        />
         <div className="releases">
           {music_releases.length !== 0 &&
             music_releases.map((release) => (
@@ -63,6 +106,7 @@ const Music = ({ releases }: MusicPageProps) => {
                 href={`/music/${release.id}`}
                 className="release-link"
                 title={release.title}
+                key={release.id}
               >
                 <Release
                   title={release.title}
@@ -74,6 +118,21 @@ const Music = ({ releases }: MusicPageProps) => {
                 />
               </a>
             ))}
+        </div>
+        <div className="streaming-links">
+          <h2 className="title">You can find my music on:</h2>
+          <ul className="links">
+            {streaming_services.map((service) => (
+              <li key={service.name}>
+                <Streaming
+                  link={service.link}
+                  name={service.name}
+                  icon={service.icon}
+                />
+              </li>
+            ))}
+            <li key="and-more">and more...</li>
+          </ul>
         </div>
       </div>
     </>

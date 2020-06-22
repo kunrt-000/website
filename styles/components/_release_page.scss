@@ -1,19 +1,9 @@
 .release-container {
   display: flex;
-  padding: 8vh 0 0 0;
+  padding: 0;
+  margin-top: 2vh;
   position: relative;
   z-index: 1;
-
-  .watermark::before {
-    content: "music";
-    font-weight: 800;
-    font-size: 40vh;
-    position: absolute;
-    top: -5%;
-    left: -3%;
-    color: rgba(52, 52, 52, 0.15);
-    z-index: -1;
-  }
 
   .left-column {
     z-index: 1;
@@ -72,10 +62,6 @@
   .right-column {
     z-index: 1;
     position: relative;
-
-    .back-link {
-      display: none;
-    }
 
     & > .cover {
       height: 60vh;

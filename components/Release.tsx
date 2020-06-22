@@ -13,12 +13,11 @@ const Release = ({ title, genre, year, type, id }) => {
       <div className="details">
         <div className="title">{title}</div>
         <div className="info">
-          <span className="genre">{genre}</span>
-          <span className="separator">·</span>
           <span className="year">{year}</span>
           <span className="separator">·</span>
           <span className="type">{type}</span>
         </div>
+        <div className="genre">{genre}</div>
       </div>
     </div>
   );

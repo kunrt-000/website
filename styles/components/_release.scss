@@ -1,12 +1,35 @@
 .release-link {
   text-decoration: none !important;
+  margin-top: 4vh;
+  margin-right: 2.25vw;
+
+  &:hover .title,
+  &:focus .title {
+    position: relative;
+    z-index: 2;
+
+    &::after {
+      content: "";
+      width: 110%;
+      height: 1vh;
+      display: block;
+      background: rgba(33, 103, 207, 0.75);
+      position: absolute;
+      bottom: 5%;
+      left: -5%;
+      z-index: -2;
+    }
+  }
+
+  &:hover img,
+  &:focus img {
+    filter: opacity(0.5);
+  }
 }
 
 .release {
   max-width: 16.5vw;
   overflow: hidden;
-  margin-top: 4vh;
-  margin-right: 2vw;
   cursor: pointer;
   color: #fff !important;
   display: flex;
@@ -21,27 +44,35 @@
     }
   }
 
+  .details {
+    width: 100%;
+  }
+
   .title {
     font-size: 4.5vh;
     font-weight: 600;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    margin-top: 0.5vh;
+    margin-top: 1vh;
+    width: min-content;
+    display: inline-block;
+    max-width: 100%;
+    line-height: 4.5vh;
   }
 
-  .info {
+  .info,
+  .genre {
     color: rgba(194, 194, 194, 0.5);
     font-size: 3vh;
     font-weight: 300;
-    margin-top: 0.5vh;
   }
+}
 
-  &:hover .title {
-    text-decoration: underline;
-  }
-
-  &:hover img {
-    filter: opacity(0.5);
+@media screen and (min-height: 768px) {
+  .release {
+    .info {
+      margin-top: 0.5vh;
+    }
   }
 }

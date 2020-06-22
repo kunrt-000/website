@@ -1,5 +1,63 @@
 .releases {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
+}
+
+.streaming-links {
+  margin-top: 5vh;
+
+  .title {
+    font-size: 4vh;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  li {
+    margin-right: 1vw;
+    font-size: 3vh;
+  }
+
+  li:last-child {
+    margin-left: 1vw;
+  }
+
+  .streaming-service {
+    color: #fff;
+    text-decoration: none;
+    padding: 2vh 2vw;
+    background: #080808;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.35vw;
+    transition: 0.15s background;
+  }
+
+  [title="Apple Music"]:hover {
+    background: #555555;
+  }
+
+  [title="Spotify"]:hover {
+    background: #169241;
+  }
+
+  [title="Bandcamp"]:hover {
+    background: #61929c;
+  }
+
+  .icon {
+    font-size: 8vh;
+    margin-bottom: 1vh;
+  }
+
+  .name {
+    font-size: 3vh;
+  }
 }

@@ -1,0 +1,39 @@
+.header .menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+
+  .menu-item {
+    margin: 0 1vw;
+    font-size: 3.5vh;
+    user-select: none;
+    z-index: 5;
+    position: relative;
+  }
+
+  .menu-item-link {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 100;
+  }
+
+  .menu-item.active a {
+    font-weight: 900;
+    cursor: unset;
+  }
+
+  .menu-item:not(.active):hover {
+    &::after {
+      content: "";
+      width: 110%;
+      height: 1vh;
+      display: block;
+      background: rgba(33, 103, 207, 0.75);
+      position: absolute;
+      bottom: 10%;
+      left: -5%;
+      z-index: -2;
+    }
+  }
+}

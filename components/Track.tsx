@@ -1,8 +1,8 @@
 import { Icon } from "@iconify/react";
 import downloadIcon from "@iconify/icons-feather/download";
-import bxDotsVerticalRounded from "@iconify/icons-bx/bx-dots-vertical-rounded";
-import bxlSpotify from "@iconify/icons-bx/bxl-spotify";
-import bxlApple from "@iconify/icons-bx/bxl-apple";
+import moreVertical from "@iconify/icons-feather/more-vertical";
+import faSpotify from "@iconify/icons-fa-brands/spotify";
+import faApple from "@iconify/icons-fa-brands/itunes";
 
 const Track = ({ number, title, links }: Track) => {
   return (
@@ -26,7 +26,7 @@ const Track = ({ number, title, links }: Track) => {
             htmlFor={`options-checkbox-${number}`}
             title="Streaming Services Menu"
           >
-            <Icon icon={bxDotsVerticalRounded} />
+            <Icon icon={moreVertical} />
           </label>
           <input
             type="checkbox"
@@ -40,7 +40,7 @@ const Track = ({ number, title, links }: Track) => {
                 rel="noopener noreferrer"
                 title="Listen on Spotify"
               >
-                <Icon icon={bxlSpotify} />
+                <Icon icon={faSpotify} />
                 Spotify
               </a>
             </li>
@@ -50,7 +50,7 @@ const Track = ({ number, title, links }: Track) => {
                 rel="noopener noreferrer"
                 title="Listen on Apple Music"
               >
-                <Icon icon={bxlApple} />
+                <Icon icon={faApple} />
                 Apple Music
               </a>
             </li>
