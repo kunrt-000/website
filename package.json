@@ -9,19 +9,17 @@
     "export": "next export"
   },
   "dependencies": {
-    "@iconify/icons-fa-brands": "^1.0.13",
-    "@iconify/icons-feather": "^1.0.9",
-    "@iconify/react": "^1.1.3",
+    "@emotion/core": "^10.0.35",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
     "jimp": "^0.13.0",
     "lqip-loader": "^2.2.0",
-    "next": "9.4.4",
+    "next": "^9.5.2",
     "next-compose-plugins": "^2.2.0",
     "next-optimized-images": "^2.6.1",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "responsive-loader": "^1.2.0",
     "sass": "^1.26.8"
   },

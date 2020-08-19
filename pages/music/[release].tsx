@@ -3,11 +3,10 @@ import path from "path";
 import { useRouter } from "next/router";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Track from "../../components/Track";
-import { Icon } from "@iconify/react";
-import faSpotify from "@iconify/icons-fa-brands/spotify";
-import appleMusic from "@iconify/icons-fa-brands/itunes-note";
 import Head from "next/head";
 import Header from "../../components/Header";
+import Spotify from "../../components/icons/Spotify";
+import AppleMusic from "../../components/icons/AppleMusic";
 
 type ReleasePageProps = {
   release: string;
@@ -55,17 +54,7 @@ const Release = ({ release, current }: ReleasePageProps) => {
       <a className="skip-link" href="#release-links">
         Go To Links
       </a>
-      <Header
-        back_link="/music"
-        title="Release"
-        show_title={false}
-        menu={[
-          { name: "Home", link: "/" },
-          { name: "Work", link: "/work" },
-          { name: "Music", link: "/music" },
-          { name: "Blog", link: "/blog" },
-        ]}
-      />
+      <Header back_link="/music" title="Release" show_title={false} active="" />
       <div className="release-container">
         <main className="left-column">
           <h1 className="title">{current.title}</h1>
@@ -132,7 +121,7 @@ const Release = ({ release, current }: ReleasePageProps) => {
               title="Listen on Spotify"
               id="spotify-release"
             >
-              <Icon icon={faSpotify} />
+              {Spotify}
             </a>
             <a
               href={current.links.apple}
@@ -142,7 +131,7 @@ const Release = ({ release, current }: ReleasePageProps) => {
               title="Listen on Apple Music"
               id="apple-release"
             >
-              <Icon icon={appleMusic} width="1em" height="1em" />
+              {AppleMusic}
             </a>
           </div>
         </aside>

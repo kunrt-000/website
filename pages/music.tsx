@@ -1,4 +1,3 @@
-import faSpotify from "@iconify/icons-fa-brands/spotify";
 import Head from "next/head";
 import fs from "fs";
 import path from "path";
@@ -6,8 +5,9 @@ import { GetStaticProps } from "next";
 import Release from "../components/Release";
 import Header from "../components/Header";
 import Streaming from "../components/Streaming";
-import bandcamp from "@iconify/icons-fa-brands/bandcamp";
-import appleMusic from "@iconify/icons-fa-brands/itunes";
+import SpotifyIcon from "../components/icons/Spotify";
+import BandcampIcon from "../components/icons/Bandcamp";
+import AppleMusicIcon from "../components/icons/AppleMusic";
 
 type MusicPageProps = {
   releases: ReleasePage[];
@@ -27,17 +27,17 @@ const Music = ({ releases }: MusicPageProps) => {
   let streaming_services: Streaming[] = [
     {
       name: "Spotify",
-      icon: faSpotify,
+      icon: SpotifyIcon,
       link: "https://open.spotify.com/artist/0oS1w3XT067ttzelzj67b6",
     },
     {
       name: "Bandcamp",
-      icon: bandcamp,
+      icon: BandcampIcon,
       link: "https://amanharwara.bandcamp.com",
     },
     {
       name: "Apple Music",
-      icon: appleMusic,
+      icon: AppleMusicIcon,
       link: "https://music.apple.com/us/artist/aman-harwara/1516521816",
     },
   ];
@@ -79,25 +79,7 @@ const Music = ({ releases }: MusicPageProps) => {
           back_link="/"
           title="All Music Releases"
           show_title={false}
-          menu={[
-            {
-              name: "Home",
-              link: "/",
-            },
-            {
-              name: "Work",
-              link: "/work",
-            },
-            {
-              name: "Music",
-              link: "/music",
-              active: true,
-            },
-            {
-              name: "Blog",
-              link: "/blog",
-            },
-          ]}
+          active="Music"
         />
         <div className="releases">
           {music_releases.length !== 0 &&
