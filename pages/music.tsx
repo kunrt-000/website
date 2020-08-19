@@ -2,18 +2,18 @@ import Head from "next/head";
 import fs from "fs";
 import path from "path";
 import { GetStaticProps } from "next";
-import Release from "../components/Release";
+/* import Release from "../components/Release";
 import Header from "../components/Header";
-import Streaming from "../components/Streaming";
+import Streaming from "../components/Streaming"; */
 import SpotifyIcon from "../components/icons/Spotify";
 import BandcampIcon from "../components/icons/Bandcamp";
 import AppleMusicIcon from "../components/icons/AppleMusic";
-
+/* 
 type MusicPageProps = {
   releases: ReleasePage[];
-};
+}; */
 
-const Music = ({ releases }: MusicPageProps) => {
+const Music = ({ releases } /* : MusicPageProps */) => {
   let music_releases = releases.map((release) => {
     return {
       title: release.title,
@@ -24,7 +24,7 @@ const Music = ({ releases }: MusicPageProps) => {
     };
   });
 
-  let streaming_services: Streaming[] = [
+  let streaming_services /* : Streaming[] */ = [
     {
       name: "Spotify",
       icon: SpotifyIcon,
@@ -75,12 +75,12 @@ const Music = ({ releases }: MusicPageProps) => {
         />
       </Head>
       <div className="main-container">
-        <Header
+        {/* <Header
           back_link="/"
           title="All Music Releases"
           show_title={false}
           active="Music"
-        />
+        /> */}
         <div className="releases">
           {music_releases.length !== 0 &&
             music_releases.map((release) => (
@@ -90,6 +90,7 @@ const Music = ({ releases }: MusicPageProps) => {
                 title={release.title}
                 key={release.id}
               >
+                {/* 
                 <Release
                   title={release.title}
                   genre={release.genre}
@@ -97,13 +98,13 @@ const Music = ({ releases }: MusicPageProps) => {
                   type={release.type}
                   id={release.id}
                   key={release.id}
-                />
+                /> */}
               </a>
             ))}
         </div>
         <div className="streaming-links">
           <h2 className="title">You can find my music on:</h2>
-          <ul className="links">
+          {/* <ul className="links">
             {streaming_services.map((service) => (
               <li key={service.name}>
                 <Streaming
@@ -114,7 +115,7 @@ const Music = ({ releases }: MusicPageProps) => {
               </li>
             ))}
             <li key="and-more">and more...</li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </>

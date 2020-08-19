@@ -2,18 +2,18 @@ import fs from "fs";
 import path from "path";
 import { useRouter } from "next/router";
 import { GetStaticProps, GetStaticPaths } from "next";
-import Track from "../../components/Track";
+//import Track from "../../components/Track";
 import Head from "next/head";
-import Header from "../../components/Header";
+//import Header from "../../components/Header";
 import Spotify from "../../components/icons/Spotify";
 import AppleMusic from "../../components/icons/AppleMusic";
 
-type ReleasePageProps = {
+/* type ReleasePageProps = {
   release: string;
   current: ReleasePage;
-};
+}; */
 
-const Release = ({ release, current }: ReleasePageProps) => {
+const Release = ({ release, current } /* : ReleasePageProps */) => {
   const router = useRouter();
   let coverSizes = require(`../../public/music/images/${release}.jpg?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`);
   return (
@@ -54,7 +54,7 @@ const Release = ({ release, current }: ReleasePageProps) => {
       <a className="skip-link" href="#release-links">
         Go To Links
       </a>
-      <Header back_link="/music" title="Release" show_title={false} active="" />
+      {/* <Header back_link="/music" title="Release" show_title={false} active="" /> */}
       <div className="release-container">
         <main className="left-column">
           <h1 className="title">{current.title}</h1>
@@ -69,7 +69,7 @@ const Release = ({ release, current }: ReleasePageProps) => {
             <span className="type">{current.type}</span>
           </div>
           <div className="description">{current.description}</div>
-          <div className="tracklist-container">
+          {/* <div className="tracklist-container">
             <h3 className="title">Tracklist:</h3>
             <ul className="tracklist" id="tracklist">
               {(current.tracklist.length === 0 || !current.tracklist) && (
@@ -87,7 +87,7 @@ const Release = ({ release, current }: ReleasePageProps) => {
                   </li>
                 ))}
             </ul>
-          </div>
+          </div> */}
         </main>
         <aside className="right-column">
           <div
@@ -143,7 +143,7 @@ const Release = ({ release, current }: ReleasePageProps) => {
 export const getStaticProps: GetStaticProps = async (context) => {
   let { release } = context.params;
 
-  let current: ReleasePage = JSON.parse(
+  let current = JSON.parse(
     fs
       .readFileSync(
         path.join(path.join(process.cwd(), "data"), "music", `${release}.json`)

@@ -6,7 +6,8 @@ import Sass from "../components/icons/Sass";
 import NextJS from "../components/icons/NextJS";
 import Rust from "../components/icons/Rust";
 
-let projects: Project[] = [
+// @TODO: Re-write Project type
+let projects = [
   {
     title: "Altus",
     category: "hybrid-app",
