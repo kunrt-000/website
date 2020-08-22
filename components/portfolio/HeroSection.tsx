@@ -12,7 +12,7 @@ const media_queries = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
 const HeroSectionEllipse = ({ ...props }) => (
   <div
     css={css`
-      background: #3352c0 20.58%;
+      background: #3352c0;
       background: linear-gradient(
         136.21deg,
         #3352c0 20.58%,
@@ -34,7 +34,7 @@ const HeroSection = () => (
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      color: #f6f6f6;
+      color: #fff;
     `}
   >
     <NavBar />
@@ -66,7 +66,7 @@ const HeroSection = () => (
       </p>
       <AnchorButton
         label="MY WORK"
-        href="#work"
+        href="#work-section"
         icon={<ArrowRight />}
         iconOnRight={true}
       />

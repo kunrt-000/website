@@ -6,7 +6,7 @@ const MenuItem = ({ children, link, ...props }) => (
   <li
     {...props}
     css={css`
-      color: #f6f6f6;
+      color: #fff;
       font-weight: 300;
       font-size: 1.8vw;
       margin-right: 1.2vw;
@@ -63,7 +63,7 @@ const NavBar = () => (
       <MenuItem link="/" className="active">
         HOME
       </MenuItem>
-      <MenuItem link="/work">WORK</MenuItem>
+      <MenuItem link="#work-section">WORK</MenuItem>
       <MenuItem link="/music">MUSIC</MenuItem>
       <MenuItem link="/blog" style={{ marginRight: "0" }}>
         BLOG

@@ -1,6 +1,8 @@
 import Head from "next/head";
 import HeroSection from "@/portfolio/HeroSection";
 import AboutSection from "@/portfolio/AboutSection";
+import WorkSection from "@/portfolio/WorkSection.jsx";
+import ContactSection from "@/portfolio/ContactSection";
 
 export default function Home() {
   return (
@@ -28,6 +30,8 @@ export default function Home() {
       </Head>
       <HeroSection />
       <AboutSection />
+      <WorkSection />
+      <ContactSection />
     </>
   );
 }
