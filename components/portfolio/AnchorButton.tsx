@@ -45,6 +45,7 @@ const Button = ({
       width: max-content;
       letter-spacing: 0.075vw;
       transition: background 0.2s;
+      user-select: none;
 
       ${media_queries[3]} {
         font-size: 2.25vw;

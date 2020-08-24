@@ -82,13 +82,14 @@ const ProjectCard = ({ title, id, category, image, align }: Project) => (
         z-index: 2;
         font-weight: 800;
         font-size: 3.5vw;
-        max-height: 8vw;
+        max-height: 8.5vw;
         overflow: hidden;
         white-space: normal;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         text-overflow: ellipsis;
+        line-height: 4vw;
       `}
     >
       {title}

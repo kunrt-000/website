@@ -20,8 +20,7 @@
     "next-optimized-images": "^2.6.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "responsive-loader": "^1.2.0",
-    "sass": "^1.26.8"
+    "responsive-loader": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^14.0.13",
