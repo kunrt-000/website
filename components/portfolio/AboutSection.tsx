@@ -8,14 +8,25 @@ import SassIcon from "@/icons/Sass";
 import ReactIcon from "@/icons/React";
 import VueIcon from "@/icons/Vue";
 
-const StyledParagraph = ({ children }) => (
+const breakpoints = [576, 1024, 1280, 1370];
+
+const media_queries = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
+
+const StyledParagraph = ({ children, ...props }) => (
   <p
     css={css`
       font-size: 1.75vw;
       max-width: 60vw;
       margin-top: 0;
       margin-bottom: 1.75vw;
+
+      ${media_queries[1]} {
+        font-size: 1.15rem !important;
+        max-width: 100%;
+        margin-bottom: 0.75rem;
+      }
     `}
+    {...props}
   >
     {children}
   </p>
@@ -33,12 +44,25 @@ const TechCard = ({ icon, label }) => (
       align-items: center;
       margin-right: 1vw;
       min-width: 7vw;
+      user-select: none;
+
+      ${media_queries[1]} {
+        font-size: 1rem;
+        padding: 0.5rem;
+        min-width: 5rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
     `}
   >
     <div
       css={css`
         font-size: 3.75vw;
         margin-bottom: 0.5vw;
+
+        ${media_queries[1]} {
+          font-size: 2rem;
+        }
       `}
     >
       {icon}
@@ -48,17 +72,15 @@ const TechCard = ({ icon, label }) => (
 );
 
 const AboutSection = () => (
-  <Section id="about-section" css={css``}>
-    <h1
-      css={css`
-        margin-top: 0;
-        font-size: 3.25vw;
-        font-weight: 800;
-        margin-bottom: 1.65vw;
-      `}
-    >
-      About
-    </h1>
+  <Section
+    id="about-section"
+    css={css`
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    `}
+  >
+    <h1>About</h1>
     <StyledParagraph>
       I’m <b>Aman Harwara</b>, a front-end web developer, graphic designer,
       software developer and a musician.
@@ -76,6 +98,7 @@ const AboutSection = () => (
       css={css`
         display: flex;
         margin-bottom: 1vw;
+        flex-wrap: wrap;
       `}
     >
       <TechCard icon={HTMLIcon} label="HTML/CSS" />

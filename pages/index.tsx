@@ -5,6 +5,7 @@ import HeroSection from "@/portfolio/HeroSection";
 import AboutSection from "@/portfolio/AboutSection";
 import WorkSection from "@/portfolio/WorkSection.jsx";
 import ContactSection from "@/portfolio/ContactSection";
+import Footer from "@/portfolio/Footer";
 
 export default function Home() {
   return (
@@ -25,6 +26,10 @@ export default function Home() {
             font-display: swap;
             src: url("../fonts/ManropeGX.ttf") format("truetype"),
               url("../fonts/ManropeGX.woff") format("woff");
+          }
+
+          *:focus {
+            outline: 3px solid #667ceed6 !important;
           }
 
           html,
@@ -67,6 +72,7 @@ export default function Home() {
       <AboutSection />
       <WorkSection />
       <ContactSection />
+      <Footer />
     </div>
   );
 }

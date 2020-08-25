@@ -4,17 +4,26 @@ import Github from "@/icons/GitHub";
 import Instagram from "@/icons/Instagram";
 import Mastodon from "@/icons/Mastodon";
 
-const FooterLink = ({ children, href }) => (
+const breakpoints = [576, 1024, 1280, 1370];
+const media_queries = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
+
+const FooterLink = ({ children, href, ...props }) => (
   <a
     className="footer-link"
     href={href}
     target="_blank"
     rel="noopener noreferrer"
+    {...props}
     css={css`
       display: flex;
       fill: #fff;
       font-size: 1.75vw;
       margin-right: 1vw;
+
+      ${media_queries[1]} {
+        font-size: 1.25rem;
+        margin-right: 0.75rem;
+      }
     `}
   >
     {children}
@@ -31,12 +40,16 @@ const Footer = () => (
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: absolute;
-      left: 0;
-      bottom: 0;
       width: 100%;
       font-weight: 100;
       box-sizing: border-box;
+      scroll-snap-align: start;
+
+      ${media_queries[1]} {
+        scroll-snap-align: none;
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+      }
     `}
   >
     <div className="left">(c) 2020 Aman Harwara</div>
@@ -50,7 +63,10 @@ const Footer = () => (
       <FooterLink href="https://mastodon.social/@amanharwara">
         {Mastodon}
       </FooterLink>
-      <FooterLink href="https://instagram.com/aman.harwara">
+      <FooterLink
+        href="https://instagram.com/aman.harwara"
+        style={{ marginRight: "0" }}
+      >
         {Instagram}
       </FooterLink>
     </div>

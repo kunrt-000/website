@@ -5,9 +5,14 @@ import GitHubIcon from "@/icons/GitHub";
 import newTabIcon from "@/icons/openInNewTab";
 import CloseIcon from "@/icons/Close";
 
-const breakpoints = [576, 768, 992, 1370];
+const breakpoints = [576, 1024, 1280, 1370];
 
-const media_queries = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
+const min_media_queries = breakpoints.map(
+  (bp) => `@media (min-width: ${bp}px)`
+);
+const max_media_queries = breakpoints.map(
+  (bp) => `@media (max-width: ${bp}px)`
+);
 
 const ProjectExtended = ({
   title,
@@ -37,15 +42,88 @@ const ProjectExtended = ({
       &.visible {
         display: grid !important;
       }
+
+      .website-button {
+        font-weight: 700;
+        margin-bottom: 1vw;
+        font-size: 1.5vw !important;
+      }
+
+      .repo-button {
+        padding: 1vw 1.5vw !important;
+        font-size: 1.35vw !important;
+      }
+
+      ${max_media_queries[1]} {
+        display: flex;
+        flex-direction: column;
+        display: none;
+
+        &.visible {
+          display: flex !important;
+        }
+
+        a {
+          width: 100%;
+          box-sizing: border-box;
+          justify-content: normal;
+        }
+
+        .project-button {
+          font-size: 1.35rem !important;
+          letter-spacing: 0.05rem !important;
+
+          .icon {
+            margin-right: 1rem !important;
+
+            &,
+            & svg {
+              width: 1.75rem;
+              height: 1.75rem;
+            }
+          }
+        }
+
+        .repo-button {
+          margin-top: 0.65rem;
+          padding: 0.7rem 1rem !important;
+        }
+      }
     `}
     id={id}
   >
+    <div
+      className="close-button"
+      tabIndex={0}
+      css={css`
+        font-weight: 800;
+        font-size: 3.5vw;
+        fill: #fff;
+        cursor: pointer;
+        display: flex;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 3;
+
+        ${max_media_queries[1]} {
+          font-size: 2.5rem;
+        }
+      `}
+    >
+      {CloseIcon}
+    </div>
     <div
       className="left"
       css={css`
         grid-column: 1 / 2;
         box-sizing: border-box;
         position: relative;
+
+        ${max_media_queries[1]} {
+          width: 100%;
+          min-height: 30%;
+        }
       `}
     >
       <div
@@ -88,6 +166,11 @@ const ProjectExtended = ({
           alt={image.alt}
           css={css`
             height: 100%;
+
+            ${max_media_queries[1]} {
+              height: auto;
+              width: 100%;
+            }
           `}
         />
       </div>
@@ -99,47 +182,41 @@ const ProjectExtended = ({
         display: flex;
         flex-direction: column;
         position: relative;
+
+        ${max_media_queries[1]} {
+          padding: 1rem;
+        }
       `}
     >
       <div
-        className="heading"
+        className="title"
         css={css`
-          display: flex;
-          justify-content: space-between;
-          align-items: start;
+          font-weight: 800;
+          font-size: 4vw;
+          max-width: 45vw;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          margin-bottom: 1vw;
+
+          ${max_media_queries[1]} {
+            position: absolute;
+            bottom: 100%;
+            font-size: 3rem;
+            max-width: 95%;
+          }
         `}
       >
-        <div
-          className="title"
-          css={css`
-            font-weight: 800;
-            font-size: 4vw;
-            max-width: 45vw;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            margin-bottom: 1.75vw;
-          `}
-        >
-          {title}
-        </div>
-        <div
-          className="close-button"
-          css={css`
-            font-weight: 800;
-            font-size: 3.5vw;
-            fill: #fff;
-            cursor: pointer;
-          `}
-        >
-          {CloseIcon}
-        </div>
+        {title}
       </div>
       <div
         className="details"
         css={css`
           flex-grow: 1;
           display: flex;
+          ${max_media_queries[1]} {
+            flex-direction: column-reverse;
+          }
         `}
       >
         <div
@@ -151,6 +228,11 @@ const ProjectExtended = ({
             flex-direction: column;
             justify-content: space-between;
             margin-right: 4vw;
+
+            ${max_media_queries[1]} {
+              max-width: 100%;
+              min-width: 100%;
+            }
           `}
         >
           <div className="meta">
@@ -166,11 +248,18 @@ const ProjectExtended = ({
                 font-size: 1vw;
                 width: max-content;
                 transition: background 0.15s;
-                margin-bottom: 1.5vw;
+                margin-bottom: 1vw;
 
-                ${media_queries[3]} {
+                ${min_media_queries[3]} {
                   font-size: 1.25vw;
                   padding: 0.65vw 0.85vw;
+                }
+
+                ${max_media_queries[1]} {
+                  font-size: 0.85rem;
+                  padding: 0.25rem 0.45rem;
+                  border-radius: 2px;
+                  letter-spacing: 0.05rem;
                 }
               `}
             >
@@ -181,8 +270,13 @@ const ProjectExtended = ({
               css={css`
                 font-size: 1.65vw;
 
-                ${media_queries[3]} {
+                ${min_media_queries[3]} {
                   font-size: 1.95vw;
+                }
+
+                ${max_media_queries[1]} {
+                  font-size: 1.2rem;
+                  margin: 1rem 0 1.35rem 0;
                 }
               `}
             >
@@ -200,12 +294,8 @@ const ProjectExtended = ({
               href={website}
               label="VISIT SITE"
               openInNewTab
-              style={{
-                fontWeight: "700",
-                marginBottom: "1vw",
-                fontSize: "1.65vw !important",
-              }}
               icon={newTabIcon}
+              className="project-button website-button"
             />
             <AnchorButton
               href={repository}
@@ -213,14 +303,38 @@ const ProjectExtended = ({
               label="REPO"
               icon={GitHubIcon}
               outlined
-              style={{
-                padding: "1vw 1.5vw !important",
-                fontSize: "1.5vw !important",
-              }}
+              className="project-button repo-button"
             />
           </div>
         </div>
-        <div className="tech-used">
+        <div
+          className="tech-used"
+          css={css`
+            ${max_media_queries[1]} {
+              h3 {
+                font-size: 1.35rem;
+                margin-bottom: 0.5rem;
+              }
+
+              .tech-list {
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-bottom: 0.25rem;
+              }
+
+              .project-tech {
+                font-size: 1.25rem;
+                margin-right: 0.75rem;
+                margin-bottom: 0.75rem;
+
+                .icon {
+                  font-size: 1.5rem;
+                  margin-right: 0.5rem;
+                }
+              }
+            }
+          `}
+        >
           <h3
             css={css`
               margin: 0;
@@ -248,13 +362,14 @@ const ProjectExtended = ({
                   margin-bottom: 1.25vw;
                   align-items: center;
 
-                  ${media_queries[3]} {
+                  ${min_media_queries[3]} {
                     font-size: 1.85vw;
                   }
                 `}
                 key={tech.title}
               >
                 <div
+                  className="icon"
                   css={css`
                     font-size: 2vw;
                     margin-right: 0.75vw;

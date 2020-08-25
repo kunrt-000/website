@@ -1,10 +1,14 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 
+const breakpoints = [576, 1024, 1280, 1370];
+const media_queries = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
+
 const ProjectCard = ({ title, id, category, image, align }: Project) => (
   <div
     className={`project-card ${align}`}
     data-id={id}
+    tabIndex={0}
     css={css`
       box-sizing: border-box;
       position: relative;
@@ -13,6 +17,17 @@ const ProjectCard = ({ title, id, category, image, align }: Project) => (
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      ${media_queries[1]} {
+        padding: 1rem;
+        min-height: 10rem;
+        margin-bottom: 1rem;
+
+        img {
+          height: auto;
+          width: 100%;
+        }
+      }
 
       &.vertical-left {
         grid-column: 1 / 2;
@@ -72,6 +87,12 @@ const ProjectCard = ({ title, id, category, image, align }: Project) => (
         font-size: 0.9vw;
         width: max-content;
         transition: background 0.15s;
+
+        ${media_queries[1]} {
+          font-size: 0.65rem;
+          padding: 0.4rem 0.5rem;
+          border-radius: 2px;
+        }
       `}
     >
       {category}
@@ -90,6 +111,12 @@ const ProjectCard = ({ title, id, category, image, align }: Project) => (
         -webkit-line-clamp: 2;
         text-overflow: ellipsis;
         line-height: 4vw;
+
+        ${media_queries[1]} {
+          font-size: 2rem;
+          line-height: 2rem;
+          -webkit-line-clamp: 1;
+        }
       `}
     >
       {title}

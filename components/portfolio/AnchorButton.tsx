@@ -1,9 +1,14 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 
-const breakpoints = [576, 768, 992, 1370];
+const breakpoints = [576, 1024, 1280, 1370];
 
-const media_queries = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
+const min_media_queries = breakpoints.map(
+  (bp) => `@media (min-width: ${bp}px)`
+);
+const max_media_queries = breakpoints.map(
+  (bp) => `@media (max-width: ${bp}px)`
+);
 
 type AnchorButtonProps = {
   icon?: JSX.Element;
@@ -12,7 +17,9 @@ type AnchorButtonProps = {
   href: string;
   outlined?: boolean;
   style?: object;
+  id?: string;
   openInNewTab?: boolean;
+  className?: string;
 };
 
 const Button = ({
@@ -22,15 +29,18 @@ const Button = ({
   iconOnRight,
   outlined,
   style,
+  id,
   openInNewTab,
+  className,
 }: AnchorButtonProps) => (
   <a
     href={href}
     style={style}
+    id={id}
     {...(openInNewTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-    className={`${outlined ? "outlined" : ""}${
+    className={`${outlined ? "outlined" : ""} ${
       iconOnRight ? "icon-right" : ""
-    }`}
+    } ${className}`}
     css={css`
       background: #fff;
       color: #000;
@@ -47,8 +57,14 @@ const Button = ({
       transition: background 0.2s;
       user-select: none;
 
-      ${media_queries[3]} {
+      ${min_media_queries[3]} {
         font-size: 2.25vw;
+      }
+
+      ${max_media_queries[1]} {
+        font-size: 1.25rem;
+        padding: 0.7rem 1rem;
+        border-radius: 2px;
       }
 
       &:hover {
@@ -75,9 +91,12 @@ const Button = ({
       &.icon-right {
         flex-direction: row-reverse;
 
-        & .icon {
+        .icon {
           margin-left: 1.25vw;
           margin-right: 0;
+          ${max_media_queries[1]} {
+            margin-left: 0.75rem;
+          }
         }
       }
     `}
@@ -92,18 +111,28 @@ const Button = ({
           align-items: center;
           margin-right: 1.25vw;
 
-          & svg {
+          svg {
             width: 1.95vw;
             height: 1.95vw;
           }
 
-          ${media_queries[3]} {
+          ${min_media_queries[3]} {
             width: 2.25vw;
             height: 2.25vw;
 
             & svg {
               width: 2.25vw !important;
               height: 2.25vw !important;
+            }
+          }
+
+          ${max_media_queries[1]} {
+            width: 1.35rem;
+            height: 1.35rem;
+
+            svg {
+              width: 1.35rem;
+              height: 1.35rem;
             }
           }
         `}

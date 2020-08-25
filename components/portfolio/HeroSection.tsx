@@ -5,9 +5,14 @@ import NavBar from "./NavBar";
 import AnchorButton from "./AnchorButton";
 import ArrowRight from "@/icons/ArrowRight";
 
-const breakpoints = [576, 768, 992, 1370];
+const breakpoints = [576, 1024, 1280, 1370];
 
-const media_queries = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
+const min_media_queries = breakpoints.map(
+  (bp) => `@media (min-width: ${bp}px)`
+);
+const max_media_queries = breakpoints.map(
+  (bp) => `@media (max-width: ${bp}px)`
+);
 
 const HeroSectionEllipse = ({ ...props }) => (
   <div
@@ -35,17 +40,35 @@ const HeroSection = () => (
       flex-direction: column;
       justify-content: space-between;
       color: #fff;
+
+      #contact-button {
+        margin-top: 1vw;
+        font-size: 1.5vw;
+      }
+
+      ${max_media_queries[1]} {
+        #contact-button {
+          margin-top: 0.5rem;
+          font-size: 1rem;
+        }
+      }
     `}
   >
     <NavBar />
     <div className="hero-section">
       <h1
         css={css`
-          font-size: 4.5vw;
-          ${media_queries[3]} {
+          font-size: 4.5vw !important;
+          margin-bottom: 1vw;
+
+          ${min_media_queries[3]} {
             font-size: 5.5vw;
           }
-          margin-bottom: 1vw;
+
+          ${max_media_queries[1]} {
+            font-size: 2.75rem !important;
+            margin-bottom: 0.5rem !important;
+          }
         `}
       >
         Turning Bits into Beauty
@@ -53,12 +76,18 @@ const HeroSection = () => (
       <p
         css={css`
           font-size: 2vw;
-          ${media_queries[3]} {
+          font-weight: 300;
+          margin: 0;
+          margin-bottom: 4vw;
+          max-width: 50vw;
+          ${min_media_queries[3]} {
             font-size: 2.5vw;
           }
-          font-weight: 300;
-          max-width: 50vw;
-          margin-bottom: 4vw;
+          ${max_media_queries[1]} {
+            font-size: 1.25rem !important;
+            max-width: 100%;
+            margin-bottom: 2.5rem !important;
+          }
         `}
       >
         I’m a programmer, designer and a musician with a penchant for turning
@@ -74,17 +103,51 @@ const HeroSection = () => (
         label="CONTACT"
         href="#contact"
         outlined
-        style={{ marginTop: "1vw", fontSize: "1.5vw" }}
+        id="contact-button"
       />
     </div>
     <HeroSectionEllipse
-      style={{ width: "15vw", height: "15vw", top: "30%", left: "-4%" }}
+      css={css`
+        width: 15vw;
+        height: 15vw;
+        top: 30%;
+        left: -4%;
+
+        ${max_media_queries[1]} {
+          width: 60%;
+          height: 60%;
+          top: auto;
+          bottom: -35%;
+          left: -10%;
+        }
+      `}
     />
     <HeroSectionEllipse
-      style={{ width: "24vw", height: "24vw", bottom: "-20%", right: "-2.5%" }}
+      css={css`
+        width: 24vw;
+        height: 24vw;
+        bottom: -20%;
+        right: -2.5%;
+
+        ${max_media_queries[1]} {
+          width: 7rem;
+          height: 7rem;
+          bottom: auto;
+          top: -7%;
+          right: -10%;
+        }
+      `}
     />
     <HeroSectionEllipse
-      style={{ width: "24vw", height: "24vw", top: "-28%", right: "10%" }}
+      css={css`
+        width: 24vw;
+        height: 24vw;
+        top: -28%;
+        right: 10%;
+        ${max_media_queries[1]} {
+          display: none;
+        }
+      `}
     />
   </Section>
 );
