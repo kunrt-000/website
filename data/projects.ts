@@ -29,7 +29,6 @@ let projects: Project[] = [
       alt: "Altus",
       lqip: require(`../public/projects/altus.jpg?lqip-colors`)[0],
     },
-    align: "vertical-left",
   },
   {
     id: "acoustic-code",
@@ -65,7 +64,6 @@ let projects: Project[] = [
       alt: "Acoustic Code",
       lqip: require(`../public/projects/acoustic-code.png?lqip-colors`)[0],
     },
-    align: "vertical-right",
   },
   {
     title: "Operate",
@@ -97,7 +95,6 @@ let projects: Project[] = [
       alt: "Operate",
       lqip: require(`../public/projects/operate.png?lqip-colors`)[0],
     },
-    align: "horizontal-top",
   },
   {
     title: "Beetle",
@@ -119,7 +116,6 @@ let projects: Project[] = [
       lqip: require(`../public/projects/beetle.png?lqip-colors`)[0],
       alt: "Beetle",
     },
-    align: "horizontal-bottom",
   },
 ];
 
