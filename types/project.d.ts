@@ -7,11 +7,6 @@ type Project = {
   website: string;
   repository?: string;
   image: ProjectImage;
-  align:
-    | "vertical-left"
-    | "vertical-right"
-    | "horizontal-top"
-    | "horizontal-bottom";
 };
 
 type ProjectImage = {

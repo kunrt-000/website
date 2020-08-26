@@ -34,6 +34,7 @@ const WorkSectionClickHandler = (e) => {
   } else if (e.target.closest(".close-button")) {
     e.target.closest(".project-extended").classList.remove("visible");
     document.querySelector(".projects-grid").style.display = "";
+    document.getElementById("work-section").scrollIntoView();
   }
 };
 
@@ -74,14 +75,12 @@ const WorkSection = () => (
     <div
       className="projects-grid"
       css={css`
-        display: grid;
+        display: flex;
+        justify-content: space-between;
         width: 100%;
         height: 78vh;
-        grid-template-columns: 26vw 38vw 26vw;
-        grid-template-rows: 1fr 1fr;
 
         ${media_queries[1]} {
-          display: flex;
           flex-direction: column;
           height: auto;
         }

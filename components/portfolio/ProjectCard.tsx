@@ -4,9 +4,9 @@ import { css, jsx } from "@emotion/core";
 const breakpoints = [576, 1024, 1280, 1370];
 const media_queries = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
 
-const ProjectCard = ({ title, id, category, image, align }: Project) => (
+const ProjectCard = ({ title, id, category, image }: Project) => (
   <div
-    className={`project-card ${align}`}
+    className={`project-card`}
     data-id={id}
     tabIndex={0}
     css={css`
@@ -17,41 +17,14 @@ const ProjectCard = ({ title, id, category, image, align }: Project) => (
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      flex-grow: 1;
+      max-width: 22vw;
 
       ${media_queries[1]} {
         padding: 1rem;
         min-height: 10rem;
         margin-bottom: 1rem;
-
-        img {
-          height: auto;
-          width: 100%;
-        }
-      }
-
-      &.vertical-left {
-        grid-column: 1 / 2;
-        grid-row: 1 / 3;
-      }
-
-      &.vertical-right {
-        grid-column: 3 / 4;
-        grid-row: 1 / 3;
-      }
-
-      &.horizontal-top {
-        grid-column: 2 / 3;
-        grid-row: 1 / 2;
-
-        img {
-          height: auto;
-          width: 100%;
-        }
-      }
-
-      &.horizontal-bottom {
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
+        max-width: 100%;
 
         img {
           height: auto;

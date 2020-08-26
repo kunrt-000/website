@@ -35,7 +35,9 @@ export default function Home() {
           html,
           body {
             width: 100%;
-            font-family: "Manrope", "Open Sans", "Helvetica Neue", sans-serif;
+            font-family: "Manrope", -apple-system, BlinkMacSystemFont,
+              "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+              "Helvetica Neue", sans-serif;
             background: #fff;
             margin: 0;
             padding: 0;
