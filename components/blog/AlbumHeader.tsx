@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 
-const breakpoints = [576, 1024, 1280, 1370, 2000];
+const breakpoints = [576, 750, 1280, 1370, 2000];
 const min_media_queries = breakpoints.map(
   (bp) => `@media (min-width: ${bp}px)`
 );
@@ -25,15 +25,17 @@ const Header = ({ postname, frontmatter, ...props }) => {
   let cover = require(`../../public/posts/album/${postname}.jpg?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`);
 
   return (
-    <div
+    <header
       className="header"
       css={css`
         background: #a8005b;
         color: #fff;
-        padding: 3.25vw 5vw;
+        padding: 3%;
         min-height: 10vw;
         position: relative;
         z-index: 0;
+        display: flex;
+        align-items: center;
 
         .separator {
           margin: 0 0.5vw;
@@ -41,6 +43,7 @@ const Header = ({ postname, frontmatter, ...props }) => {
 
         ${max_media_queries[1]} {
           padding: 1.75rem 1.45rem;
+          flex-direction: column;
 
           .separator {
             margin: 0 0.35rem;
@@ -48,22 +51,15 @@ const Header = ({ postname, frontmatter, ...props }) => {
         }
       `}
     >
-      <div
-        className="right"
-        css={css`
-          float: right;
-
-          ${max_media_queries[1]} {
-            float: none;
-          }
-        `}
-      >
+      <div className="right">
         <div
           className="cover-art"
           css={css`
+            display: flex;
+
             &,
             & img {
-              width: 24vw;
+              width: 17vw;
             }
 
             ${max_media_queries[1]} {
@@ -79,32 +75,17 @@ const Header = ({ postname, frontmatter, ...props }) => {
         >
           <img src={cover.src} alt={frontmatter.title} srcSet={cover.srcSet} />
         </div>
-        <div
-          className="article-info"
-          css={css`
-            display: flex;
-            color: #131313;
-            justify-content: center;
-            margin-top: 1vw;
-            font-size: 1.25vw;
-
-            ${max_media_queries[1]} {
-              display: none;
-            }
-          `}
-        >
-          <div className="author">{frontmatter.author}</div>
-          <div className="separator">·</div>
-          <div className="date">
-            {new Date(frontmatter.date).toLocaleDateString(undefined, {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            })}
-          </div>
-        </div>
       </div>
-      <div className="left">
+      <div
+        className="left"
+        css={css`
+          margin-left: 5%;
+
+          ${max_media_queries[1]} {
+            margin-left: 0;
+          }
+        `}
+      >
         <div
           className="artist"
           css={css`
@@ -123,8 +104,8 @@ const Header = ({ postname, frontmatter, ...props }) => {
           className="title"
           css={css`
             font-weight: 800;
-            font-size: 4vw;
-            margin: 0.35vw 0;
+            font-size: 4.25vw;
+            margin: 0.35vw 1vw 0.5vw 0;
             overflow: hidden;
             white-space: normal;
             display: -webkit-box;
@@ -147,6 +128,7 @@ const Header = ({ postname, frontmatter, ...props }) => {
             font-size: 1.5vw;
             font-weight: 100;
             margin: 0.75vw 0 0 0;
+            flex-wrap: wrap;
 
             ${max_media_queries[1]} {
               font-size: 1.15rem;
@@ -173,8 +155,8 @@ const Header = ({ postname, frontmatter, ...props }) => {
       >
         <AlbumHeaderEllipse
           css={css`
-            width: 12vw;
-            height: 12vw;
+            width: 16vw;
+            height: 16vw;
             bottom: -20%;
             left: -4%;
             background: linear-gradient(
@@ -195,10 +177,10 @@ const Header = ({ postname, frontmatter, ...props }) => {
         />
         <AlbumHeaderEllipse
           css={css`
-            width: 12vw;
-            height: 12vw;
+            width: 14vw;
+            height: 14vw;
             top: -30%;
-            right: 23%;
+            left: 15%;
             background: linear-gradient(
               197deg,
               #d60777 21.28%,
@@ -210,14 +192,13 @@ const Header = ({ postname, frontmatter, ...props }) => {
               height: 11rem;
               left: -10%;
               top: 45%;
-              right: auto;
             }
           `}
         />
         <AlbumHeaderEllipse
           css={css`
-            width: 12vw;
-            height: 12vw;
+            width: 15vw;
+            height: 15vw;
             bottom: -20%;
             right: -4%;
             background: linear-gradient(
@@ -236,7 +217,7 @@ const Header = ({ postname, frontmatter, ...props }) => {
           `}
         />
       </div>
-    </div>
+    </header>
   );
 };
 

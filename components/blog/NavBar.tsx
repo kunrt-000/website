@@ -15,7 +15,7 @@ const MenuItem = ({ children, link, ...props }) => (
     css={css`
       color: #fff;
       font-weight: 300;
-      font-size: 1.5vw;
+      font-size: 1.25vw;
       margin-right: 1.2vw;
       user-select: none;
 
@@ -125,7 +125,9 @@ const NavBar = () => (
       >
         <MenuItem link="/blog">HOME</MenuItem>
         <MenuItem link="/archive">ARCHIVE</MenuItem>
-        <MenuItem link="/blog/about">ABOUT</MenuItem>
+        <MenuItem link="/blog/about" style={{ marginRight: "0" }}>
+          ABOUT
+        </MenuItem>
       </ul>
     </nav>
   </div>

@@ -40,6 +40,11 @@ const Footer = () => (
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      ${media_queries[1]} {
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+      }
     `}
   >
     <div className="left">(c) 2020 Aman Harwara</div>

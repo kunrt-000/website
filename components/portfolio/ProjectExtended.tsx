@@ -37,10 +37,10 @@ const ProjectExtended = ({
       top: 0;
       left: 0;
       background: ${image.lqip};
-      display: none;
+      visibility: hidden;
 
       &.visible {
-        display: grid !important;
+        visibility: visible !important;
       }
 
       .website-button {

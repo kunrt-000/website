@@ -25,16 +25,17 @@ const WorkSectionClickHandler = (e) => {
     let project_card = e.target.closest(".project-card");
 
     // Hide project cards
-    document.querySelector(".projects-grid").style.display = "none";
-    document.querySelector(".selected-project-container").style.display = "";
+    document.querySelector(".projects-grid").style.visibility = "hidden";
+    document.querySelector(".selected-project-container").style.display =
+      "block";
 
     // Display extended project info
     document.getElementById(project_card.dataset.id).classList.add("visible");
     document.getElementById("work-section").scrollIntoView();
   } else if (e.target.closest(".close-button")) {
     e.target.closest(".project-extended").classList.remove("visible");
-    document.querySelector(".projects-grid").style.display = "";
-    document.getElementById("work-section").scrollIntoView();
+    document.querySelector(".selected-project-container").style.display = "";
+    document.querySelector(".projects-grid").style.visibility = "";
   }
 };
 
@@ -42,8 +43,9 @@ const WorkSectionKeyDownHanlder = (e) => {
   if (e.key === "Enter") {
     if (document.activeElement.matches(".project-card")) {
       // Hide project cards
-      document.querySelector(".projects-grid").style.display = "none";
-      document.querySelector(".selected-project-container").style.display = "";
+      document.querySelector(".projects-grid").style.visibility = "hidden";
+      document.querySelector(".selected-project-container").style.display =
+        "block";
 
       // Display extended project info
       document
@@ -54,7 +56,8 @@ const WorkSectionKeyDownHanlder = (e) => {
 
     if (document.activeElement.matches(".close-button")) {
       document.querySelector(".visible").classList.remove("visible");
-      document.querySelector(".projects-grid").style.display = "";
+      document.querySelector(".selected-project-container").style.display = "";
+      document.querySelector(".projects-grid").style.visibility = "";
     }
   }
 };
@@ -94,9 +97,13 @@ const WorkSection = () => (
       className="selected-project-container"
       style={{ display: "none" }}
       css={css`
-        width: 100%;
+        width: 90%;
         height: 78vh;
-        position: relative;
+        position: absolute;
+        top: 55%;
+        left: auto;
+        transform: translateY(-50%);
+        display: none;
 
         ${media_queries[1]} {
           height: auto;
@@ -106,6 +113,7 @@ const WorkSection = () => (
           width: 100%;
           height: 100%;
           box-sizing: border-box;
+          transform: translateY(0);
         }
       `}
     >
