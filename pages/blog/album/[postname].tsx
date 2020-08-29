@@ -76,7 +76,7 @@ const AlbumPost = ({ frontmatter, markdownBody, postname }) => {
           `}
         >
           <div
-            className="mobile-article-info"
+            className="article-info"
             css={css`
               display: flex;
               color: #585858;

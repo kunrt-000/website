@@ -31,6 +31,10 @@ const ShareButton = ({ children, url, ...props }) => (
       cursor: pointer;
       font-size: 1.25vw;
 
+      &:hover {
+        background: #2a2a2a;
+      }
+
       ${max_media_queries[1]} {
         font-size: 1.25rem;
         padding: 0.5rem;
@@ -66,6 +70,7 @@ const ShareModule = ({ title, url, ...props }) => (
     `}
   >
     <div
+      className="share-title"
       css={css`
         margin: 1.15vw 0 1vw 0;
         font-size: 1.05vw;

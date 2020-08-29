@@ -8,7 +8,7 @@ description: My favorite albums from the last decade, i.e., the 2010s
 
 These are my most favorite albums from the last decade, i.e., the 2010s.
 
-<img src="/posts/list/top-albums-last-decade.png" alt="Top Albums From The Last Decade">
+<img src="/posts/cover-art/top-albums-last-decade.png" alt="Top Albums From The Last Decade">
 
 Keep in mind these are not in a definite order:
 

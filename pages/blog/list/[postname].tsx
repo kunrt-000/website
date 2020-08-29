@@ -3,7 +3,7 @@ import { Global, css, jsx } from "@emotion/core";
 import { GetStaticProps, GetStaticPaths } from "next";
 import getStaticPropsFunc from "util/blogGetStaticProps";
 import getStaticPathsFunc from "util/blogGetStaticPaths";
-import GlobalStyle from "@/blog/GlobalStyle";
+import GlobalStyle, { AlbumGroupStyle } from "@/blog/GlobalStyle";
 import Head from "next/head";
 import NavBar from "@/blog/NavBar";
 import Footer from "@/blog/Footer";
@@ -25,117 +25,7 @@ const ListPost = ({ frontmatter, markdownBody, postname }) => {
   return (
     <>
       <GlobalStyle />
-      <Global
-        styles={css`
-          .album-group {
-            background: #f9f9f9;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            display: flex;
-            padding: 1.25vw 1.5vw;
-            align-items: center;
-            text-decoration: none;
-            color: #000;
-            cursor: pointer;
-
-            .album-list & {
-              margin-bottom: 1vw;
-
-              ${max_media_queries[1]} {
-                margin-bottom: 0.75rem;
-              }
-            }
-
-            &:hover {
-              background: #e6e6e6;
-              .title {
-                text-decoration: underline;
-              }
-            }
-
-            .cover {
-              width: 25%;
-              margin-right: 1.5vw;
-              display: flex;
-              background: #e6e6e6;
-
-              img {
-                width: 100%;
-              }
-            }
-
-            .content {
-              display: flex;
-              flex-direction: column;
-              max-width: 69%;
-
-              .rank {
-                font-weight: 600;
-                font-size: 1.4vw;
-                margin: 0 0 0.25vw 0;
-              }
-
-              .title {
-                font-weight: 800;
-                font-size: 2.75vw;
-                overflow: hidden;
-                white-space: normal;
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 2;
-                text-overflow: ellipsis;
-                margin: 0 0 0.25vw 0;
-                line-height: 1.2;
-              }
-
-              .artist {
-                font-size: 1.5vw;
-              }
-
-              .genre {
-                font-size: 1.3vw;
-                font-weight: 100;
-                margin: 0.25vw 0 0 0;
-              }
-            }
-
-            ${max_media_queries[1]} {
-              padding: 1rem;
-              flex-direction: column;
-
-              .cover {
-                width: 50%;
-                margin-bottom: 1rem;
-              }
-
-              .content {
-                max-width: 100%;
-                align-items: center;
-
-                .rank {
-                  font-size: 1.25rem;
-                  margin: 0 0 0.25rem 0;
-                }
-
-                .title {
-                  font-size: 1.65rem;
-                  margin: 0 0 0.25rem 0;
-                  text-align: center;
-                  line-height: 1.3;
-                }
-
-                .artist {
-                  font-size: 1.25rem;
-                }
-
-                .genre {
-                  font-size: 1rem;
-                  font-weight: 100;
-                }
-              }
-            }
-          }
-        `}
-      />
+      <AlbumGroupStyle />
       <Head>
         <title>{frontmatter.title} | Acoustic Code</title>
       </Head>
