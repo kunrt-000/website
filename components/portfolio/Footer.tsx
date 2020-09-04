@@ -41,7 +41,7 @@ const Footer = () => (
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      font-weight: 100;
+      font-weight: 400;
       box-sizing: border-box;
       scroll-snap-align: start;
 

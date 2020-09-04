@@ -81,7 +81,11 @@ const AboutSection = () => (
     `}
   >
     <h1>About</h1>
-    <StyledParagraph>
+    <StyledParagraph
+      css={css`
+        margin-top: 1vw;
+      `}
+    >
       I’m <b>Aman Harwara</b>, a front-end web developer, graphic designer,
       software developer and a musician.
     </StyledParagraph>

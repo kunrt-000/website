@@ -49,11 +49,11 @@ const Button = ({
       justify-content: space-between;
       padding: 1.15vw 2vw;
       border-radius: 0.15vw;
-      font-weight: 800;
+      font-weight: 500;
       text-decoration: none;
       font-size: 1.85vw;
       width: max-content;
-      letter-spacing: 0.075vw;
+      letter-spacing: 0.05vw;
       transition: background 0.2s;
       user-select: none;
 
@@ -78,7 +78,7 @@ const Button = ({
         border: 1px solid #fff;
         color: #fff;
         font-weight: 300;
-        letter-spacing: 0.2vw;
+        letter-spacing: 0.1vw;
         fill: #fff;
 
         &:hover {

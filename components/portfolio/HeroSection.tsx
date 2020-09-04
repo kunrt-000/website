@@ -56,23 +56,24 @@ const HeroSection = () => (
   >
     <NavBar />
     <div className="hero-section">
-      <h1
+      <h2
         css={css`
-          font-size: 4.5vw !important;
-          margin-bottom: 1vw;
+          font-size: 4.75vw !important;
+          font-weight: 700;
+          margin-bottom: 1.75vw;
 
           ${min_media_queries[3]} {
             font-size: 5.5vw;
           }
 
           ${max_media_queries[1]} {
-            font-size: 2.75rem !important;
-            margin-bottom: 0.5rem !important;
+            font-size: 3rem !important;
+            margin-bottom: 1rem !important;
           }
         `}
       >
         Turning Bits into Beauty
-      </h1>
+      </h2>
       <p
         css={css`
           font-size: 2vw;
@@ -86,7 +87,7 @@ const HeroSection = () => (
           ${max_media_queries[1]} {
             font-size: 1.25rem !important;
             max-width: 100%;
-            margin-bottom: 2.5rem !important;
+            margin-bottom: 4.5rem !important;
           }
         `}
       >
@@ -114,10 +115,10 @@ const HeroSection = () => (
         left: -4%;
 
         ${max_media_queries[1]} {
-          width: 60%;
-          height: 60%;
+          width: 14rem;
+          height: 14rem;
           top: auto;
-          bottom: -35%;
+          bottom: -15%;
           left: -10%;
         }
       `}

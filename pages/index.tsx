@@ -20,12 +20,12 @@ export default function Home() {
       <Global
         styles={css`
           @font-face {
-            font-family: "Manrope";
+            font-family: "Inter";
             font-style: normal;
             font-weight: 100 800;
             font-display: swap;
-            src: url("../fonts/ManropeGX.ttf") format("truetype"),
-              url("../fonts/ManropeGX.woff") format("woff");
+            src: url("../fonts/Inter.var.woff2") format("woff2"),
+            url("../fonts/Inter.ttf") format("truetype");
           }
 
           *:focus {
@@ -35,7 +35,7 @@ export default function Home() {
           html,
           body {
             width: 100%;
-            font-family: "Manrope", -apple-system, BlinkMacSystemFont,
+            font-family: "Inter", -apple-system, BlinkMacSystemFont,
               "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
               "Helvetica Neue", sans-serif;
             background: #fff;

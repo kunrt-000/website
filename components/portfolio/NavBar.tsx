@@ -54,20 +54,22 @@ const NavBar = () => (
       justify-content: space-between;
       position: relative;
       ${max_media_queries[1]} {
-        margin-bottom: 4rem;
+        margin-bottom: 2.5rem;
       }
     `}
   >
-    <div className="logo" style={{ display: "flex" }}>
-      <Logo
-        css={css`
-          width: auto;
-          height: 1.8vw;
-          ${max_media_queries[1]} {
-            height: 1rem;
-          }
-        `}
-      />
+    <div
+      className="logo"
+      css={css`
+        display: flex;
+        font-weight: 800;
+        font-size: 2vw;
+        ${max_media_queries[1]} {
+          font-size: 1.5rem;
+        }
+      `}
+    >
+      AMANHARWARA
     </div>
     <nav
       css={css`
@@ -120,10 +122,7 @@ const NavBar = () => (
           HOME
         </MenuItem>
         <MenuItem link="#work-section">WORK</MenuItem>
-        <MenuItem link="/music">MUSIC</MenuItem>
-        <MenuItem link="/blog" style={{ marginRight: "0" }}>
-          BLOG
-        </MenuItem>
+        <MenuItem link="#contact">CONTACT</MenuItem>
       </ul>
     </nav>
   </div>
