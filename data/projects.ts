@@ -3,6 +3,7 @@ import HTML5 from "@/icons/HTML5";
 import JS from "@/icons/JavaScript";
 import TS from "@/icons/TypeScript";
 import Sass from "@/icons/Sass";
+import Svelte from "@/icons/Svelte";
 import NextJS from "@/icons/NextJS";
 import PaintRoller from "@/icons/PaintRoller";
 import Parcel from "@/icons/Parcel";
@@ -28,6 +29,58 @@ let projects: Project[] = [
         .src,
       alt: "Altus",
       lqip: require(`../public/projects/altus.jpg?lqip-colors`)[0],
+    },
+  },
+  {
+    title: "Chartr",
+    category: "Web App",
+    id: "chartr",
+    description:
+      "Chartr is a web app where anyone can create their own customized music charts and collages.",
+    tech: [
+      { title: "Svelte", icon: Svelte },
+      { title: "Sass", icon: Sass },
+    ],
+    website: "https://chartr.vercel.app",
+    repository: "https://github.com/amanharwara/chartr",
+    image: {
+      srcSet: require(`../public/projects/chartr.jpg?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
+        .srcSet,
+      src: require(`../public/projects/chartr.jpg?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
+        .src,
+      lqip: require(`../public/projects/chartr.jpg?lqip-colors`)[0],
+      alt: "Chartr",
+    },
+  },
+  {
+    title: "Operate",
+    category: "Web App",
+    id: "operate",
+    description:
+      'Operate is an attempt at creating a very basic "operating system" inside the browser. So far it imitates the style of older operating systems and has very few basic apps.',
+    tech: [
+      {
+        title: "ParcelJS",
+        icon: Parcel,
+      },
+      {
+        title: "JavaScript",
+        icon: JS,
+      },
+      {
+        title: "Sass",
+        icon: Sass,
+      },
+    ],
+    website: "https://amanharwara.github.io/operate",
+    repository: "https://github.com/amanharwara/operate",
+    image: {
+      srcSet: require(`../public/projects/operate.png?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
+        .srcSet,
+      src: require(`../public/projects/operate.png?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
+        .src,
+      alt: "Operate",
+      lqip: require(`../public/projects/operate.png?lqip-colors`)[0],
     },
   },
   {
@@ -63,58 +116,6 @@ let projects: Project[] = [
         .src,
       alt: "Acoustic Code",
       lqip: require(`../public/projects/acoustic-code.png?lqip-colors`)[0],
-    },
-  },
-  {
-    title: "Operate",
-    category: "Web App",
-    id: "operate",
-    description:
-      'Operate is an attempt at creating a very basic "operating system" inside the browser. So far it imitates the style of older operating systems and has very few basic apps.',
-    tech: [
-      {
-        title: "ParcelJS",
-        icon: Parcel,
-      },
-      {
-        title: "JavaScript",
-        icon: JS,
-      },
-      {
-        title: "Sass",
-        icon: Sass,
-      },
-    ],
-    website: "https://amanharwara.github.io/operate",
-    repository: "https://github.com/amanharwara/operate",
-    image: {
-      srcSet: require(`../public/projects/operate.png?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
-        .srcSet,
-      src: require(`../public/projects/operate.png?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
-        .src,
-      alt: "Operate",
-      lqip: require(`../public/projects/operate.png?lqip-colors`)[0],
-    },
-  },
-  {
-    title: "Beetle",
-    category: "Extension",
-    id: "beetle",
-    description:
-      "Beetle is a WebExtension using which you can easily get logins from BugMeNot for any website you're visiting.\nWith Beetle, you don't need to open BugMeNot every time you want to use a throwaway login.",
-    tech: [
-      { title: "HTML5 / CSS3", icon: HTML5 },
-      { title: "JavaScript", icon: JS },
-    ],
-    website: "https://github.com/amanharwara/beetle",
-    repository: "https://github.com/amanharwara/beetle",
-    image: {
-      srcSet: require(`../public/projects/beetle.png?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
-        .srcSet,
-      src: require(`../public/projects/beetle.png?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
-        .src,
-      lqip: require(`../public/projects/beetle.png?lqip-colors`)[0],
-      alt: "Beetle",
     },
   },
 ];
