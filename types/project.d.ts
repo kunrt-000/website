@@ -10,10 +10,9 @@ type Project = {
 };
 
 type ProjectImage = {
-  srcSet: string;
   src: string;
   alt: string;
-  lqip: string;
+  color?: string;
 };
 
 type ProjectTech = {

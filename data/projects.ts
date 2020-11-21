@@ -23,12 +23,9 @@ let projects: Project[] = [
     website: "https://github.com/amanharwara/altus",
     repository: "https://github.com/amanharwara/altus",
     image: {
-      srcSet: require(`../public/projects/altus.jpg?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
-        .srcSet,
-      src: require(`../public/projects/altus.jpg?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
-        .src,
+      src: "/projects/altus.jpg",
       alt: "Altus",
-      lqip: require(`../public/projects/altus.jpg?lqip-colors`)[0],
+      color: "#24244C",
     },
   },
   {
@@ -44,12 +41,9 @@ let projects: Project[] = [
     website: "https://chartr.vercel.app",
     repository: "https://github.com/amanharwara/chartr",
     image: {
-      srcSet: require(`../public/projects/chartr.jpg?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
-        .srcSet,
-      src: require(`../public/projects/chartr.jpg?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
-        .src,
-      lqip: require(`../public/projects/chartr.jpg?lqip-colors`)[0],
+      src: "/projects/chartr.jpg",
       alt: "Chartr",
+      color: "#141C24",
     },
   },
   {
@@ -75,12 +69,9 @@ let projects: Project[] = [
     website: "https://amanharwara.github.io/operate",
     repository: "https://github.com/amanharwara/operate",
     image: {
-      srcSet: require(`../public/projects/operate.png?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
-        .srcSet,
-      src: require(`../public/projects/operate.png?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
-        .src,
+      src: "/projects/operate.png",
       alt: "Operate",
-      lqip: require(`../public/projects/operate.png?lqip-colors`)[0],
+      color: "#3C54CC",
     },
   },
   {
@@ -110,12 +101,9 @@ let projects: Project[] = [
     website: "https://amanharwara.xyz/blog",
     repository: "https://github.com/amanharwara/website",
     image: {
-      srcSet: require(`../public/projects/acoustic-code.png?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
-        .srcSet,
-      src: require(`../public/projects/acoustic-code.png?resize&sizes[]=500&sizes[]=1000&sizes[]=2000&sizes[]=3000`)
-        .src,
+      src: "/projects/acoustic-code.png",
       alt: "Acoustic Code",
-      lqip: require(`../public/projects/acoustic-code.png?lqip-colors`)[0],
+      color: "#143C7C",
     },
   },
 ];
