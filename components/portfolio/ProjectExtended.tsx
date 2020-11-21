@@ -161,7 +161,6 @@ const ProjectExtended = ({
         `}
       >
         <img
-          srcSet={image.srcSet}
           src={image.src}
           alt={image.alt}
           css={css`
@@ -172,6 +171,7 @@ const ProjectExtended = ({
               width: 100%;
             }
           `}
+          loading="lazy"
         />
       </div>
     </div>
