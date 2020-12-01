@@ -1,0 +1,52 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff1e0;
+}
+
+* {
+  font-family: 'Inter-var', 'Inter', 'Open Sans', 'Helvetica', Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+}
+
+@supports (font-variation-settings: 'wdth' 115) {
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('~assets/fonts/Inter-Regular.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    src: url('~assets/fonts/Inter-Black.woff2') format('woff2');
+  }
+}
+
+@supports (font-variation-settings: 'wdth' 115) {
+  @font-face {
+    font-family: 'Inter-var';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('~assets/fonts/Inter.var.woff2') format('woff2');
+  }
+}
+
+h1 {
+  font-size: 4vw;
+  font-weight: 900;
+  margin: 0;
+}
+
+.section {
+  padding: 4vw 7.25vw;
+}
