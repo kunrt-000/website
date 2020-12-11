@@ -1,7 +1,7 @@
 <template>
   <div class="hero">
     <div class="left">
-      <h1>Turning Bits Into<br />Beauty</h1>
+      <h1>Turning Bits Into Beauty</h1>
     </div>
     <div class="right">
       <div class="description">
@@ -24,9 +24,9 @@ export default Vue.extend({})
 <style lang="scss" scoped>
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.65fr 1fr;
   grid-template-rows: auto;
-  margin: 4vw 0 7.25vw 0;
+  margin: 7.25vw 0;
 
   .left {
     display: flex;
@@ -34,7 +34,7 @@ export default Vue.extend({})
   }
 
   .right {
-    margin-left: 2vw;
+    margin-left: 10vw;
   }
 
   .description {
@@ -49,6 +49,11 @@ export default Vue.extend({})
     font-size: 1.65vw;
     font-weight: 300;
     line-height: 1.2;
+    color: #fff;
+
+    &:first-child {
+      margin-top: 0.85vw;
+    }
   }
 
   .call-to-action {
@@ -61,12 +66,48 @@ export default Vue.extend({})
   font-weight: 500;
   font-size: 1.25vw;
   color: #000;
+  color: #fff;
   display: block;
-  margin-top: 1vw;
+  margin-top: 2vw;
   text-align: center;
 }
 
 .button {
   font-size: 1.45vw !important;
+}
+
+@media screen and (max-width: 800px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    margin: 3.25rem 0;
+
+    h1 {
+      text-align: left;
+      font-size: 2.65rem;
+    }
+
+    .right {
+      margin: 0;
+    }
+
+    .description {
+      max-width: 100%;
+      margin-top: 2rem;
+    }
+
+    p {
+      color: #000;
+      font-size: 1.25rem;
+    }
+
+    .link {
+      display: none;
+    }
+
+    .button {
+      margin-top: 1rem;
+    }
+  }
 }
 </style>

@@ -33,7 +33,7 @@ export default Vue.extend({
   }
 
   a {
-    color: #000;
+    color: #fff;
     font-weight: 600;
     text-decoration: none;
     font-size: 1.25vw;
@@ -42,5 +42,9 @@ export default Vue.extend({
       text-decoration: underline;
     }
   }
+}
+
+@media screen and (max-width: 800px) {
+  .navbar ul {display: none;}
 }
 </style>

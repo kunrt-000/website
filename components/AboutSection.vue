@@ -28,15 +28,46 @@
 
 <style lang="scss" scoped>
 #about-section {
-  background: #ffe0bb;
+  background: #080808;
+  color: #ebebeb;
   display: grid;
-  grid-template-columns: 0.65fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
+  padding: 6vw 7.25vw;
+}
+
+.left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.right {
+  margin-left: 2vw;
 }
 
 p {
   font-size: 1.45vw;
   line-height: 1.3;
   font-weight: 300;
+  max-width: 80%;
+}
+
+@media screen and (max-width: 800px) {
+  #about-section {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-size: 1rem;
+      max-width: 100%;
+
+      &:last-child {margin-bottom: 0;}
+    }
+
+    .right {
+      margin: 0;
+    }
+  }
 }
 </style>

@@ -4,32 +4,56 @@
     <div class="social column">
       <h3>Social</h3>
       <div class="links">
-        <a target="blank" href="https://mastodon.social/@amanharwara"
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://mastodon.social/@amanharwara"
           >Mastodon</a
         >
-        <a target="blank" href="https://instagram.com/aman.harwara"
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://instagram.com/aman.harwara"
           >Instagram</a
         >
-        <a target="blank" href="https://github.com/amanharwara">GitHub</a>
-        <a target="blank" href="https://gitlab.com/amanharwara">GitLab</a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/amanharwara"
+          >GitHub</a
+        >
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://gitlab.com/amanharwara"
+          >GitLab</a
+        >
       </div>
     </div>
     <div class="music column">
       <h3>Music</h3>
       <div class="links">
-        <a target="blank" href="https://amanharwara.bandcamp.com">Bandcamp</a>
         <a
-          target="blank"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://amanharwara.bandcamp.com"
+          >Bandcamp</a
+        >
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://open.spotify.com/artist/0oS1w3XT067ttzelzj67b6"
           >Spotify</a
         >
         <a
-          target="blank"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://music.apple.com/us/artist/aman-harwara/1516521816"
           >Apple Music</a
         >
         <a
-          target="blank"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.youtube.com/channel/UCHk6MIPQhtZf6zFS_FrDHKg"
           >YouTube</a
         >
@@ -71,7 +95,41 @@ a {
   }
 }
 
-h3 {
+h3,
+.copyright {
   margin: 0 0 0.75vw 0;
+  font-size: 1.35vw;
+}
+
+@media screen and (max-width: 800px) {
+  footer {
+    display: block;
+    padding: 1.75rem;
+
+    h3,
+    .copyright {
+      font-size: 1.25rem;
+    }
+
+    .copyright {
+      margin-bottom: 1.5rem;
+    }
+
+    .column {
+      display: inline-flex;
+
+      &:last-child {
+        margin-left: 2rem !important;
+      }
+
+      *:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    a {
+      font-size: 1.15rem;
+    }
+  }
 }
 </style>

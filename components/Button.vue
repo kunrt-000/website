@@ -37,4 +37,11 @@ export default Vue.extend({
   text-decoration: none;
   cursor: pointer;
 }
+
+@media screen and (max-width: 800px) {
+  .button {
+    padding: 1.05rem 2.5rem;
+    font-size: 1.15rem !important;
+  }
+}
 </style>

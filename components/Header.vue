@@ -1,8 +1,8 @@
 <template>
-  <div class="header">
+  <header class="header">
     <div class="logo">Aman Harwara</div>
     <nav-bar :menu="menu" />
-  </div>
+  </header>
 </template>
 
 <script lang="ts">
@@ -78,6 +78,12 @@ export default Vue.extend({
   .logo {
     font-size: 1.45vw;
     font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .logo {
+    font-size: 1.25rem !important;
   }
 }
 </style>

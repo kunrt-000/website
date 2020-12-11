@@ -7,12 +7,13 @@ body {
 }
 
 body {
-  background: #fff1e0;
+  background: #eeecea;
 }
 
 * {
   font-family: 'Inter-var', 'Inter', 'Open Sans', 'Helvetica', Roboto, Oxygen,
     Ubuntu, Cantarell, sans-serif;
+  box-sizing: border-box;
 }
 
 @supports (font-variation-settings: 'wdth' 115) {
@@ -49,4 +50,10 @@ h1 {
 
 .section {
   padding: 4vw 7.25vw;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
