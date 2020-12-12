@@ -10,13 +10,13 @@ const projects: Project[] = [
     screenshots: ['1.png', '2.png'],
   },
   {
-    id: 'altus2',
-    title: 'Altus',
-    link: 'https://github.com/amanharwara/altus',
-    category: 'Desktop App',
+    id: 'chartr',
+    title: 'Chartr',
+    link: 'https://chartr.vercel.app',
+    category: 'Web App',
     workType: 'Design / Development',
     description:
-      'Altus is a free, open-source desktop client for WhatsApp with built-in themes and multiple account support, available for Windows, Mac & Linux!\n\nIt is made using the Electron framework with HTML, CSS and vanilla JavaScript.',
+      'Chartr is a web-app that allows users to create their own music charts and collages, with support for using Spotify & Last.fm statistics.',
     screenshots: ['1.png', '2.png'],
   },
   {
