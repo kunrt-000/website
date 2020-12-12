@@ -64,7 +64,8 @@
 
 <style lang="scss" scoped>
 footer {
-  background: #070707;
+  background: #080808;
+  background: var(--alt-bg-2);
   color: #fff;
   display: flex;
   align-items: flex-start;

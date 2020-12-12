@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar" v-bind:class="{invert: invertColors}">
     <ul>
       <li v-for="item in menu" :key="item.label">
         <a :href="item.link">
@@ -18,6 +18,10 @@ export default Vue.extend({
       type: Array as () => NavMenu,
       required: true,
     },
+    invertColors: {
+      type: Boolean,
+      default: false,
+    }
   },
 })
 </script>
@@ -42,9 +46,13 @@ export default Vue.extend({
       text-decoration: underline;
     }
   }
+
+  .invert>& a {
+    color: #000;
+  }
 }
 
 @media screen and (max-width: 800px) {
-  .navbar ul {display: none;}
+  .navbar {ul {display: none;} a {color: #fff !important;}}
 }
 </style>

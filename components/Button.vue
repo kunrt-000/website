@@ -30,12 +30,18 @@ export default Vue.extend({
   display: inline-flex;
   background: #000;
   color: #fff;
-  border: 0;
+  border: 1px solid #000;
   font-weight: 400;
   padding: 1.05vw 2.5vw;
   font-size: 1.15vw;
   text-decoration: none;
   cursor: pointer;
+  transition: background 0.2s, color 0.15s;
+
+  &:hover {
+    background: var(--main-bg);    
+    color: var(--alt-bg-2);
+  }
 }
 
 @media screen and (max-width: 800px) {

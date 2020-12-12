@@ -13,7 +13,8 @@
 
 <style lang="scss" scoped>
 #contact-section {
-  background: #181717;
+  background: #1b1b1b;
+  background: var(--alt-bg-1);
   color: #ebebeb;
   display: grid;
   grid-template-columns: 0.65fr 1fr;

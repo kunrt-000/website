@@ -9,7 +9,7 @@
     <div class="overlay"></div>
     <div class="image">
       <img
-        :src="require(`~/assets/projects/altus/img.png`)"
+        :src="require(`~/assets/projects/${project.id}/img.png`)"
         :alt="project.title"
         loading="lazy"
       />
@@ -48,7 +48,7 @@ export default Vue.extend({
     bottom: 0;
     left: 0;
     z-index: 2;
-    padding: 2vw 3vw;
+    padding: 2.5vw 3vw;
     width: 100%;
     color: #fff;
 
@@ -84,7 +84,7 @@ export default Vue.extend({
       position: absolute;
       top: 0;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%);
     }
   }
 }
@@ -94,6 +94,7 @@ export default Vue.extend({
     img {
       width: 100%;
       height: auto !important;
+      transform: translate(-50%, -50%) !important;
       top: 50% !important;
     }
   }

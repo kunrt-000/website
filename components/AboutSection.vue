@@ -29,6 +29,7 @@
 <style lang="scss" scoped>
 #about-section {
   background: #080808;
+  background: var(--alt-bg-2);
   color: #ebebeb;
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -66,9 +66,10 @@ p {
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(2, 40vw);
-  grid-template-rows: repeat(2, 85vh);
+  grid-template-columns: repeat(2, 40%);
+  grid-template-rows: repeat(2, 75vh);
   gap: $col-gap $row-gap;
+  justify-content: center;
 }
 
 @media screen and (max-width: 800px){

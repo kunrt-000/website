@@ -1,7 +1,7 @@
 <template>
-  <header class="header">
-    <div class="logo">Aman Harwara</div>
-    <nav-bar :menu="menu" />
+  <header class="header" v-bind:class="{invert: invertColors}">
+    <a class="logo" href="/">Aman Harwara</a>
+    <nav-bar :menu="menu" invertColors/>
   </header>
 </template>
 
@@ -12,7 +12,7 @@ import NavBar from './NavBar.vue'
 let default_menu: NavMenu = [
   {
     label: 'Work',
-    link: '#work-section',
+    link: '/#work-section',
   },
   {
     label: 'Music',
@@ -46,6 +46,10 @@ export default Vue.extend({
       type: String,
       default: 'home',
     },
+    invertColors: {
+      type: Boolean,
+      default: false,
+    }
   },
   computed: {
     menu() {
@@ -78,12 +82,21 @@ export default Vue.extend({
   .logo {
     font-size: 1.45vw;
     font-weight: 700;
+    text-decoration: none;
+    color: #000;
+  }
+
+  &.invert {
+    .logo {
+      color: #fff;
+    }
   }
 }
 
 @media screen and (max-width: 800px) {
   .logo {
     font-size: 1.25rem !important;
+    color: #000 !important;
   }
 }
 </style>

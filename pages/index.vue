@@ -5,6 +5,7 @@
       content: '';
       display: block;
       background: #1b1b1b;
+      background: var(--alt-bg-1);
       height: 100vh;
       width: 54%;
       position: absolute;
@@ -12,7 +13,6 @@
       right: 0;
       z-index: -1;
     }
-    @media screen and (max-width: 800px) {body::after{display: none;}}
     </style>
     <div class="section" id="main-section">
       <Header page="home" />

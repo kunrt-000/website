@@ -65,7 +65,6 @@ export default Vue.extend({})
 .link {
   font-weight: 500;
   font-size: 1.25vw;
-  color: #000;
   color: #fff;
   display: block;
   margin-top: 2vw;
