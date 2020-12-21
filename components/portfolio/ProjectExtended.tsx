@@ -36,7 +36,7 @@ const ProjectExtended = ({
       z-index: 3;
       top: 0;
       left: 0;
-      background: ${image.color ? image.color : "#090D12"};
+      background: ${image.lqip};
       visibility: hidden;
 
       &.visible {

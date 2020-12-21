@@ -10,6 +10,7 @@ const Section = ({ children, ...props }) => (
     className="section"
     {...props}
     css={css`
+      scroll-snap-align: start;
       height: 100vh;
       padding: 4.5vh 8.5vh;
       box-sizing: border-box;
@@ -26,6 +27,7 @@ const Section = ({ children, ...props }) => (
 
       ${media_queries[1]} {
         height: auto;
+        scroll-snap-align: none;
         padding: 1rem 1.25rem;
 
         h1 {

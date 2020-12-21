@@ -69,7 +69,7 @@ const NavBar = () => (
         }
       `}
     >
-      Aman Harwara
+      AMANHARWARA
     </div>
     <nav
       css={css`

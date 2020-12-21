@@ -43,8 +43,10 @@ const Footer = () => (
       width: 100%;
       font-weight: 400;
       box-sizing: border-box;
+      scroll-snap-align: start;
 
       ${media_queries[1]} {
+        scroll-snap-align: none;
         padding: 1rem 1.25rem;
         font-size: 1rem;
       }

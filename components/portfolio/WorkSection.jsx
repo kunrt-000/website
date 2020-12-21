@@ -97,8 +97,8 @@ const WorkSection = () => (
       className="selected-project-container"
       style={{ display: "none" }}
       css={css`
-      width: 91.75%;
-      height: 78.5vh;
+        width: 90%;
+        height: 78vh;
         position: absolute;
         top: 55%;
         left: auto;

@@ -11,7 +11,8 @@ export default function Home() {
   return (
     <div
       css={css`
-        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
         height: 100vh;
         scroll-behavior: smooth;
       `}
@@ -24,7 +25,7 @@ export default function Home() {
             font-weight: 100 800;
             font-display: swap;
             src: url("../fonts/Inter.var.woff2") format("woff2"),
-              url("../fonts/Inter.ttf") format("truetype");
+            url("../fonts/Inter.ttf") format("truetype");
           }
 
           *:focus {
@@ -34,9 +35,9 @@ export default function Home() {
           html,
           body {
             width: 100%;
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-              Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-              sans-serif;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont,
+              "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+              "Helvetica Neue", sans-serif;
             background: #fff;
             margin: 0;
             padding: 0;
