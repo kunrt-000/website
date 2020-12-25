@@ -1,12 +1,12 @@
 <template>
-  <nav class="navbar" v-bind:class="{invert: invertColors}">
-    <ul>
-      <li v-for="item in menu" :key="item.label">
-        <a :href="item.link">
-          {{ item.label }}
-        </a>
-      </li>
-    </ul>
+  <nav class="navbar" v-bind:class="{ invert: invertColors }">
+    <label for="hamburger">&#9776;</label>
+    <input type="checkbox" id="hamburger" />
+    <div class="links">
+      <a :href="item.link" v-for="item in menu" :key="item.label">
+        {{ item.label }}
+      </a>
+    </div>
   </nav>
 </template>
 
@@ -21,38 +21,77 @@ export default Vue.extend({
     invertColors: {
       type: Boolean,
       default: false,
-    }
+    },
   },
 })
 </script>
 
 <style lang="scss" scoped>
-.navbar ul {
+input {
+  display: none;
+}
+
+label {
+  font-size: 1.75rem;
+}
+
+input:checked ~ .links {
   display: flex;
+  flex-flow: column nowrap;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 3;
   padding: 0;
-  list-style: none;
+}
 
-  li:not(:last-child) {
-    margin-right: 1.75vw;
-  }
+a {
+  text-align: center;
+  font-size: 1rem;
+  border-top: 1px solid rgba(44, 44, 44, 0.6);
+  transition: background 0.15s;
+  background: #fff;
+  user-select: none;
+  text-decoration: none;
+  color: #000;
+  padding: 1.1rem;
 
-  a {
+  &:hover {
+    background: #1b1b1b;
     color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 1.25vw;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 
-  .invert>& a {
-    color: #000;
+  &:last-child {
+    border-bottom: 1px solid rgba(44, 44, 44, 0.6);
   }
 }
 
-@media screen and (max-width: 800px) {
-  .navbar {ul {display: none;} a {color: #fff !important;}}
+.links {
+  display: none;
+  list-style: none;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  label {
+    display: none;
+  }
+  .links {
+    display: flex;
+  }
+  a {
+    font-size: 1.2rem;
+    color: #fff;
+    border: 0 !important;
+    background: transparent;
+    cursor: pointer;
+  }
+  .invert a {
+    color: #000;
+
+    &:hover {
+      color: #fff;
+    }
+  }
 }
 </style>

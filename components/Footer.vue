@@ -1,8 +1,8 @@
 <template>
-  <footer class="section">
+  <footer>
     <div class="copyright">(c) Aman Harwara</div>
     <div class="social column">
-      <h3>Social</h3>
+      <div class="column-title">Social</div>
       <div class="links">
         <a
           target="_blank"
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="music column">
-      <h3>Music</h3>
+      <div class="column-title">Music</div>
       <div class="links">
         <a
           target="_blank"
@@ -64,73 +64,48 @@
 
 <style lang="scss" scoped>
 footer {
+  padding: 1.5rem;
   background: #080808;
-  background: var(--alt-bg-2);
   color: #fff;
-  display: flex;
-  align-items: flex-start;
-
-  & > :not(:last-child) {
-    margin-right: 4.5vw;
-  }
 }
-
-.column,
+.copyright {
+  margin-bottom: 1rem;
+}
 .links {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
 }
-
+.column {
+  display: inline-block;
+}
+.social {
+  margin-right: 3rem;
+}
+.column-title {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
 a {
   color: #fff;
-  text-decoration: none;
-  font-size: 1.35vw;
-  font-weight: 300;
-
-  &:not(:last-child) {
-    margin-bottom: 0.5vw;
-  }
-
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
+  }
+  &:not(:last-child) {
+    margin-bottom: 1rem;
   }
 }
-
-h3,
-.copyright {
-  margin: 0 0 0.75vw 0;
-  font-size: 1.35vw;
-}
-
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 768px) {
   footer {
-    display: block;
-    padding: 1.75rem;
-
-    h3,
-    .copyright {
-      font-size: 1.25rem;
-    }
-
-    .copyright {
-      margin-bottom: 1.5rem;
-    }
-
-    .column {
-      display: inline-flex;
-
-      &:last-child {
-        margin-left: 2rem !important;
-      }
-
-      *:not(:last-child) {
-        margin-bottom: 1rem;
-      }
-    }
-
-    a {
-      font-size: 1.15rem;
-    }
+    padding: 3rem 5rem;
+    display: flex;
+    align-items: flex-start;
+  }
+  .column-title {
+    margin-top: 0;
+  }
+  .social {
+    margin: 0 5rem;
   }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <header class="header" v-bind:class="{invert: invertColors}">
+  <header class="header" v-bind:class="{ invert: invertColors }">
     <a class="logo" href="/">Aman Harwara</a>
-    <nav-bar :menu="menu" invertColors/>
+    <nav-bar :menu="menu" v-bind:class="{ invert: invertColors }" />
   </header>
 </template>
 
@@ -49,7 +49,7 @@ export default Vue.extend({
     invertColors: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   computed: {
     menu() {
@@ -74,29 +74,27 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.header {
+header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
-  .logo {
-    font-size: 1.45vw;
-    font-weight: 700;
-    text-decoration: none;
-    color: #000;
-  }
-
-  &.invert {
-    .logo {
-      color: #fff;
-    }
-  }
+  justify-content: space-between;
+  position: relative;
+  padding: 1rem 1.5rem;
 }
 
-@media screen and (max-width: 800px) {
+.logo {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #000;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    padding: 2.5rem 5rem;
+  }
   .logo {
-    font-size: 1.25rem !important;
-    color: #000 !important;
+    font-size: 1.5rem;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="section" id="work-section">
+  <section id="work-section">
     <h1>Work</h1>
     <div class="projects-container">
       <ProjectCard
@@ -24,7 +24,7 @@
         >GitLab</a
       >.
     </p>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">
@@ -41,45 +41,32 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-$col-gap: 4vw;
-$row-gap: 6vw;
-
+section {
+  padding: 1.5rem;
+}
 h1 {
-  margin-bottom: 4vw;
+  font-size: 2rem;
+  margin-top: 0;
 }
-
-p {
-  margin-top: 4vw;
-  text-align: center;
-  font-size: 1.15vw;
-
-  a {
-    color: #000;
-    font-weight: 500;
-  }
-}
-
-#work-section {
-  padding-top: 6vw;
-  padding-bottom: 6vw;
-}
-
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(2, 40%);
-  grid-template-rows: repeat(2, 75vh);
-  gap: $col-gap $row-gap;
-  justify-content: center;
+  gap: 0.5rem;
 }
-
-@media screen and (max-width: 800px){
+@media screen and (min-width: 768px) {
+  section {
+    padding: 3rem 5rem;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-top: 0;
+    text-align: left;
+  }
   .projects-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, min(40vh, 10rem));
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
   p {
-    font-size: 1rem;
-    margin-top: 2rem;
+    margin: 2rem 0;
   }
 }
 </style>

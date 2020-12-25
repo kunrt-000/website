@@ -28,26 +28,15 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .button {
   display: inline-flex;
-  background: #000;
+  background: #080808;
+  padding: 1rem 1.75rem;
+  font-size: 1.1rem;
   color: #fff;
-  border: 1px solid #000;
-  font-weight: 400;
-  padding: 1.05vw 2.5vw;
-  font-size: 1.15vw;
   text-decoration: none;
-  cursor: pointer;
-  transition: background 0.2s, color 0.15s;
-
+  transition: background 0.25s;
   &:hover {
-    background: var(--main-bg);    
-    color: var(--alt-bg-2);
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .button {
-    padding: 1.05rem 2.5rem;
-    font-size: 1.15rem !important;
+    background: #3f3f3f;
+    color: #fff;
   }
 }
 </style>

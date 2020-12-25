@@ -1,5 +1,5 @@
 <template>
-  <div class="section" id="about-section">
+  <section id="about-section">
     <div class="left">
       <h1>Hi!<br />I'm Aman Harwara</h1>
     </div>
@@ -23,52 +23,36 @@
         electronic & ambient music.
       </p>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
-#about-section {
+section {
+  padding: 1.5rem;
   background: #080808;
-  background: var(--alt-bg-2);
-  color: #ebebeb;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  padding: 6vw 7.25vw;
+  color: #fff;
 }
-
-.left {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.right {
-  margin-left: 2vw;
-}
-
-p {
-  font-size: 1.45vw;
-  line-height: 1.3;
-  font-weight: 300;
-  max-width: 80%;
-}
-
-@media screen and (max-width: 800px) {
-  #about-section {
-    padding: 1.75rem;
+@media screen and (min-width: 768px) {
+  section {
+    padding: 5rem;
     display: flex;
-    flex-direction: column;
-
-    p {
-      font-size: 1rem;
-      max-width: 100%;
-
-      &:last-child {margin-bottom: 0;}
-    }
-
-    .right {
-      margin: 0;
-    }
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+  .left {
+    width: 40%;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-top: 0;
+    text-align: left;
+  }
+  .right {
+    width: 40%;
+  }
+  p {
+    font-size: 1.1rem;
+    line-height: 1.3;
   }
 }
 </style>

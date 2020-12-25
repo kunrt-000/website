@@ -1,7 +1,7 @@
 <template>
   <NuxtLink :to="`/project/${project.id}`" class="project-card">
     <div class="details">
-      <h1 class="title">{{ project.title }}</h1>
+      <div class="title">{{ project.title }}</div>
       <div class="category">
         {{ project.category }} · {{ project.workType }}
       </div>
@@ -9,7 +9,7 @@
     <div class="overlay"></div>
     <div class="image">
       <img
-        :src="require(`~/assets/projects/${project.id}/img.png`)"
+        :src="require(`~/static/assets/projects/${project.id}/img.png`)"
         :alt="project.title"
         loading="lazy"
       />
@@ -28,75 +28,62 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .project-card {
+  display: flex;
   position: relative;
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
 
-  .details,
-  .overlay {
-    transition: opacity 0.15s;
-    opacity: 0;
-  }
-
-  &:hover {
-    .details,
-    .overlay {
-      opacity: 1;
-    }
-  }
-
-  .details {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    padding: 2.5vw 3vw;
-    width: 100%;
-    color: #fff;
-
-    h1 {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .category {
-      color: #d8d8d8;
-    }
-  }
-
-  .overlay {
-    background: #000000ab;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-
-  .image {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-
-    img {
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translate(-50%);
-    }
+  &:not(:last-child) {
+    margin-bottom: 2rem;
   }
 }
-
-@media screen and (max-width: 800px) {
+.details {
+  padding: 1.75rem 1.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  max-width: 100%;
+}
+.title {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.category {
+  font-size: 0.85rem;
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: background 0.15s;
+}
+.image,
+img {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (min-width: 768px) {
   .project-card {
-    img {
-      width: 100%;
-      height: auto !important;
-      transform: translate(-50%, -50%) !important;
-      top: 50% !important;
+    margin: 0 !important;
+    &:hover {
+      .overlay {
+        background: rgba(0, 0, 0, 0.85);
+      }
     }
+  }
+  .details {
+    padding: 1.5rem 1.65rem;
   }
 }
 </style>
