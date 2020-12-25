@@ -45,7 +45,7 @@ p {
   .hero {
     display: flex;
     align-items: flex-start;
-    margin: 0 0 5rem;
+    margin: 0;
   }
   .left {
     width: 50%;

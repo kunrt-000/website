@@ -39,6 +39,7 @@ input:checked ~ .links {
   display: flex;
   flex-flow: column nowrap;
   position: absolute;
+  top: 100%;
   left: 0;
   width: 100%;
   z-index: 3;

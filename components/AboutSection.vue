@@ -37,7 +37,7 @@ section {
     padding: 5rem;
     display: flex;
     align-items: flex-start;
-    justify-content: space-around;
+    justify-content: flex-start;
   }
   .left {
     width: 40%;
@@ -49,6 +49,7 @@ section {
   }
   .right {
     width: 40%;
+    margin: auto;
   }
   p {
     font-size: 1.1rem;

@@ -7,7 +7,7 @@
           display: block !important;
           background: #1b1b1b;
           background: var(--alt-bg-1);
-          height: 40rem;
+          height: max(40rem, 50vh);
           width: 50vw;
           position: absolute;
           top: 0;
@@ -39,7 +39,8 @@ main {
 }
 @media screen and (min-width: 768px) {
   main {
-    padding: 3rem 5rem;
+    padding: 2rem 5rem 6rem;
+    padding: max(2rem, 10vh) 5rem max(6rem, 20vh);
   }
 }
 </style>
