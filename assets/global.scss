@@ -15,6 +15,10 @@ body {
 body {
   background: #eeecea;
   background: var(--main-bg);
+
+  &::after {
+    display: none !important;
+  }
 }
 
 * {
@@ -46,24 +50,5 @@ body {
     font-weight: 100 900;
     font-display: swap;
     src: url('~assets/fonts/Inter.var.woff2') format('woff2');
-  }
-}
-
-h1 {
-  font-size: 4vw;
-  font-weight: 900;
-  margin: 0;
-}
-
-.section {
-  padding: 4vw 7.25vw;
-}
-
-@media screen and (max-width: 800px) {
-  h1 {
-    font-size: 2rem;
-  }
-  body::after {
-    display: none !important;
   }
 }
