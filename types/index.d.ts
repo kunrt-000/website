@@ -15,3 +15,17 @@ type Project = {
   link: string
   screenshots: string[]
 }
+
+type MusicRelease = {
+  id: string
+  title: string
+  date: string
+  genre: [string, string] | string
+  description: string
+  tracklist: string[]
+  links: {
+    bandcamp: string
+    spotify: string
+    apple: string
+  }
+}
