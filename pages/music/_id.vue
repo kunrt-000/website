@@ -27,9 +27,21 @@
             :href="release.links.bandcamp"
             label="Buy on Bandcamp"
             newTab
-          />
-          <Button :href="release.links.apple" label="Apple Music" newTab />
-          <Button :href="release.links.spotify" label="Spotify" newTab />
+            hasIcon
+          >
+            <Bandcamp />
+          </Button>
+          <Button
+            :href="release.links.apple"
+            label="Apple Music"
+            newTab
+            hasIcon
+          >
+            <AppleMusic />
+          </Button>
+          <Button :href="release.links.spotify" label="Spotify" newTab hasIcon>
+            <Spotify />
+          </Button>
         </div>
       </div>
     </section>
@@ -59,4 +71,76 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+section {
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  padding: 0 1.5rem 1rem;
+}
+.cover {
+  img {
+    width: 100%;
+  }
+}
+.links {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 1rem 0 0;
+
+  & > :not(:last-child) {
+    margin-bottom: 0.65rem;
+  }
+}
+h1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+.meta {
+  font-size: 0.9rem;
+}
+p {
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+.tracklist {
+  font-size: 1.035rem;
+}
+@media screen and (min-width: 768px) {
+  section {
+    padding: 0 5rem 3rem;
+    flex-flow: row nowrap;
+  }
+  .left {
+    width: 65%;
+    padding-right: 5rem;
+  }
+  .right {
+    width: 35%;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  .links {
+    flex-flow: row wrap;
+    justify-content: center;
+    a {
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+
+      &:not(last-child) {
+        margin-right: 0.5rem;
+      }
+    }
+    .icon,
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
+</style>
