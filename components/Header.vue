@@ -18,10 +18,6 @@ let default_menu: NavMenu = [
     label: 'Music',
     link: '/music',
   },
-  {
-    label: 'Blog',
-    link: '/blog',
-  },
 ]
 
 let music_menu: NavMenu = [
@@ -32,10 +28,6 @@ let music_menu: NavMenu = [
   {
     label: 'Work',
     link: '/#work-section',
-  },
-  {
-    label: 'Blog',
-    link: '/blog',
   },
 ]
 
