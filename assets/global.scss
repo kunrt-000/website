@@ -28,14 +28,14 @@ body {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    src: url('~assets/fonts/Inter-Regular.woff2') format('woff2');
+    src: url('~static/assets/fonts/Inter-Regular.woff2') format('woff2');
   }
 
   @font-face {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 900;
-    src: url('~assets/fonts/Inter-Black.woff2') format('woff2');
+    src: url('~static/assets/fonts/Inter-Black.woff2') format('woff2');
   }
 }
 
