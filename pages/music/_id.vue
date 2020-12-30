@@ -87,6 +87,12 @@ section {
   flex-flow: column nowrap;
   margin: 1rem 0 0;
 
+  .icon,
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
   & > :not(:last-child) {
     margin-bottom: 0.65rem;
   }
@@ -125,6 +131,9 @@ p {
   h1 {
     font-size: 3rem;
   }
+  .meta {
+    font-size: 0.95rem;
+  }
   .links {
     flex-flow: row wrap;
     justify-content: center;
@@ -135,11 +144,6 @@ p {
       &:not(last-child) {
         margin-right: 0.5rem;
       }
-    }
-    .icon,
-    svg {
-      width: 1.5rem;
-      height: 1.5rem;
     }
   }
 }

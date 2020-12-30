@@ -46,6 +46,7 @@ section {
   flex-flow: column nowrap;
   text-decoration: none;
   margin-bottom: 2rem;
+  color: #000;
 
   &:hover {
     text-decoration: underline;
@@ -77,8 +78,7 @@ section {
 .title {
   font-weight: bold;
   font-size: 1.5rem;
-  margin: 0.5rem 0;
-  color: #000;
+  margin: 0.85rem 0;
 }
 @media screen and (min-width: 768px) {
   section {
