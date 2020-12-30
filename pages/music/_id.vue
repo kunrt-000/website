@@ -116,6 +116,9 @@ p {
 .tracklist {
   font-size: 1.035rem;
 }
+li {
+  margin: 0.5rem 0;
+}
 @media screen and (min-width: 768px) {
   section {
     padding: 0 5rem 3rem;
