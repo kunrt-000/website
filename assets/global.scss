@@ -15,10 +15,6 @@ body {
 body {
   background: #eeecea;
   background: var(--main-bg);
-
-  &::after {
-    display: none !important;
-  }
 }
 
 * {
