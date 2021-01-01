@@ -4,21 +4,13 @@
     <section>
       <h1>Music</h1>
       <div class="releases">
-        <a
-          :href="`/music/${release.id}`"
-          class="release"
+        <ProjectCard
           v-for="release in releases"
           :key="release.id"
-        >
-          <div class="cover">
-            <img
-              :src="require(`~/static/assets/music/${release.id}.png`)"
-              :alt="`Cover art for ${release.title}`"
-            />
-            <div class="overlay"></div>
-          </div>
-          <div class="title">{{ release.title }}</div>
-        </a>
+          :project="release"
+          class="music-card"
+          type="music"
+        />
       </div>
     </section>
     <Footer />
@@ -40,6 +32,9 @@ export default Vue.extend({
 <style lang="scss" scoped>
 section {
   padding: 0 1.5rem;
+}
+.releases {
+  margin-bottom: 4rem;
 }
 .release {
   display: flex;
@@ -91,13 +86,14 @@ section {
   .releases {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
+    gap: 2rem;
+    margin-bottom: 2rem;
   }
   .release {
     margin-bottom: 0;
   }
-  .title {
-    font-size: 1.25rem;
+  .music-card .title {
+    font-size: 1rem;
   }
 }
 </style>
