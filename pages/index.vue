@@ -6,6 +6,7 @@
     </main>
     <AboutSection />
     <WorkSection />
+    <MusicSection />
     <ContactSection />
     <Footer />
   </div>
