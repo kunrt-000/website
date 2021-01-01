@@ -20,6 +20,7 @@
           <img
             :src="require(`~/static/assets/music/${release.id}.png`)"
             :alt="`Cover art for ${release.title}`"
+            loading="lazy"
           />
         </div>
         <div class="links">

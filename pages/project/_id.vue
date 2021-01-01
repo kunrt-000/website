@@ -11,6 +11,7 @@
         :alt="`${project.title} Screenshot`"
         :key="src"
         v-for="src in project.screenshots"
+        loading="lazy"
       />
     </div>
     <Footer />
