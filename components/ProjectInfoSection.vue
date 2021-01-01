@@ -4,6 +4,7 @@
       <img
         :src="require(`~/static/assets/projects/${project.id}/img.png`)"
         :alt="project.title"
+        loading="lazy"
       />
     </div>
     <div class="right">
