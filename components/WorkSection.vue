@@ -6,6 +6,7 @@
         v-for="project in projects"
         :key="project.id"
         :project="project"
+        type="work"
       />
     </div>
     <p class="open-source-work">
