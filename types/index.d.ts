@@ -29,3 +29,5 @@ type MusicRelease = {
     apple: string
   }
 }
+
+type ProjectCardType = 'work' | 'music'

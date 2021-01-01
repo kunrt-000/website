@@ -1,15 +1,28 @@
 <template>
-  <NuxtLink :to="`/project/${project.id}`" class="project-card">
+  <NuxtLink
+    :to="`/${type === 'work' ? 'project' : 'music'}/${project.id}`"
+    class="project-card"
+  >
     <div class="details">
       <div class="title">{{ project.title }}</div>
-      <div class="category">
+      <div class="category" v-if="type === 'work'">
         {{ project.category }} · {{ project.workType }}
+      </div>
+      <div class="category" v-if="type === 'music'">
+        {{ project.date }} ·
+        {{
+          typeof project.genre === 'object' ? project.genre[0] : project.genre
+        }}
       </div>
     </div>
     <div class="overlay"></div>
     <div class="image">
       <img
-        :src="require(`~/static/assets/projects/${project.id}/img.png`)"
+        :src="
+          require(`~/static/assets/${type === 'work' ? 'projects' : 'music'}/${
+            type === 'work' ? `${project.id}/img.png` : `${project.id}.png`
+          }`)
+        "
         :alt="project.title"
         loading="lazy"
       />
@@ -22,6 +35,7 @@ import Vue from 'vue'
 export default Vue.extend({
   props: {
     project: Object as () => Project,
+    type: String as () => ProjectCardType,
   },
 })
 </script>
@@ -84,6 +98,9 @@ img {
   }
   .details {
     padding: 1.5rem 1.65rem;
+  }
+  .music-card .title {
+    font-size: 1.6rem;
   }
 }
 </style>
