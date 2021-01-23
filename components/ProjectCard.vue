@@ -82,7 +82,12 @@ export default Vue.extend({
   z-index: 1;
   transition: background 0.15s;
 }
-.image,
+.image {
+  width: 100%;
+  width: calc(100vw - 3rem);
+  height: 100%;
+  height: calc(100vw - 3rem);
+}
 img {
   width: 100%;
   height: 100%;
@@ -101,6 +106,10 @@ img {
   }
   .music-card .title {
     font-size: 1.6rem;
+  }
+  .image {
+    width: 100%;
+    height: 100%;
   }
 }
 </style>
