@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar" v-bind:class="{ invert: invertColors }">
+  <nav class="navbar">
     <label for="hamburger">&#9776;</label>
     <input type="checkbox" id="hamburger" />
     <div class="links">
@@ -17,10 +17,6 @@ export default Vue.extend({
     menu: {
       type: Array as () => NavMenu,
       required: true,
-    },
-    invertColors: {
-      type: Boolean,
-      default: false,
     },
   },
 })
@@ -82,17 +78,9 @@ a {
   }
   a {
     font-size: 1.2rem;
-    color: #fff;
     border: 0 !important;
     background: transparent;
     cursor: pointer;
-  }
-  .invert a {
-    color: #000;
-
-    &:hover {
-      color: #fff;
-    }
   }
 }
 </style>

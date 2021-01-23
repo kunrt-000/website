@@ -1,5 +1,5 @@
 <template>
-  <a class="button" :href="href">
+  <a class="button" :href="href" v-bind:class="{ outlined }">
     <div class="icon" v-if="hasIcon">
       <slot />
     </div>
@@ -23,6 +23,10 @@ export default Vue.extend({
       type: String,
       required: true,
     },
+    outlined: {
+      type: Boolean,
+      default: false,
+    },
   },
 })
 </script>
@@ -37,6 +41,7 @@ export default Vue.extend({
   color: #fff;
   text-decoration: none;
   transition: background 0.25s;
+  border: 1px solid transparent;
 
   .icon {
     display: flex;
@@ -47,6 +52,25 @@ export default Vue.extend({
   &:hover {
     background: #3f3f3f;
     color: #fff;
+  }
+
+  &.outlined {
+    background: transparent;
+    border-color: #080808;
+    color: #080808;
+
+    &:hover {
+      background: #080808;
+      color: #fff;
+
+      .icon {
+        fill: #fff;
+      }
+    }
+
+    .icon {
+      fill: #080808;
+    }
   }
 }
 </style>

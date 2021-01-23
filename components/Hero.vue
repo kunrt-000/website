@@ -2,15 +2,13 @@
   <div class="hero">
     <div class="left">
       <h1>Turning Bits Into Beauty</h1>
-    </div>
-    <div class="right">
       <div class="description">
         <p>I’m a frontend developer, web designer & musician.</p>
         <p>I make websites & apps that look beautiful and perform well.</p>
       </div>
       <div class="call-to-action">
         <Button label="View My Work" href="#work-section" />
-        <a href="#contact-section" class="link">Contact Me</a>
+        <Button label="Contact Me" href="#contact-section" outlined />
       </div>
     </div>
   </div>
@@ -35,6 +33,10 @@ p {
 .call-to-action {
   margin-top: 2rem;
   margin-bottom: 1.75rem;
+
+  & > :not(:last-child) {
+    margin-bottom: 1rem;
+  }
 }
 
 .link {
@@ -43,27 +45,31 @@ p {
 
 @media screen and (min-width: 768px) {
   .hero {
-    display: flex;
-    align-items: flex-start;
     margin: 0;
   }
   .left {
     width: 50%;
-    padding-right: 5rem;
-  }
-  .right {
-    width: 50%;
-    padding-left: 5rem;
-    color: #fff;
   }
   h1 {
     margin-top: 0;
-    font-size: 4rem;
-    text-align: right;
+    margin-bottom: 3rem;
+    font-size: 4.5rem;
+    width: 10ch;
   }
   p {
     font-size: 1.25rem;
-    max-width: 65%;
+    margin: 0;
+  }
+  p:not(:last-child) {
+    margin-bottom: 0.65rem;
+  }
+  .call-to-action {
+    margin-top: 3rem;
+
+    & > :not(:last-child) {
+      margin-bottom: 0;
+      margin-right: 1rem;
+    }
   }
 }
 </style>

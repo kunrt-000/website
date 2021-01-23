@@ -3,6 +3,10 @@
     <Header page="home" />
     <main class="section" id="main-section">
       <Hero />
+      <div class="topography-container">
+        <Topography />
+        <div class="overlay"></div>
+      </div>
     </main>
     <AboutSection />
     <WorkSection />
@@ -22,22 +26,36 @@ export default Vue.extend({})
 main {
   padding: 1.5rem;
 }
+.topography-container svg {
+  display: none;
+}
 @media screen and (min-width: 768px) {
   main {
-    padding: 2rem 5rem 6rem;
-    padding: max(2rem, 10vh) 5rem max(6rem, 20vh);
+    padding: 2rem 5rem 5.5rem;
+    position: relative;
+  }
+  .topography-container {
+    position: absolute;
+    width: 100%;
+    height: 105vh;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
 
-    &::after {
-      content: '';
-      display: block !important;
-      background: #1b1b1b;
-      background: var(--alt-bg-1);
-      height: max(40rem, 50vh);
-      width: 50vw;
+    svg {
+      display: block;
+      opacity: 0.05;
+    }
+
+    .overlay {
       position: absolute;
+      width: 100%;
+      height: 100%;
       top: 0;
-      right: 0;
-      z-index: -1;
+      left: 0;
+      z-index: 0;
+      background: linear-gradient(to right, #fff 35%, transparent);
     }
   }
 }
