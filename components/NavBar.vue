@@ -79,8 +79,19 @@ a {
   a {
     font-size: 1.2rem;
     border: 0 !important;
+    padding: 0;
     background: transparent;
     cursor: pointer;
+
+    &:hover {
+      background: initial;
+      color: initial;
+      text-decoration: underline;
+    }
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
   }
 }
 </style>

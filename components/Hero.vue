@@ -23,7 +23,7 @@ export default Vue.extend({})
 h1 {
   font-weight: 900;
   font-size: 3rem;
-  margin: 0 0 2rem;
+  margin: 2.5rem 0 1.75rem;
 }
 
 p {
@@ -51,8 +51,7 @@ p {
     width: 50%;
   }
   h1 {
-    margin-top: 0;
-    margin-bottom: 3rem;
+    margin: 5rem 0 2rem;
     font-size: 4.5rem;
     width: 10ch;
   }
@@ -64,7 +63,8 @@ p {
     margin-bottom: 0.65rem;
   }
   .call-to-action {
-    margin-top: 3rem;
+    margin-top: 3.5rem;
+    margin-bottom: 0;
 
     & > :not(:last-child) {
       margin-bottom: 0;

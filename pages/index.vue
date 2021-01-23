@@ -1,7 +1,7 @@
 <template>
   <div id="home">
-    <Header page="home" />
     <main class="section" id="main-section">
+      <Header page="home" />
       <Hero />
       <div class="topography-container">
         <Topography />
@@ -31,7 +31,7 @@ main {
 }
 @media screen and (min-width: 768px) {
   main {
-    padding: 2rem 5rem 5.5rem;
+    padding: 3rem 5rem 7rem;
     position: relative;
   }
   .topography-container {
@@ -55,7 +55,7 @@ main {
       top: 0;
       left: 0;
       z-index: 0;
-      background: linear-gradient(to right, #fff 35%, transparent);
+      background: linear-gradient(to right, var(--main-bg) 35%, transparent);
     }
   }
 }

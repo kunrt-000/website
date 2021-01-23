@@ -71,7 +71,6 @@ header {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: 1rem 1.5rem;
 }
 
 .logo {
@@ -82,9 +81,6 @@ header {
 }
 
 @media screen and (min-width: 768px) {
-  header {
-    padding: 2.5rem 5rem;
-  }
   .logo {
     font-size: 1.5rem;
   }
