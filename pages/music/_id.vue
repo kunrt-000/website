@@ -104,7 +104,7 @@ h1 {
   -webkit-line-clamp: 2;
   text-overflow: ellipsis;
   overflow: hidden;
-  margin: 1rem 0;
+  margin: 2rem 0 1rem;
   font-size: 2rem;
 }
 .meta {
