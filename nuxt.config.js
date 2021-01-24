@@ -16,10 +16,9 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-  },
-
-  htmlAttrs: {
-    lang: 'en',
+    htmlAttrs: {
+      lang: 'en',
+    },
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -35,7 +34,12 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    '@aceforth/nuxt-optimized-images',
   ],
+
+  optimizedImages: {
+    optimizeImages: true,
+  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
