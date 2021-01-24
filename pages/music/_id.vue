@@ -17,11 +17,21 @@
       </div>
       <div class="right">
         <div class="cover">
-          <img
-            :src="require(`~/static/assets/music/${release.id}.png`)"
-            :alt="`Cover art for ${release.title}`"
-            loading="lazy"
-          />
+          <picture>
+            <source
+              :srcSet="require(`~/static/assets/music/${release.id}.png?webp`)"
+              type="image/webp"
+            />
+            <source
+              :srcSet="require(`~/static/assets/music/${release.id}.png`)"
+              type="image/png"
+            />
+            <img
+              :src="require(`~/static/assets/music/${release.id}.png`)"
+              :alt="`Cover art for ${release.title}`"
+              loading="lazy"
+            />
+          </picture>
         </div>
         <div class="links">
           <Button

@@ -17,15 +17,38 @@
     </div>
     <div class="overlay"></div>
     <div class="image">
-      <img
-        :src="
-          require(`~/static/assets/${type === 'work' ? 'projects' : 'music'}/${
-            type === 'work' ? `${project.id}/img.png` : `${project.id}.png`
-          }`)
-        "
-        :alt="project.title"
-        loading="lazy"
-      />
+      <picture>
+        <source
+          :srcSet="
+            require(`~/static/assets/${
+              type === 'work' ? 'projects' : 'music'
+            }/${
+              type === 'work' ? `${project.id}/img.png` : `${project.id}.png`
+            }?webp`)
+          "
+          type="image/webp"
+        />
+        <source
+          :srcSet="
+            require(`~/static/assets/${
+              type === 'work' ? 'projects' : 'music'
+            }/${
+              type === 'work' ? `${project.id}/img.png` : `${project.id}.png`
+            }`)
+          "
+          type="image/png"
+        />
+        <img
+          :src="
+            require(`~/static/assets/${
+              type === 'work' ? 'projects' : 'music'
+            }/${
+              type === 'work' ? `${project.id}/img.png` : `${project.id}.png`
+            }`)
+          "
+          loading="lazy"
+        />
+      </picture>
     </div>
   </NuxtLink>
 </template>

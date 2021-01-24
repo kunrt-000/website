@@ -1,11 +1,23 @@
 <template>
   <section class="project-info">
     <div class="left">
-      <img
-        :src="require(`~/static/assets/projects/${project.id}/img.png`)"
-        :alt="project.title"
-        loading="lazy"
-      />
+      <picture>
+        <source
+          :srcSet="
+            require(`~/static/assets/projects/${project.id}/img.png?webp`)
+          "
+          type="image/webp"
+        />
+        <source
+          :srcSet="require(`~/static/assets/projects/${project.id}/img.png`)"
+          type="image/png"
+        />
+        <img
+          :src="require(`~/static/assets/projects/${project.id}/img.png`)"
+          :alt="project.title"
+          loading="lazy"
+        />
+      </picture>
     </div>
     <div class="right">
       <h1 class="title">{{ project.title }}</h1>
