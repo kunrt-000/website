@@ -4,15 +4,27 @@
     <ProjectInfoSection :project="project" />
     <div class="screenshots">
       <h2>Screenshots:</h2>
-      <img
-        :src="
-          require(`~/static/assets/projects/${project.id}/screenshots/${src}`)
-        "
-        :alt="`${project.title} Screenshot`"
-        :key="src"
-        v-for="src in project.screenshots"
-        loading="lazy"
-      />
+      <picture :key="src" v-for="src in project.screenshots">
+        <source
+          :srcSet="
+            require(`~/static/assets/projects/${project.id}/screenshots/${src}?webp`)
+          "
+          type="image/webp"
+        />
+        <source
+          :srcSet="
+            require(`~/static/assets/projects/${project.id}/screenshots/${src}`)
+          "
+          type="image/png"
+        />
+        <img
+          :src="
+            require(`~/static/assets/projects/${project.id}/screenshots/${src}`)
+          "
+          :alt="`${project.title} Screenshot`"
+          loading="lazy"
+        />
+      </picture>
     </div>
     <Footer />
   </div>
