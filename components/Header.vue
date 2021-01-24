@@ -75,14 +75,13 @@ header {
 
 .logo {
   text-decoration: none;
-  font-weight: bold;
   font-size: 1.25rem;
   color: #000;
 }
 
 @media screen and (min-width: 768px) {
   .logo {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 </style>
