@@ -51,7 +51,7 @@ p {
     width: 50%;
   }
   h1 {
-    margin: 5rem 0 2rem;
+    margin: 6rem 0 2rem;
     font-size: 4.5rem;
     width: 10ch;
   }
@@ -60,10 +60,10 @@ p {
     margin: 0;
   }
   p:not(:last-child) {
-    margin-bottom: 0.65rem;
+    margin-bottom: 0.6rem;
   }
   .call-to-action {
-    margin-top: 3.5rem;
+    margin-top: 2.8rem;
     margin-bottom: 0;
 
     & > :not(:last-child) {

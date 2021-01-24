@@ -73,6 +73,9 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+header {
+  padding: 1rem 1.5rem;
+}
 section {
   display: flex;
   flex-flow: column-reverse nowrap;
@@ -121,6 +124,9 @@ li {
   margin: 0.5rem 0;
 }
 @media screen and (min-width: 768px) {
+  header {
+    padding: 2rem 5rem 3.25rem;
+  }
   section {
     padding: 0 5rem 3rem;
     flex-flow: row nowrap;
@@ -134,6 +140,7 @@ li {
   }
   h1 {
     font-size: 3rem;
+    margin-top: 0;
   }
   .meta {
     font-size: 0.95rem;

@@ -31,13 +31,12 @@ main {
 }
 @media screen and (min-width: 768px) {
   main {
-    padding: 3rem 5rem 7rem;
+    padding: 3rem 5rem 8rem;
     position: relative;
   }
   .topography-container {
     position: absolute;
     width: 100%;
-    height: 105vh;
     left: 0;
     bottom: 0;
     z-index: -1;

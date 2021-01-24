@@ -30,6 +30,9 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+header {
+  padding: 1rem 1.5rem;
+}
 section {
   padding: 0 1.5rem;
 }
@@ -76,6 +79,9 @@ section {
   margin: 0.85rem 0;
 }
 @media screen and (min-width: 768px) {
+  header {
+    padding: 2rem 5rem 3.25rem;
+  }
   section {
     padding: 0 5rem 3rem;
   }
