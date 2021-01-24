@@ -18,6 +18,10 @@ body {
   background: var(--main-bg);
 }
 
+h1 {
+  font-weight: 800;
+}
+
 * {
   font-family: 'Inter-var', 'Inter', 'Open Sans', 'Helvetica', Roboto, Oxygen,
     Ubuntu, Cantarell, sans-serif;
@@ -35,17 +39,7 @@ body {
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 900;
+  font-weight: 800;
   font-display: swap;
-  src: url('~assets/fonts/Inter-Black.woff2') format('woff2');
-}
-
-@supports (font-variation-settings: normal) {
-  @font-face {
-    font-family: 'Inter-var';
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url('~assets/fonts/Inter.var.woff2') format('woff2');
-  }
+  src: url('~assets/fonts/Inter-ExtraBold.woff2') format('woff2');
 }
