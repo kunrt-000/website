@@ -31,7 +31,9 @@ main {
 }
 @media screen and (min-width: 768px) {
   main {
-    padding: 3rem 5rem 8rem;
+    --gap: calc(6rem + 2vh);
+    padding: 3rem 5rem 6rem;
+    padding: max(3rem, 2vw) max(5rem, 3vw) calc(var(--gap) + 1rem + 2vh);
     position: relative;
   }
   .topography-container {

@@ -98,11 +98,14 @@ a {
 @media screen and (min-width: 768px) {
   footer {
     padding: 3rem 5rem;
+    padding: max(3rem, 3vw) max(5rem, 3vw);
     display: flex;
     align-items: flex-start;
+    font-size: max(1rem, 0.7vw);
   }
   .column-title {
     margin-top: 0;
+    font-size: max(1.25rem, 0.75vw);
   }
   .social {
     margin: 0 5rem;

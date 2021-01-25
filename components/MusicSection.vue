@@ -36,9 +36,8 @@ h1 {
   font-size: 2rem;
   margin-top: 0;
 }
-.music-container {
-  display: grid;
-  gap: 0.5rem;
+.music-container > :not(:last-child) {
+  margin-bottom: 1.5rem;
 }
 .button {
   margin: 1rem 0;
@@ -46,15 +45,21 @@ h1 {
 @media screen and (min-width: 768px) {
   section {
     padding: 0 5rem 3rem;
+    padding: 0 max(5rem, 3vw) max(3rem, 3vw);
   }
   h1 {
     font-size: 3rem;
+    font-size: max(3rem, 1.85vw);
     margin-top: 0;
     text-align: left;
   }
   .music-container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    display: flex;
+    & > :not(:last-child) {
+      margin-bottom: 0;
+      margin-right: 2rem;
+      margin-right: max(2rem, 3vw);
+    }
   }
   .button {
     margin: 2rem 0;

@@ -78,6 +78,7 @@ a {
   }
   a {
     font-size: 1.2rem;
+    font-size: max(1.2rem, 0.8vw);
     border: 0 !important;
     padding: 0;
     background: transparent;
@@ -91,6 +92,7 @@ a {
 
     &:not(:last-child) {
       margin-right: 1.5rem;
+      margin-right: max(1.5rem, 1.25vw);
     }
   }
 }

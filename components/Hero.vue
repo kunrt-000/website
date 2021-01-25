@@ -48,14 +48,19 @@ p {
   }
   .left {
     width: 50%;
+    margin: 6rem 0 0;
+    margin-top: var(--gap);
   }
   h1 {
-    margin: 6rem 0 2rem;
+    margin-bottom: 2rem;
+    margin-bottom: max(2rem, 1.45vw);
     font-size: 4.5rem;
+    font-size: max(4.5rem, 3vw);
     width: 10ch;
   }
   p {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    font-size: max(1.2rem, 0.675vw);
     margin: 0;
   }
   p:not(:last-child) {
@@ -63,11 +68,13 @@ p {
   }
   .call-to-action {
     margin-top: 2.8rem;
+    margin-top: max(2.8rem, 1.75vw);
     margin-bottom: 0;
 
     & > :not(:last-child) {
       margin-bottom: 0;
       margin-right: 1rem;
+      margin-right: max(1rem, 0.85vw);
     }
   }
 }

@@ -49,25 +49,31 @@ h1 {
   font-size: 2rem;
   margin-top: 0;
 }
-.projects-container {
-  display: grid;
-  gap: 0.5rem;
+.projects-container > :not(:last-child) {
+  margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   section {
     padding: 3rem 5rem;
+    padding: max(3rem, 3vw) max(5rem, 3vw);
   }
   h1 {
     font-size: 3rem;
+    font-size: max(3rem, 1.85vw);
     margin-top: 0;
     text-align: left;
   }
   .projects-container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    display: flex;
+    & > :not(:last-child) {
+      margin-bottom: 0;
+      margin-right: 2rem;
+      margin-right: max(2rem, 3vw);
+    }
   }
   p {
     margin: 2rem 0;
+    font-size: max(1rem, 0.675vw);
   }
 }
 </style>

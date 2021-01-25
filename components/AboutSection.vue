@@ -35,6 +35,7 @@ section {
 @media screen and (min-width: 768px) {
   section {
     padding: 5rem;
+    padding: max(5rem, 5vw) max(5rem, 3vw);
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -44,6 +45,7 @@ section {
   }
   h1 {
     font-size: 3rem;
+    font-size: max(3rem, 1.85vw);
     margin-top: 0;
     text-align: left;
   }
@@ -53,7 +55,12 @@ section {
   }
   p {
     font-size: 1.1rem;
+    font-size: max(1.1rem, 1vw);
     line-height: 1.3;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 }
 </style>

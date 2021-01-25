@@ -82,6 +82,7 @@ header {
 @media screen and (min-width: 768px) {
   .logo {
     font-size: 1.3rem;
+    font-size: max(1.3rem, 0.8vw);
   }
 }
 </style>

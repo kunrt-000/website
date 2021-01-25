@@ -38,29 +38,9 @@ section {
 }
 .releases {
   margin-bottom: 4rem;
-}
-.release {
-  display: flex;
-  flex-flow: column nowrap;
-  text-decoration: none;
-  margin-bottom: 2rem;
-  color: #000;
 
-  &:hover {
-    text-decoration: underline;
-
-    .overlay {
-      opacity: 1;
-    }
-  }
-}
-.cover {
-  width: 100%;
-  position: relative;
-
-  img {
-    width: 100%;
-    height: 100%;
+  & > :not(:last-child) {
+    margin-bottom: 2rem;
   }
 }
 .overlay {
@@ -90,13 +70,13 @@ section {
     font-size: 2rem;
   }
   .releases {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
     margin-bottom: 2rem;
-  }
-  .release {
-    margin-bottom: 0;
+
+    & > * {
+      margin-right: 2rem;
+    }
   }
   .music-card .title {
     font-size: 1rem;

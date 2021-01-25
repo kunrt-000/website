@@ -70,10 +70,6 @@ export default Vue.extend({
   color: #fff;
   text-decoration: none;
   overflow: hidden;
-
-  &:not(:last-child) {
-    margin-bottom: 2rem;
-  }
 }
 .details {
   padding: 1.75rem 1.5rem;
@@ -117,7 +113,10 @@ img {
 }
 @media screen and (min-width: 768px) {
   .project-card {
-    margin: 0 !important;
+    width: 22rem;
+    width: max(22rem, 25vw);
+    height: 22rem;
+    height: max(22rem, 25vw);
     &:hover {
       .overlay {
         background: rgba(0, 0, 0, 0.85);
@@ -126,9 +125,16 @@ img {
   }
   .details {
     padding: 1.5rem 1.65rem;
+    padding: max(1.5rem, 1.5vw) max(1.65rem, 1.55vw);
+  }
+  .title {
+    font-size: max(2.5rem, 1.75vw);
+  }
+  .category {
+    font-size: max(0.85rem, 0.7vw);
   }
   .music-card .title {
-    font-size: 1.6rem;
+    font-size: max(1.6rem, 1.5vw);
   }
   .image {
     width: 100%;
