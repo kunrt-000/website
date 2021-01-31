@@ -53,14 +53,11 @@ p {
   }
   h1 {
     margin-bottom: 2rem;
-    margin-bottom: max(2rem, 1.45vw);
     font-size: 4.5rem;
-    font-size: max(4.5rem, 3vw);
     width: 10ch;
   }
   p {
     font-size: 1.2rem;
-    font-size: max(1.2rem, 0.675vw);
     margin: 0;
   }
   p:not(:last-child) {
@@ -68,13 +65,27 @@ p {
   }
   .call-to-action {
     margin-top: 2.8rem;
-    margin-top: max(2.8rem, 1.75vw);
     margin-bottom: 0;
 
     & > :not(:last-child) {
-      margin-bottom: 0;
+      margin-bottom: 1rem;
       margin-right: 1rem;
-      margin-right: max(1rem, 0.85vw);
+    }
+  }
+  @supports (width: max(1rem, 1vw)) {
+    h1 {
+      margin-bottom: max(2rem, 1.45vw);
+      font-size: max(4.5rem, 3vw);
+    }
+    p {
+      font-size: max(1.2rem, 0.675vw);
+    }
+    .call-to-action {
+      margin-top: max(2.8rem, 1.75vw);
+      & > :not(:last-child) {
+        margin-bottom: max(1rem, 0.85vw);
+        margin-right: max(1rem, 0.85vw);
+      }
     }
   }
 }

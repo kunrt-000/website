@@ -44,13 +44,18 @@
           </Button>
           <Button
             :href="release.links.apple"
-            label="Apple Music"
+            label="Listen on Apple Music"
             newTab
             hasIcon
           >
             <AppleMusic />
           </Button>
-          <Button :href="release.links.spotify" label="Spotify" newTab hasIcon>
+          <Button
+            :href="release.links.spotify"
+            label="Listen on Spotify"
+            newTab
+            hasIcon
+          >
             <Spotify />
           </Button>
         </div>
@@ -156,15 +161,9 @@ li {
     font-size: 0.95rem;
   }
   .links {
-    flex-flow: row wrap;
-    justify-content: center;
     a {
       font-size: 1rem;
       padding: 0.75rem 1rem;
-
-      &:not(last-child) {
-        margin-right: 0.5rem;
-      }
     }
   }
 }

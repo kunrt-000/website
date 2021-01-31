@@ -10,7 +10,6 @@
     </main>
     <AboutSection />
     <WorkSection />
-    <MusicSection />
     <ContactSection />
     <Footer />
   </div>
@@ -31,9 +30,7 @@ main {
 }
 @media screen and (min-width: 768px) {
   main {
-    --gap: calc(6rem + 2vh);
     padding: 3rem 5rem 6rem;
-    padding: max(3rem, 2vw) max(5rem, 3vw) calc(var(--gap) + 1rem + 2vh);
     position: relative;
   }
   .topography-container {
@@ -57,6 +54,12 @@ main {
       left: 0;
       z-index: 0;
       background: linear-gradient(to right, var(--main-bg) 35%, transparent);
+    }
+  }
+  @supports (width: max(1rem, 1vw)) {
+    main {
+      --gap: calc(6rem + 2vh);
+      padding: max(3rem, 2vw) max(5rem, 3vw) calc(var(--gap) + 1rem + 2vh);
     }
   }
 }

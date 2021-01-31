@@ -55,11 +55,9 @@ h1 {
 @media screen and (min-width: 768px) {
   section {
     padding: 3rem 5rem;
-    padding: max(3rem, 3vw) max(5rem, 3vw);
   }
   h1 {
     font-size: 3rem;
-    font-size: max(3rem, 1.85vw);
     margin-top: 0;
     text-align: left;
   }
@@ -68,12 +66,24 @@ h1 {
     & > :not(:last-child) {
       margin-bottom: 0;
       margin-right: 2rem;
-      margin-right: max(2rem, 3vw);
     }
   }
   p {
     margin: 2rem 0;
-    font-size: max(1rem, 0.675vw);
+  }
+  @supports (width: max(1rem, 1vw)) {
+    section {
+      padding: max(3rem, 3vw) max(5rem, 3vw);
+    }
+    h1 {
+      font-size: max(3rem, 1.85vw);
+    }
+    .projects-container > :not(:last-child) {
+      margin-right: max(2rem, 3vw);
+    }
+    p {
+      font-size: max(1rem, 0.675vw);
+    }
   }
 }
 </style>

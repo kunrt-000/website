@@ -32,24 +32,32 @@ h1 {
 @media screen and (min-width: 768px) {
   section {
     padding: 3rem 5rem;
-    padding: max(3rem, 3vw) max(5rem, 3vw);
     display: flex;
     align-items: flex-start;
   }
   h1 {
     margin-right: 5rem;
-    margin-right: max(5rem, 5vw);
     font-size: 3rem;
-    font-size: max(3rem, 1.85vw);
     margin-top: 0;
     text-align: left;
   }
   p {
-    font-size: max(1rem, 1vw);
     margin-top: 0;
   }
   .right {
     width: 40%;
+  }
+  @supports (width: max(1rem, 1vw)) {
+    section {
+      padding: max(3rem, 3vw) max(5rem, 3vw);
+    }
+    h1 {
+      margin-right: max(5rem, 5vw);
+      font-size: max(3rem, 1.85vw);
+    }
+    p {
+      font-size: max(1rem, 1vw);
+    }
   }
 }
 </style>

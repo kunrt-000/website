@@ -74,9 +74,11 @@ export default Vue.extend({
   }
 }
 @media screen and (min-width: 768px) {
-  .button {
-    font-size: max(1.1rem, 0.675vw);
-    padding: max(1rem, 0.65vw) max(1.75rem, 1.2vw);
+  @supports (width: max(1rem, 1vw)) {
+    .button {
+      font-size: max(1.1rem, 0.675vw);
+      padding: max(1rem, 0.65vw) max(1.75rem, 1.2vw);
+    }
   }
 }
 </style>
