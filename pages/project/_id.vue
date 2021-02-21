@@ -2,7 +2,7 @@
   <div id="project">
     <Header page="project" invertColors />
     <ProjectInfoSection :project="project" />
-    <div class="screenshots">
+    <div class="screenshots section-container">
       <h2>Screenshots:</h2>
       <picture :key="src" v-for="src in project.screenshots">
         <source
@@ -57,10 +57,10 @@ header {
 }
 @media screen and (min-width: 768px) {
   header {
-    padding: 2rem 5rem 3.25rem;
+    padding: 2rem 0 3.25rem;
   }
   .screenshots {
-    padding: 2rem 5rem;
+    padding: 2rem 0;
   }
 }
 </style>
