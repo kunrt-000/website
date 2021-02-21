@@ -2,62 +2,68 @@
   <main>
     <Header invertColors />
     <section>
-      <div class="left">
-        <h1>{{ release.title }}</h1>
-        <div class="meta">
-          {{ release.date }} <span>·</span> {{ release.genre }}
+      <div class="section-container flex">
+        <div class="left">
+          <h1>{{ release.title }}</h1>
+          <div class="meta">
+            {{ release.date }} <span>·</span> {{ release.genre }}
+          </div>
+          <p>{{ release.description }}</p>
+          <div class="tracklist">
+            <b>Tracklist:</b>
+            <ol>
+              <li v-for="track in release.tracklist" :key="track">
+                {{ track }}
+              </li>
+            </ol>
+          </div>
         </div>
-        <p>{{ release.description }}</p>
-        <div class="tracklist">
-          <b>Tracklist:</b>
-          <ol>
-            <li v-for="track in release.tracklist" :key="track">{{ track }}</li>
-          </ol>
-        </div>
-      </div>
-      <div class="right">
-        <div class="cover">
-          <picture>
-            <source
-              :srcSet="require(`~/static/assets/music/${release.id}.png?webp`)"
-              type="image/webp"
-            />
-            <source
-              :srcSet="require(`~/static/assets/music/${release.id}.png`)"
-              type="image/png"
-            />
-            <img
-              :src="require(`~/static/assets/music/${release.id}.png`)"
-              :alt="`Cover art for ${release.title}`"
-              loading="lazy"
-            />
-          </picture>
-        </div>
-        <div class="links">
-          <Button
-            :href="release.links.bandcamp"
-            label="Buy on Bandcamp"
-            newTab
-            hasIcon
-          >
-            <Bandcamp />
-          </Button>
-          <Button
-            :href="release.links.apple"
-            label="Listen on Apple Music"
-            newTab
-            hasIcon
-          >
-            <AppleMusic />
-          </Button>
-          <Button
-            :href="release.links.spotify"
-            label="Listen on Spotify"
-            newTab
-            hasIcon
-          >
-            <Spotify />
-          </Button>
+        <div class="right">
+          <div class="cover">
+            <picture>
+              <source
+                :srcSet="
+                  require(`~/static/assets/music/${release.id}.png?webp`)
+                "
+                type="image/webp"
+              />
+              <source
+                :srcSet="require(`~/static/assets/music/${release.id}.png`)"
+                type="image/png"
+              />
+              <img
+                :src="require(`~/static/assets/music/${release.id}.png`)"
+                :alt="`Cover art for ${release.title}`"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+          <div class="links">
+            <Button
+              :href="release.links.bandcamp"
+              label="Buy on Bandcamp"
+              newTab
+              hasIcon
+            >
+              <Bandcamp />
+            </Button>
+            <Button
+              :href="release.links.apple"
+              label="Listen on Apple Music"
+              newTab
+              hasIcon
+            >
+              <AppleMusic />
+            </Button>
+            <Button
+              :href="release.links.spotify"
+              label="Listen on Spotify"
+              newTab
+              hasIcon
+            >
+              <Spotify />
+            </Button>
+          </div>
         </div>
       </div>
     </section>
@@ -202,11 +208,10 @@ li {
 }
 @media screen and (min-width: 768px) {
   header {
-    padding: 2rem 5rem 3.25rem;
+    padding: 2rem 0 3.25rem;
   }
   section {
-    padding: 0 5rem 3rem;
-    flex-flow: row nowrap;
+    padding: 0 0 3rem;
   }
   .left {
     width: 65%;

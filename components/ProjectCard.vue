@@ -81,8 +81,9 @@ export default Vue.extend({
 }
 .title {
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   margin-bottom: 0.5rem;
+  line-height: 1;
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
@@ -113,8 +114,8 @@ img {
 }
 @media screen and (min-width: 768px) {
   .project-card {
-    width: 22rem;
-    height: 22rem;
+    width: 20rem;
+    height: 20rem;
     &:hover {
       .overlay {
         background: rgba(0, 0, 0, 0.85);

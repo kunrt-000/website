@@ -2,15 +2,17 @@
   <main id="music">
     <Header page="music" invertColors />
     <section>
-      <h1>Music</h1>
-      <div class="releases">
-        <ProjectCard
-          v-for="release in releases"
-          :key="release.id"
-          :project="release"
-          class="music-card"
-          type="music"
-        />
+      <div class="section-container">
+        <h1>Music</h1>
+        <div class="releases">
+          <ProjectCard
+            v-for="release in releases"
+            :key="release.id"
+            :project="release"
+            class="music-card"
+            type="music"
+          />
+        </div>
       </div>
     </section>
     <Footer />
@@ -65,10 +67,10 @@ section {
 }
 @media screen and (min-width: 768px) {
   header {
-    padding: 2rem 5rem 3.25rem;
+    padding: 2rem 0 3.25rem;
   }
   section {
-    padding: 0 5rem 3rem;
+    padding: 0 0 3rem;
   }
   h1 {
     margin-top: 0;
