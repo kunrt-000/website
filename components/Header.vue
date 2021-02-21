@@ -1,5 +1,8 @@
 <template>
-  <header class="header" v-bind:class="{ invert: invertColors }">
+  <header
+    class="header section-container"
+    v-bind:class="{ invert: invertColors }"
+  >
     <a class="logo" href="/">Aman Harwara</a>
     <nav-bar :menu="menu" v-bind:class="{ invert: invertColors }" />
   </header>
@@ -71,22 +74,11 @@ header {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  font-size: 1.15rem;
 }
 
 .logo {
   text-decoration: none;
-  font-size: 1.25rem;
   color: #000;
-}
-
-@media screen and (min-width: 768px) {
-  .logo {
-    font-size: 1.3rem;
-  }
-  @supports (width: max(1rem, 1vw)) {
-    .logo {
-      font-size: max(1.3rem, 0.8vw);
-    }
-  }
 }
 </style>

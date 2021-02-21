@@ -1,30 +1,37 @@
 <template>
   <section id="work-section">
-    <h1>Work</h1>
-    <div class="projects-container">
-      <ProjectCard
-        v-for="project in projects"
-        :key="project.id"
-        :project="project"
-        type="work"
-      />
+    <div class="section-container">
+      <h1>Work</h1>
+      <div class="projects-container">
+        <ProjectCard
+          v-for="project in projects"
+          :key="project.id"
+          :project="project"
+          type="work"
+        />
+        <!-- <div
+          class="project"
+          v-for="project in projects"
+          :key="project.id"
+        ></div> -->
+      </div>
+      <p class="open-source-work">
+        My open-source projects can be found on
+        <a
+          href="https://github.com/amanharwara/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub</a
+        >
+        and
+        <a
+          href="https://gitlab.com/amanharwara/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitLab</a
+        >.
+      </p>
     </div>
-    <p class="open-source-work">
-      My open-source projects can be found on
-      <a
-        href="https://github.com/amanharwara/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >GitHub</a
-      >
-      and
-      <a
-        href="https://gitlab.com/amanharwara/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >GitLab</a
-      >.
-    </p>
   </section>
 </template>
 
@@ -54,7 +61,7 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   section {
-    padding: 3rem 5rem;
+    padding: 3rem 0;
   }
   h1 {
     font-size: 3rem;
@@ -70,20 +77,6 @@ h1 {
   }
   p {
     margin: 2rem 0;
-  }
-  @supports (width: max(1rem, 1vw)) {
-    section {
-      padding: max(3rem, 3vw) max(5rem, 3vw);
-    }
-    h1 {
-      font-size: max(3rem, 1.85vw);
-    }
-    .projects-container > :not(:last-child) {
-      margin-right: max(2rem, 3vw);
-    }
-    p {
-      font-size: max(1rem, 0.675vw);
-    }
   }
 }
 </style>

@@ -44,7 +44,6 @@ input:checked ~ .links {
 
 a {
   text-align: center;
-  font-size: 1rem;
   border-top: 1px solid rgba(44, 44, 44, 0.6);
   transition: background 0.15s;
   background: #fff;
@@ -77,7 +76,6 @@ a {
     display: flex;
   }
   a {
-    font-size: 1.2rem;
     border: 0 !important;
     padding: 0;
     background: transparent;
@@ -91,14 +89,6 @@ a {
 
     &:not(:last-child) {
       margin-right: 1.5rem;
-    }
-  }
-  @supports (width: max(1rem, 1vw)) {
-    a {
-      font-size: max(1.2rem, 0.8vw);
-      &:not(:last-child) {
-        margin-right: max(1.5rem, 1.25vw);
-      }
     }
   }
 }

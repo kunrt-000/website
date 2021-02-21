@@ -1,15 +1,18 @@
 <template>
-  <div class="hero">
-    <div class="left">
-      <h1>Turning Bits Into Beauty</h1>
-      <div class="description">
-        <p>I’m a frontend developer, web designer & musician.</p>
-        <p>I make websites & apps that look beautiful and perform well.</p>
-      </div>
-      <div class="call-to-action">
-        <Button label="View My Work" href="#work-section" />
-        <Button label="Contact Me" href="#contact-section" outlined />
-      </div>
+  <div class="hero section-container">
+    <h1>Turning Bits Into Beauty</h1>
+    <div class="description">
+      <p>I’m a frontend developer, web designer & musician.</p>
+      <p>I make websites & apps that look beautiful and perform well.</p>
+    </div>
+    <div class="call-to-action">
+      <Button class="main-cta" label="View My Work" href="#work-section" />
+      <Button
+        class="secondary-cta"
+        label="Contact Me"
+        href="#contact-section"
+        outlined
+      />
     </div>
   </div>
 </template>
@@ -38,26 +41,33 @@ p {
   }
 }
 
+.main-cta {
+  font-size: 1.15rem !important;
+
+  &:hover {
+    background: #0f3774 !important;
+  }
+}
+
+.secondary-cta {
+  font-size: 1rem !important;
+}
+
 .link {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
   .hero {
-    margin: 0;
-  }
-  .left {
-    width: 50%;
-    margin: 6rem 0 0;
-    margin-top: var(--gap);
+    margin-top: 4.5rem;
   }
   h1 {
     margin-bottom: 2rem;
     font-size: 4.5rem;
+    line-height: 1.3;
     width: 10ch;
   }
   p {
-    font-size: 1.2rem;
     margin: 0;
   }
   p:not(:last-child) {
@@ -70,22 +80,6 @@ p {
     & > :not(:last-child) {
       margin-bottom: 1rem;
       margin-right: 1rem;
-    }
-  }
-  @supports (width: max(1rem, 1vw)) {
-    h1 {
-      margin-bottom: max(2rem, 1.45vw);
-      font-size: max(4.5rem, 3vw);
-    }
-    p {
-      font-size: max(1.2rem, 0.675vw);
-    }
-    .call-to-action {
-      margin-top: max(2.8rem, 1.75vw);
-      & > :not(:last-child) {
-        margin-bottom: max(1rem, 0.85vw);
-        margin-right: max(1rem, 0.85vw);
-      }
     }
   }
 }

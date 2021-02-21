@@ -1,16 +1,18 @@
 <template>
   <section id="contact-section">
-    <h1>Get in touch!</h1>
-    <div class="right">
-      <p>
-        I’m available for freelance work, so if you are interested in working
-        together on a project, be sure to drop an email.
-      </p>
-      <Button
-        label="E-mail me!"
-        href="mailto:amanharwara@protonmail.com"
-        class="light"
-      />
+    <div class="section-container flex">
+      <h1>Get in touch!</h1>
+      <div class="right">
+        <p>
+          I’m available for freelance work, so if you are interested in working
+          together on a project, be sure to drop an email.
+        </p>
+        <Button
+          label="E-mail me!"
+          href="mailto:amanharwara@protonmail.com"
+          class="light"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -31,9 +33,7 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   section {
-    padding: 3rem 5rem;
-    display: flex;
-    align-items: flex-start;
+    padding: 3rem 0;
   }
   h1 {
     margin-right: 5rem;
@@ -45,19 +45,7 @@ h1 {
     margin-top: 0;
   }
   .right {
-    width: 40%;
-  }
-  @supports (width: max(1rem, 1vw)) {
-    section {
-      padding: max(3rem, 3vw) max(5rem, 3vw);
-    }
-    h1 {
-      margin-right: max(5rem, 5vw);
-      font-size: max(3rem, 1.85vw);
-    }
-    p {
-      font-size: max(1rem, 1vw);
-    }
+    width: 50%;
   }
 }
 </style>

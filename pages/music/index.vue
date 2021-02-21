@@ -26,6 +26,11 @@ export default Vue.extend({
       releases,
     }
   },
+  head() {
+    return {
+      title: `Music - Aman Harwara`,
+    }
+  },
 })
 </script>
 
@@ -77,9 +82,6 @@ section {
     & > * {
       margin-right: 2rem;
     }
-  }
-  .music-card .title {
-    font-size: 1rem;
   }
 }
 </style>

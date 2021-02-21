@@ -1,5 +1,5 @@
 :root {
-  --main-bg: #eeecea;
+  --main-bg: #fff;
   --alt-bg-1: #1b1b1b;
   --alt-bg-2: #080808;
 }
@@ -9,21 +9,28 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  scrollbar-color: #eeecea #080808;
 }
 
 body {
-  background: #eeecea;
+  background: #fff;
   background: var(--main-bg);
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-h1 {
-  font-weight: 800;
+p,
+li,
+h1,
+h2,
+h3,
+h4 {
+  word-break: break-word;
+  hyphens: auto;
 }
 
 * {
-  font-family: 'Inter-var', 'Inter', 'Open Sans', 'Helvetica', Roboto, Oxygen,
-    Ubuntu, Cantarell, sans-serif;
+  font-family: 'Inter', 'Open Sans', 'Helvetica', Roboto, Oxygen, Ubuntu,
+    Cantarell, sans-serif;
   box-sizing: border-box;
 }
 
@@ -32,7 +39,8 @@ h1 {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('~assets/fonts/Inter-Regular.woff2') format('woff2');
+  src: url('~assets/fonts/Inter-Regular.woff2') format('woff2'),
+    url('~assets/fonts/Inter-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -40,5 +48,19 @@ h1 {
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url('~assets/fonts/Inter-ExtraBold.woff2') format('woff2');
+  src: url('~assets/fonts/Inter-ExtraBold.woff2') format('woff2'),
+    url('~assets/fonts/Inter-ExtraBold.woff') format('woff');
+}
+
+@media screen and (min-width: 768px) {
+  .section-container {
+    max-width: 80%;
+    margin: auto;
+
+    &.flex {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
 }

@@ -65,7 +65,7 @@
   </main>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import releases from '@/data/music'
 export default Vue.extend({
@@ -83,6 +83,68 @@ export default Vue.extend({
         .find((release) => release.id === id)
       return release
     },
+  },
+  head() {
+    return {
+      title: `${this.release.title} - Aman Harwara`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.release.description.split('<br/>')[0],
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: `${this.release.title} - Aman Harwara`,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.release.description.split('<br/>')[0],
+        },
+        {
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'website',
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `https://amanharwara.com/music/${this.release.id}`,
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `https://amanharwara.com/assets/music/${this.release.id}.png`,
+        },
+        {
+          hid: 'twitter:card',
+          property: 'twitter:card',
+          content: `summary_large_image`,
+        },
+        {
+          hid: 'twitter:url',
+          property: 'twitter:url',
+          content: `https://amanharwara.com/music/${this.release.id}`,
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: `${this.release.title} - Aman Harwara`,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.release.description.split('<br/>')[0],
+        },
+        {
+          hid: 'twitter:image',
+          property: 'twitter:image',
+          content: `https://amanharwara.com/assets/music/${this.release.id}.png`,
+        },
+      ],
+    }
   },
 })
 </script>
@@ -162,7 +224,6 @@ li {
   }
   .links {
     a {
-      font-size: 1rem;
       padding: 0.75rem 1rem;
     }
   }

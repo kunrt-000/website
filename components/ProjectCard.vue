@@ -128,24 +128,5 @@ img {
     width: 100%;
     height: 100%;
   }
-
-  @supports (width: max(1rem, 1vw)) {
-    .project-card {
-      width: max(22rem, 25vw);
-      height: max(22rem, 25vw);
-    }
-    .details {
-      padding: max(1.5rem, 1.5vw) max(1.65rem, 1.55vw);
-    }
-    .title {
-      font-size: max(2.5rem, 1.75vw);
-    }
-    .category {
-      font-size: max(0.85rem, 0.7vw);
-    }
-    .music-card .title {
-      font-size: max(1.6rem, 1.5vw);
-    }
-  }
 }
 </style>

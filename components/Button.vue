@@ -36,7 +36,7 @@ export default Vue.extend({
   display: inline-flex;
   align-items: center;
   background: #080808;
-  padding: 1rem 1.75rem;
+  padding: 0.85em 1.85em;
   font-size: 1.1rem;
   color: #fff;
   text-decoration: none;
@@ -70,14 +70,6 @@ export default Vue.extend({
 
     .icon {
       fill: #080808;
-    }
-  }
-}
-@media screen and (min-width: 768px) {
-  @supports (width: max(1rem, 1vw)) {
-    .button {
-      font-size: max(1.1rem, 0.675vw);
-      padding: max(1rem, 0.65vw) max(1.75rem, 1.2vw);
     }
   }
 }

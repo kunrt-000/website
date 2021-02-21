@@ -1,62 +1,64 @@
 <template>
   <footer>
-    <div class="copyright">(c) Aman Harwara</div>
-    <div class="social column">
-      <div class="column-title">Social</div>
-      <div class="links">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://mastodon.social/@amanharwara"
-          >Mastodon</a
-        >
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://instagram.com/aman.harwara"
-          >Instagram</a
-        >
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/amanharwara"
-          >GitHub</a
-        >
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://gitlab.com/amanharwara"
-          >GitLab</a
-        >
+    <div class="section-container flex">
+      <div class="copyright">(c) Aman Harwara</div>
+      <div class="social column">
+        <div class="column-title">Social</div>
+        <div class="links">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://mastodon.social/@amanharwara"
+            >Mastodon</a
+          >
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://instagram.com/aman.harwara"
+            >Instagram</a
+          >
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/amanharwara"
+            >GitHub</a
+          >
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://gitlab.com/amanharwara"
+            >GitLab</a
+          >
+        </div>
       </div>
-    </div>
-    <div class="music column">
-      <div class="column-title">Music</div>
-      <div class="links">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://amanharwara.bandcamp.com"
-          >Bandcamp</a
-        >
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://open.spotify.com/artist/0oS1w3XT067ttzelzj67b6"
-          >Spotify</a
-        >
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://music.apple.com/us/artist/aman-harwara/1516521816"
-          >Apple Music</a
-        >
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.youtube.com/channel/UCHk6MIPQhtZf6zFS_FrDHKg"
-          >YouTube</a
-        >
+      <div class="music column">
+        <div class="column-title">Music</div>
+        <div class="links">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://amanharwara.bandcamp.com"
+            >Bandcamp</a
+          >
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://open.spotify.com/artist/0oS1w3XT067ttzelzj67b6"
+            >Spotify</a
+          >
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://music.apple.com/us/artist/aman-harwara/1516521816"
+            >Apple Music</a
+          >
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.youtube.com/channel/UCHk6MIPQhtZf6zFS_FrDHKg"
+            >YouTube</a
+          >
+        </div>
       </div>
     </div>
   </footer>
@@ -97,24 +99,13 @@ a {
 }
 @media screen and (min-width: 768px) {
   footer {
-    padding: 3rem 5rem;
-    display: flex;
-    align-items: flex-start;
+    padding: 3rem 0;
   }
   .column-title {
     margin-top: 0;
   }
   .social {
     margin: 0 5rem;
-  }
-  @supports (width: max(1rem, 1vw)) {
-    footer {
-      padding: max(3rem, 3vw) max(5rem, 3vw);
-      font-size: max(1rem, 0.7vw);
-    }
-    .column-title {
-      font-size: max(1.25rem, 0.75vw);
-    }
   }
 }
 </style>
