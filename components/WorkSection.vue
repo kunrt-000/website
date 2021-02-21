@@ -3,17 +3,24 @@
     <div class="section-container">
       <h1>Work</h1>
       <div class="projects-container">
-        <ProjectCard
+        <!-- <ProjectCard
           v-for="project in projects"
           :key="project.id"
           :project="project"
           type="work"
-        />
-        <!-- <div
+        /> -->
+        <div
           class="project"
           v-for="project in projects"
           :key="project.id"
-        ></div> -->
+          :style="`background: ${project.color}`"
+        >
+          <NuxtLink :to="`/project/${project.id}`" class="project-link">
+            <h2>{{ project.title }}</h2>
+            <p>{{ project.shortDescription }}</p>
+            <div class="overlay"></div>
+          </NuxtLink>
+        </div>
       </div>
       <p class="open-source-work">
         My open-source projects can be found on
@@ -59,6 +66,39 @@ h1 {
 .projects-container > :not(:last-child) {
   margin-bottom: 1.5rem;
 }
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.15s;
+}
+.project-link {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+
+  h2 {
+    font-size: 2.65rem;
+    transition: font-size 0.15s;
+  }
+
+  &:hover {
+    .overlay {
+      opacity: 1;
+    }
+  }
+}
 @media screen and (min-width: 768px) {
   section {
     padding: 3rem 0;
@@ -70,10 +110,42 @@ h1 {
   }
   .projects-container {
     display: flex;
-    & > :not(:last-child) {
-      margin-bottom: 0;
-      margin-right: 2rem;
+    flex-flow: row wrap;
+    & > :first-child,
+    & > :nth-child(3n + 1) {
+      flex: 1 100%;
+
+      h2 {
+        font-size: 3rem;
+      }
+
+      p {
+        max-width: 50%;
+      }
+
+      &:hover {
+        h2 {
+          font-size: 3.35rem;
+        }
+      }
     }
+  }
+  .project-link {
+    padding: 5rem;
+    text-align: center;
+    align-items: center;
+
+    &:hover {
+      h2 {
+        font-size: 3rem;
+      }
+    }
+  }
+  .project {
+    flex: 1 50%;
+    min-height: 75vh;
+    margin: 0 !important;
+    z-index: 0;
   }
   p {
     margin: 2rem 0;

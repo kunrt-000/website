@@ -31,8 +31,8 @@
 <style lang="scss" scoped>
 section {
   padding: 1.5rem;
-  background: #080808;
-  color: #fff;
+  background: #f8f8f8;
+  color: #000;
 }
 @media screen and (min-width: 768px) {
   section {

@@ -11,6 +11,7 @@ type Project = {
   color?: string
   category: string
   workType: string
+  shortDescription: string
   description: string
   link: string
   screenshots: string[]
