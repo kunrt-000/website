@@ -3,6 +3,7 @@ const projects: Project[] = [
     id: 'altus',
     title: 'Altus',
     color: '#24224E',
+    hasIcon: true,
     link: 'https://github.com/amanharwara/altus',
     category: 'Desktop App',
     workType: 'Design / Development',
@@ -18,6 +19,7 @@ const projects: Project[] = [
     id: 'chartr',
     title: 'Chartr',
     color: '#141C25',
+    hasIcon: true,
     link: 'https://chartr.vercel.app',
     category: 'Web App',
     workType: 'Design / Development',
@@ -28,15 +30,16 @@ const projects: Project[] = [
     screenshots: ['1.png', '2.png'],
   },
   {
-    id: 'arm64',
-    title: 'Arm-64.com',
+    id: 'aarch64',
+    title: 'AArch64.com',
     color: '#161616',
-    link: 'https://arm-64.com',
+    hasIcon: false,
+    link: 'https://aarch64.com',
     category: 'Website / Blog',
     workType: 'Design / Development',
     shortDescription:
-      'Arm-64.com is a blog run by experts at Fosshost about the challenges of planning, coordinating and managing 50u of Arm hardware in multiple, global locations.',
-    description: `Arm-64.com is a blog run by experts at Fosshost about the challenges of planning, coordinating and managing 50u of Arm hardware in multiple, global locations.<br/><br/>
+      'AArch64.com is a blog run by experts at Fosshost about the challenges of planning, coordinating and managing 50u of Arm hardware in multiple, global locations.',
+    description: `AArch64.com is a blog run by experts at Fosshost about the challenges of planning, coordinating and managing 50u of Arm hardware in multiple, global locations.<br/><br/>
     It is completely built with Next.js + Typescript using a flat-file approach and being mostly self-contained without using too many other dependencies.<br/><br/>
     For the design, I went with a modern and clean look while remembering to maintain familiarity and good UX. A healthy amount of white space is used to give the design some room to breath and to keep the user's information overload to the minimal.`,
     screenshots: ['1.png', '2.png', '3.png'],

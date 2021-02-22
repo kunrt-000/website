@@ -16,7 +16,14 @@
           :style="`background: ${project.color}`"
         >
           <NuxtLink :to="`/project/${project.id}`" class="project-link">
-            <h2>{{ project.title }}</h2>
+            <div class="title">
+              <img
+                v-if="project.hasIcon"
+                :src="`assets/projects/${project.id}/icon.svg`"
+                loading="lazy"
+              />
+              <h2>{{ project.title }}</h2>
+            </div>
             <p>{{ project.shortDescription }}</p>
             <div class="overlay"></div>
           </NuxtLink>
@@ -91,6 +98,15 @@ h1 {
   h2 {
     font-size: 2.65rem;
     transition: font-size 0.15s;
+    margin: 2rem 0 0;
+  }
+
+  p {
+    margin: 0.5rem 0 0;
+  }
+
+  img {
+    width: 50%;
   }
 
   &:hover {
@@ -135,9 +151,22 @@ h1 {
     text-align: center;
     align-items: center;
 
+    h2 {
+      margin: 1rem 0;
+    }
+
+    img {
+      width: 65%;
+      transition: width 0.15s;
+    }
+
     &:hover {
       h2 {
         font-size: 3rem;
+      }
+
+      img {
+        width: 75%;
       }
     }
   }

@@ -9,6 +9,7 @@ type Project = {
   id: string
   title: string
   color?: string
+  hasIcon: boolean
   category: string
   workType: string
   shortDescription: string
