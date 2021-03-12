@@ -1,7 +1,7 @@
 <template>
   <main>
     <Header invertColors />
-    <section>
+    <section class="project">
       <div class="section-container flex">
         <div class="left">
           <h1>{{ release.title }}</h1>
@@ -67,6 +67,7 @@
         </div>
       </div>
     </section>
+    <SupportSection />
     <Footer />
   </main>
 </template>
@@ -160,9 +161,10 @@ header {
   padding: 1rem 1.5rem;
 }
 section {
-  display: flex;
-  flex-flow: column-reverse nowrap;
   padding: 0 1.5rem 1rem;
+}
+.project .section-container {
+  flex-flow: column-reverse nowrap;
 }
 .cover {
   img {
@@ -212,6 +214,10 @@ li {
   }
   section {
     padding: 0 0 3rem;
+  }
+  .project .section-container {
+    display: flex;
+    flex-flow: row nowrap;
   }
   .left {
     width: 65%;

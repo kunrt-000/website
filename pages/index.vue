@@ -10,6 +10,7 @@
     </main>
     <AboutSection />
     <WorkSection />
+    <SupportSection />
     <ContactSection />
     <Footer />
   </div>

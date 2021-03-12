@@ -15,6 +15,7 @@
         </div>
       </div>
     </section>
+    <SupportSection />
     <Footer />
   </main>
 </template>
