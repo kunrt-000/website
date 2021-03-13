@@ -13,6 +13,7 @@
             <Liberapay />
           </div>
           <div class="title">Liberapay</div>
+          <div class="content"><NewTab /></div>
         </a>
         <a
           href="https://buymeacoffee.com/amanharwara"
@@ -24,6 +25,7 @@
             <BuyMeACoffee />
           </div>
           <div class="title">Buy Me a Coffee</div>
+          <div class="content"><NewTab /></div>
         </a>
         <a
           href="https://ko-fi.com/amanharwara"
@@ -35,6 +37,7 @@
             <KoFi />
           </div>
           <div class="title">Ko-Fi</div>
+          <div class="content"><NewTab /></div>
         </a>
         <div class="link">
           <div class="icon">
@@ -115,14 +118,17 @@ h1 {
   .content {
     width: 100%;
     word-break: break-all;
+
+    svg {
+      margin-top: 0.25rem;
+      width: 1.75em;
+      height: 1.75em;
+    }
   }
 }
 @media screen and (min-width: 768px) {
   section {
     padding: 3rem 0;
-  }
-  .section-container {
-    max-width: 90%;
   }
   h1 {
     font-size: 2rem;
