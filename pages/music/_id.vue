@@ -2,24 +2,17 @@
   <main>
     <Header invertColors />
     <section class="project">
-      <div class="section-container flex">
-        <div class="left">
-          <h1>{{ release.title }}</h1>
-          <div class="meta">
-            {{ release.date }} <span>·</span> {{ release.genre }}
-          </div>
-          <p>{{ release.description }}</p>
-          <div class="tracklist">
-            <b>Tracklist:</b>
-            <ol>
-              <li v-for="track in release.tracklist" :key="track">
-                {{ track }}
-              </li>
-            </ol>
-          </div>
-        </div>
-        <div class="right">
-          <div class="cover">
+      <div
+        class="album-info"
+        :style="{
+          backgroundColor: `${
+            release.colors ? release.colors.background : '#f7f7f7'
+          }`,
+          color: `${release.colors ? release.colors.foreground : '#000'}`,
+        }"
+      >
+        <div class="container">
+          <div class="album-cover">
             <picture>
               <source
                 :srcSet="
@@ -38,32 +31,49 @@
               />
             </picture>
           </div>
-          <div class="links">
-            <Button
-              :href="release.links.bandcamp"
-              label="Buy on Bandcamp"
-              newTab
-              hasIcon
-            >
-              <Bandcamp />
-            </Button>
-            <Button
-              :href="release.links.apple"
-              label="Listen on Apple Music"
-              newTab
-              hasIcon
-            >
-              <AppleMusic />
-            </Button>
-            <Button
-              :href="release.links.spotify"
-              label="Listen on Spotify"
-              newTab
-              hasIcon
-            >
-              <Spotify />
-            </Button>
+          <div class="details">
+            <h1>{{ release.title }}</h1>
+            <div class="meta">
+              {{ release.date }} <span>·</span> {{ release.genre }}
+            </div>
+            <div class="links">
+              <Button
+                :href="release.links.bandcamp"
+                label="Buy on Bandcamp"
+                newTab
+                hasIcon
+              >
+                <Bandcamp />
+              </Button>
+              <Button
+                :href="release.links.apple"
+                label="Listen on Apple Music"
+                newTab
+                hasIcon
+              >
+                <AppleMusic />
+              </Button>
+              <Button
+                :href="release.links.spotify"
+                label="Listen on Spotify"
+                newTab
+                hasIcon
+              >
+                <Spotify />
+              </Button>
+            </div>
           </div>
+        </div>
+      </div>
+      <div class="section-container description">
+        <p v-if="release.description">{{ release.description }}</p>
+        <div class="tracklist">
+          <b>Tracklist:</b>
+          <ol>
+            <li v-for="track in release.tracklist" :key="track">
+              {{ track }}
+            </li>
+          </ol>
         </div>
       </div>
     </section>
@@ -88,6 +98,9 @@ export default Vue.extend({
           }
         })
         .find((release) => release.id === id)
+      console.log(
+        require(`~/static/assets/music/${release.id}.png?lqip-colors`)
+      )
       return release
     },
   },
@@ -160,13 +173,16 @@ export default Vue.extend({
 header {
   padding: 1rem 1.5rem;
 }
-section {
+.project {
   padding: 0 1.5rem 1rem;
 }
-.project .section-container {
-  flex-flow: column-reverse nowrap;
-}
-.cover {
+.album-info {
+  width: 100vw;
+  margin-left: -1.5rem;
+  padding: 1.5rem;
+
+  .album-cover,
+  picture,
   img {
     width: 100%;
   }
@@ -182,7 +198,7 @@ section {
     height: 1.5rem;
   }
 
-  & > :not(:last-child) {
+  & > * {
     margin-bottom: 0.65rem;
   }
 }
@@ -192,15 +208,18 @@ h1 {
   -webkit-line-clamp: 2;
   text-overflow: ellipsis;
   overflow: hidden;
-  margin: 2rem 0 1rem;
-  font-size: 2rem;
+  margin: 0.5rem 0 0.25rem;
+  font-size: 2.15rem;
 }
 .meta {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 p {
   font-size: 1.1rem;
   line-height: 1.3;
+}
+.description {
+  margin-top: 1.5rem;
 }
 .tracklist {
   font-size: 1.035rem;
@@ -210,32 +229,64 @@ li {
 }
 @media screen and (min-width: 768px) {
   header {
-    padding: 2rem 0 3.25rem;
+    padding: 2rem 0;
   }
-  section {
+  .project {
     padding: 0 0 3rem;
   }
-  .project .section-container {
+  .album-info {
+    width: 100%;
+    margin: 0;
+    padding: 1.5rem 0;
+
+    h1 {
+      margin: 0 0 0.25rem;
+      font-size: 2.45rem;
+    }
+
+    .container {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      max-width: 80%;
+      margin: auto;
+    }
+
+    .album-cover {
+      width: 15rem;
+      height: 15rem;
+      margin-right: 3rem;
+    }
+
+    .links {
+      flex-flow: row wrap;
+
+      & > * {
+        font-size: 1rem;
+        margin-right: 0.65rem;
+      }
+    }
+  }
+  .description {
     display: flex;
-    flex-flow: row nowrap;
-  }
-  .left {
-    width: 65%;
-    padding-right: 5rem;
-  }
-  .right {
-    width: 35%;
-  }
-  h1 {
-    font-size: 3rem;
-    margin-top: 0;
-  }
-  .meta {
-    font-size: 0.95rem;
-  }
-  .links {
-    a {
-      padding: 0.75rem 1rem;
+
+    & > * + * {
+      padding-left: 3rem;
+    }
+
+    p {
+      max-width: 65%;
+      margin-top: 0;
+    }
+
+    .tracklist {
+      flex-grow: 1;
+
+      ol {
+        max-height: 20vh;
+        overflow: hidden;
+        overflow-y: auto;
+      }
     }
   }
 }

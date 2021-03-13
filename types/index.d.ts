@@ -30,6 +30,10 @@ type MusicRelease = {
     spotify: string
     apple: string
   }
+  colors?: {
+    background: string
+    foreground: string
+  }
 }
 
 type ProjectCardType = 'work' | 'music'

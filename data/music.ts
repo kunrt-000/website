@@ -34,6 +34,10 @@ const releases: MusicRelease[] = [
       spotify: 'https://open.spotify.com/album/4q2vhfX1DwIRUUoLgiwqTZ',
       apple: 'https://music.apple.com/us/album/ode-to-messier/1536503229',
     },
+    colors: {
+      background: '#2c445c',
+      foreground: '#fff',
+    },
   },
   {
     id: 'moodbender',
@@ -68,6 +72,7 @@ const releases: MusicRelease[] = [
       spotify: 'https://open.spotify.com/album/6e89r55iMhOoDNMQJpR9Yo',
       apple: 'https://music.apple.com/us/album/1-music-for-sewers/1532886883',
     },
+    colors: { background: '#1b2542', foreground: '#fff' },
   },
   {
     id: 'as-the-day-goes-on',
@@ -88,6 +93,10 @@ const releases: MusicRelease[] = [
       bandcamp: 'https://amanharwara.bandcamp.com/album/as-the-day-goes-on',
       spotify: 'https://open.spotify.com/album/4FWGB8diYurJHcyd7SRfUD',
       apple: 'https://music.apple.com/us/album/as-the-day-goes-on/1517320899',
+    },
+    colors: {
+      background: '#78144c',
+      foreground: '#fff',
     },
   },
 ]
