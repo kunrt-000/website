@@ -1,4 +1,17 @@
 const releases: MusicRelease[] = [
+{
+    id: 'sound-experiments-may-21',
+    title: "Sound Experiments: May '21",
+    date: 'May 2021',
+    genre: ['Ambient', 'Electronic'],
+    description: 'A collection of songs I've made by experimenting on my phone.',
+    tracklist: ['Discobolus', 'Fabaceous', 'Flagelliform', 'Naupathia', 'Nécessaire', 'Negentropy', 'Nyctanthous', 'Peracute', 'Spinuliferous', 'Twire', 'Undate', 'Ypsiliform'],
+    links: {
+      bandcamp: 'https://amanharwara.bandcamp.com/album/sound-experiments-may-21',
+      spotify: 'https://play.spotify.com/album/1mW3AYh91uDJolI6DEltY3',
+      apple: 'https://music.apple.com/us/album/sound-experiments-may-21/1569917349',
+    },
+  },
   {
     id: 'ode-to-messier',
     title: 'Ode To Messier',
