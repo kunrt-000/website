@@ -4,7 +4,7 @@ const releases: MusicRelease[] = [
     title: "Sound Experiments: May '21",
     date: 'May 2021',
     genre: ['Ambient', 'Electronic'],
-    description: 'A collection of songs I've made by experimenting on my phone.',
+    description: "A collection of songs I've made by experimenting on my phone.",
     tracklist: ['Discobolus', 'Fabaceous', 'Flagelliform', 'Naupathia', 'Nécessaire', 'Negentropy', 'Nyctanthous', 'Peracute', 'Spinuliferous', 'Twire', 'Undate', 'Ypsiliform'],
     links: {
       bandcamp: 'https://amanharwara.bandcamp.com/album/sound-experiments-may-21',
