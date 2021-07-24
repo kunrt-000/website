@@ -1,9 +1,10 @@
 import styles from "@/styles/altus/Support.module.scss";
+import common from "@/styles/altus/Altus.module.scss";
 import Button from "../Button";
 
 const Support = () => (
   <section id="support" className={styles.supportSection}>
-    <h1 className={styles.heading}>Support the Project</h1>
+    <h1 className={common.heading}>Support the Project</h1>
     <div className={styles.flex}>
       <div className={styles.copy}>
         <p>

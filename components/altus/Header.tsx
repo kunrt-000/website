@@ -9,12 +9,12 @@ const Header = () => (
       <div className={styles.container}>
         <div className={styles.left}>
           <Link href="/altus" passHref={true}>
-            <div className={styles.logo}>
+            <a className={styles.logo}>
               <div className={styles.icon}>
                 <Image src={icon} alt="Altus logo" />
               </div>
               <div className={styles.logoText}>Altus</div>
-            </div>
+            </a>
           </Link>
         </div>
         <div className={styles.right}>

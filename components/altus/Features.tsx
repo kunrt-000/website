@@ -1,4 +1,5 @@
 import styles from "@/styles/altus/Features.module.scss";
+import common from "@/styles/altus/Altus.module.scss";
 import FeatureColumn from "./FeatureColumn";
 import Themes from "@/icons/altus/Themes";
 import MultipleAcc from "../icons/altus/MultipleAcc";
@@ -12,7 +13,7 @@ import SplitMode from "../icons/altus/SplitMode";
 
 const Features = () => (
   <section id="features" className={styles.featuresSection}>
-    <h1 className={styles.heading}>Improve your WhatsApp experience</h1>
+    <h1 className={common.heading}>Improve your WhatsApp experience</h1>
     <h3 className={styles.subheading}>with features like...</h3>
     <div className={styles.featuresGrid}>
       <FeatureColumn

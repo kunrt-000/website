@@ -1,4 +1,5 @@
 import styles from "@/styles/altus/Downloads.module.scss";
+import common from "@/styles/altus/Altus.module.scss";
 import Linux from "../icons/altus/Linux";
 import MacOS from "../icons/altus/macOS";
 import Windows from "../icons/altus/Windows";
@@ -15,7 +16,7 @@ type DownloadsProps = {
 
 const Downloads = ({ version, links }: DownloadsProps) => (
   <section id="downloads" className={styles.downloadSection}>
-    <h1>Downloads</h1>
+    <h1 className={common.heading}>Downloads</h1>
     <div className={styles.downloads}>
       <div className={styles.item}>
         <div className={styles.meta}>

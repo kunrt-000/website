@@ -6,7 +6,7 @@ const Footer = () => (
       <div className={styles.copyright}>© Aman Harwara</div>
       <div className={styles.linkGroup}>
         <a
-          href=""
+          href="https://github.com/amanharwara"
           target="_blank"
           rel="noreferrer noopener"
           className={styles.item}
@@ -14,7 +14,7 @@ const Footer = () => (
           GitHub
         </a>
         <a
-          href=""
+          href="https://gitlab.com/amanharwara"
           target="_blank"
           rel="noreferrer noopener"
           className={styles.item}
@@ -22,7 +22,7 @@ const Footer = () => (
           GitLab
         </a>
         <a
-          href=""
+          href="https://mastodon.social/@amanharwara"
           target="_blank"
           rel="noreferrer noopener"
           className={styles.item}
@@ -32,7 +32,7 @@ const Footer = () => (
       </div>
       <div className={styles.linkGroup}>
         <a
-          href=""
+          href="https://amanharwara.bandcamp.com/"
           target="_blank"
           rel="noreferrer noopener"
           className={styles.item}
@@ -40,7 +40,7 @@ const Footer = () => (
           Bandcamp
         </a>
         <a
-          href=""
+          href="https://open.spotify.com/artist/0oS1w3XT067ttzelzj67b6"
           target="_blank"
           rel="noreferrer noopener"
           className={styles.item}
@@ -48,7 +48,7 @@ const Footer = () => (
           Spotify
         </a>
         <a
-          href=""
+          href="https://www.youtube.com/channel/UCHk6MIPQhtZf6zFS_FrDHKg"
           target="_blank"
           rel="noreferrer noopener"
           className={styles.item}
