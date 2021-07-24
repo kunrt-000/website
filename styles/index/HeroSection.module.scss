@@ -1,0 +1,104 @@
+.heroSection {
+  display: flex;
+  flex-flow: column;
+  color: #fff;
+  position: relative;
+  margin: auto;
+  padding: 2rem 1.5rem 2.5rem;
+}
+
+.preHeading {
+  font-weight: 500;
+  color: #dfdfdf;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: -0.022em;
+  margin: 1rem 0;
+}
+
+.subHeading {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #dfdfdf;
+  margin-bottom: 1.5rem;
+}
+
+.callToAction {
+  display: inline-flex;
+  flex-flow: column;
+}
+
+.secondaryCTA {
+  margin-top: 1rem;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .heroSection {
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 48rem;
+  }
+  .left,
+  .right {
+    width: 100%;
+  }
+  .left {
+    margin-right: 1rem;
+  }
+  .right {
+    margin-left: 1rem;
+  }
+  .heading {
+    font-size: 2.35rem;
+  }
+  .preHeading,
+  .subHeading {
+    font-size: 1.1rem;
+    max-width: 80%;
+  }
+  .callToAction {
+    flex-flow: row;
+    align-items: center;
+  }
+  .secondaryCTA {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .heroSection {
+    max-width: 64rem;
+    padding: 1.5rem 4rem 2.5rem;
+  }
+  .left {
+    margin-right: 2rem;
+  }
+  .right {
+    margin-left: 2rem;
+  }
+  .heading {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .heroSection {
+    max-width: 80rem;
+    padding: 2.5rem 5rem 3.5rem;
+  }
+  .heading {
+    font-size: 3.5rem;
+  }
+}

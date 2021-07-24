@@ -18,7 +18,7 @@ type DownloadsProps = {
 };
 
 const Altus = ({ downloadProps }: { downloadProps: DownloadsProps }) => (
-  <div className={styles.page}>
+  <div id="altus-page" className={styles.page}>
     <Head>
       <title>Altus — Feature-rich desktop WhatsApp client</title>
       <meta

@@ -1,5 +1,5 @@
 import styles from "@/styles/altus/Support.module.scss";
-import Button from "./Button";
+import Button from "../Button";
 
 const Support = () => (
   <section id="support" className={styles.supportSection}>

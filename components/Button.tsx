@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "@/styles/altus/Button.module.scss";
+import styles from "@/styles/Button.module.scss";
 
 type ButtonProps = {
   children: any;

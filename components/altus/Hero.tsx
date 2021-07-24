@@ -1,5 +1,5 @@
 import styles from "@/styles/altus/Hero.module.scss";
-import Button from "./Button";
+import Button from "../Button";
 import Image from "next/image";
 import defaultPic from "@/img/altus/default.png";
 import darkPic from "@/img/altus/dark.png";

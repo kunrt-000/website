@@ -2,7 +2,7 @@ import styles from "@/styles/altus/Downloads.module.scss";
 import Linux from "../icons/altus/Linux";
 import MacOS from "../icons/altus/macOS";
 import Windows from "../icons/altus/Windows";
-import Button from "./Button";
+import Button from "../Button";
 
 type DownloadsProps = {
   version: string;
