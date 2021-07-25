@@ -79,7 +79,10 @@ export default function Music() {
                 : featured?.genre}
             </div>
             <div className={styles.description}>{featured?.description}</div>
-            <Button href={featured?.links?.bandcamp} external={true}>
+            <Button
+              href={featured?.links?.bandcamp ? featured?.links?.bandcamp : ""}
+              external={true}
+            >
               Buy on Bandcamp
             </Button>
           </div>

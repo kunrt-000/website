@@ -3,7 +3,7 @@ import styles from "@/styles/Button.module.scss";
 
 type ButtonProps = {
   children: any;
-  href: string | undefined;
+  href: string;
   external?: boolean;
 };
 
