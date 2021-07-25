@@ -12,6 +12,7 @@ type WorkProject = {
   techStack: string;
   summary: string;
   website: string;
+  description: string;
 };
 
 type MusicRelease = {
