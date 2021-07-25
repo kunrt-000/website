@@ -7,8 +7,10 @@ import LatestMusicRelease from "@/components/index/LatestMusicRelease";
 import WorkSection from "@/components/index/WorkSection";
 import ContactSection from "@/components/index/ContactSection";
 import Footer from "@/components/Footer";
+import { GetStaticProps, GetStaticPropsContext } from "next";
+import paginatedResults from "util/paginatedResults";
 
-export default function Home() {
+export default function Home({ posts }: { posts: BlogPost[] }) {
   return (
     <div id="index-page" className={styles.page}>
       <Head>
@@ -39,7 +41,7 @@ export default function Home() {
       </Head>
       <Header />
       <HeroSection />
-      <RecentWritings />
+      {posts.length > 0 ? <RecentWritings posts={posts} /> : <></>}
       <LatestMusicRelease />
       <WorkSection />
       <ContactSection />
@@ -47,3 +49,20 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps = async (
+  context: GetStaticPropsContext
+) => {
+  let { posts } = paginatedResults(1);
+  //let allPosts = getAllPosts();
+
+  //const rss = generateRSS(allPosts);
+
+  //fs.writeFileSync("./public/feed.xml", rss);
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};

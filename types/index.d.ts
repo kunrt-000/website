@@ -1,9 +1,9 @@
 type BlogPost = {
   slug: string;
-  type: string;
+  tag: string;
   title: string;
   summary: string;
-  content: string;
+  date: string;
 };
 
 type WorkProject = {
