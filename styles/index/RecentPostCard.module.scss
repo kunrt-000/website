@@ -1,0 +1,55 @@
+.post {
+  background: #080e1b;
+  border: 1px solid #0c1327;
+  border-radius: 5px;
+  transition: 0.1s background;
+  padding: 1rem;
+
+  &:hover {
+    background: hsl(221, 54%, 10%);
+
+    .title {
+      text-decoration: underline;
+    }
+  }
+}
+
+.tag {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #e0e1dd;
+  letter-spacing: 0.05rem;
+}
+
+.title {
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: -0.022em;
+  margin: 0.75rem 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.summary {
+  color: #dfdfdf;
+}
+
+@media screen and (min-width: 48rem) {
+  .post {
+    padding: 1.5rem;
+    height: 100%;
+  }
+  .title {
+    font-size: 1.65rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+}
+
+@media screen and (min-width: 80rem) {
+}
