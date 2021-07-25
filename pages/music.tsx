@@ -16,7 +16,6 @@ const createRows = (array: Array<any>, itemsPerRow: number) => {
     }
     groupedArray.push(row);
   }
-  console.log(groupedArray);
   return groupedArray;
 };
 
@@ -93,7 +92,7 @@ export default function Music() {
         <div className={styles.releases}>
           {grouped.map((group, i) => (
             <div className={styles.row} key={i}>
-              {group.map((release) =>
+              {group.map((release, i) =>
                 release ? (
                   <div className={styles.release} key={release.id}>
                     <Link href={`/music/${release.id}`} passHref={true}>
@@ -106,7 +105,7 @@ export default function Music() {
                     </Link>
                   </div>
                 ) : (
-                  <div className={styles.release}></div>
+                  <div className={styles.release} key={i}></div>
                 )
               )}
             </div>
