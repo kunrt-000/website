@@ -37,6 +37,10 @@
 .item {
   margin-right: 2rem;
 
+  &[data-active="true"] {
+    font-weight: 700;
+  }
+
   &:hover {
     text-decoration: underline;
   }
