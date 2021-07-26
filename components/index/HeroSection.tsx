@@ -36,6 +36,8 @@ const HeroSection = () => (
           webp
           src={require(`../../public/img/music/moodbender.png`)}
           alt="Moodbender cover"
+          sizes={[500, 1000, 2000]}
+          breakpoints={[768, 1366]}
         />
       </div>
       <div className={styles.rect}>
