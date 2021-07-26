@@ -21,6 +21,10 @@
 
 .cover {
   position: relative;
+
+  img {
+    width: 100%;
+  }
 }
 
 .cover::after {

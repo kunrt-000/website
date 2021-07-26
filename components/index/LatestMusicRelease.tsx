@@ -1,7 +1,7 @@
 import common from "@/styles/Index.module.scss";
 import styles from "@/styles/index/LatestMusicRelease.module.scss";
 import Button from "@/components/Button";
-import Image from "next/image";
+import Img from "react-optimized-image";
 import Link from "next/link";
 import music from "@/data/music";
 
@@ -14,11 +14,10 @@ const LatestMusicRelease = () => {
       <Link href={`/music/${release.id}`} passHref={true}>
         <a className={styles.release}>
           <div className={styles.cover}>
-            <Image
-              src={`/img/music/${release.id}.png`}
+            <Img
+              webp
+              src={require(`../../public/img/music/${release.id}.png`)}
               alt={`Cover art for ${release.title}`}
-              width={3000}
-              height={3000}
             />
           </div>
           <div className={styles.meta}>

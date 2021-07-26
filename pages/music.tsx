@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import Img from "react-optimized-image";
 import styles from "@/styles/Music.module.scss";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -58,11 +58,10 @@ export default function Music() {
           <div className={styles.cover}>
             <Link href={`/music/${featured?.id}`} passHref={true}>
               <a>
-                <Image
-                  src={`/img/music/${featured?.id}.png`}
+                <Img
+                  webp
+                  src={require(`../public/img/music/${featured?.id}.png`)}
                   alt={`Cover art for ${featured?.title}`}
-                  width={3000}
-                  height={3000}
                 />
               </a>
             </Link>
@@ -99,11 +98,10 @@ export default function Music() {
                   <div className={styles.release} key={release.id}>
                     <Link href={`/music/${release.id}`} passHref={true}>
                       <a>
-                        <Image
-                          src={`/img/music/${release.id}.png`}
+                        <Img
+                          webp
+                          src={require(`../public/img/music/${release.id}.png`)}
                           alt={`Cover art for ${release.title}`}
-                          width={3000}
-                          height={3000}
                         />
                       </a>
                     </Link>
