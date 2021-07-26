@@ -4,6 +4,7 @@ type BlogPost = {
   title: string;
   summary: string;
   date: string;
+  image?: string;
 };
 
 type WorkProject = {

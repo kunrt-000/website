@@ -2,7 +2,12 @@ import fs from "fs";
 import matter from "gray-matter";
 
 const getAllPosts = (): BlogPost[] => {
-  let posts = fs.readdirSync("posts");
+  let posts: Array<any> = [];
+  try {
+    posts = fs.readdirSync("posts");
+  } catch (e) {
+    console.error(e);
+  }
   return posts
     .map((post): BlogPost => {
       let file = fs.readFileSync(`posts/${post}`).toString();
@@ -13,6 +18,7 @@ const getAllPosts = (): BlogPost[] => {
         summary: frontmatter.data.summary,
         date: frontmatter.data.date,
         slug: post.replace(".md", ""),
+        image: frontmatter.data.image ? frontmatter.data.image : null,
       };
     })
     .sort((a, b) => {
