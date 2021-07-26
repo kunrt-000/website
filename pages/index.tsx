@@ -50,19 +50,15 @@ export default function Home({ posts }: { posts: BlogPost[] }) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async (
-  context: GetStaticPropsContext
-) => {
+export const getStaticProps: GetStaticProps = async () => {
   let { posts } = paginatedResults(1);
   //let allPosts = getAllPosts();
-
   //const rss = generateRSS(allPosts);
-
   //fs.writeFileSync("./public/feed.xml", rss);
 
   return {
     props: {
-      posts,
+      posts: posts.slice(0, 3),
     },
   };
 };
