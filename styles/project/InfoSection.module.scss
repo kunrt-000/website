@@ -1,0 +1,80 @@
+.infoSection {
+  display: flex;
+  flex-flow: column;
+  color: #fff;
+  position: relative;
+  margin: auto;
+  padding: 2rem 1.5rem 2.5rem;
+}
+
+.image {
+  background: #080e1b;
+  width: 100%;
+  min-height: 15rem;
+  aspect-ratio: 1 / 1;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  img {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  letter-spacing: -0.022em;
+}
+
+.techStack {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  color: #dfdfdf;
+  margin: 0.25rem 0 1rem;
+}
+
+.description {
+  line-height: 140%;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .infoSection {
+    flex-flow: row;
+    align-items: center;
+    width: 100%;
+    max-width: 48rem;
+  }
+  .image {
+    margin-right: 1.5rem;
+    min-height: 20rem;
+  }
+  .meta {
+    margin-left: 1.5rem;
+  }
+  .title {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .infoSection {
+    max-width: 64rem;
+    padding: 1.5rem 4rem 2.5rem;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .infoSection {
+    max-width: 80rem;
+    padding: 2.5rem 5rem 3.5rem;
+  }
+}
