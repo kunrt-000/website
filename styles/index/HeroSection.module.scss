@@ -41,6 +41,10 @@
   }
 }
 
+.right {
+  display: none;
+}
+
 @media screen and (min-width: 48rem) {
   .heroSection {
     flex-flow: row;
@@ -57,7 +61,45 @@
     margin-right: 1rem;
   }
   .right {
+    display: flex;
     margin-left: 1rem;
+    height: 100%;
+    position: relative;
+    min-height: 22.5rem;
+  }
+  .rect {
+    width: 12.5rem;
+    height: 12.5rem;
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    & > picture img {
+      width: 100%;
+    }
+
+    &:first-child {
+      background: #080e1b;
+      top: 35%;
+      left: 30%;
+    }
+
+    &:nth-child(2) {
+      top: 70%;
+      left: 50%;
+    }
+
+    &:last-child {
+      background: #121d3a;
+      top: 30%;
+      left: 65%;
+    }
+  }
+  .center img {
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .heading {
     font-size: 2.35rem;
