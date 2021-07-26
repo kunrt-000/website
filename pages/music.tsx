@@ -59,8 +59,10 @@ export default function Music() {
             <Link href={`/music/${featured?.id}`} passHref={true}>
               <a>
                 <Image
-                  src={require(`@/img/music/${featured?.id}.png`)}
+                  src={`/img/music/${featured?.id}.png`}
                   alt={`Cover art for ${featured?.title}`}
+                  width={3000}
+                  height={3000}
                 />
               </a>
             </Link>
@@ -98,8 +100,10 @@ export default function Music() {
                     <Link href={`/music/${release.id}`} passHref={true}>
                       <a>
                         <Image
-                          src={require(`@/img/music/${release.id}.png`)}
+                          src={`/img/music/${release.id}.png`}
                           alt={`Cover art for ${release.title}`}
+                          width={3000}
+                          height={3000}
                         />
                       </a>
                     </Link>

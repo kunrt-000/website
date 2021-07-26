@@ -15,8 +15,10 @@ const LatestMusicRelease = () => {
         <a className={styles.release}>
           <div className={styles.cover}>
             <Image
-              src={require(`@/img/music/${release.id}.png`)}
+              src={`/img/music/${release.id}.png`}
               alt={`Cover art for ${release.title}`}
+              width={3000}
+              height={3000}
             />
           </div>
           <div className={styles.meta}>
