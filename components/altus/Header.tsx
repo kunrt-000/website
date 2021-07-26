@@ -1,4 +1,5 @@
 import styles from "@/styles/altus/Header.module.scss";
+import cta from "@/styles/HeaderCTA.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import icon from "../../public/icons/altus/altus.svg";
@@ -27,7 +28,7 @@ const Header = () => (
           <a className={styles.item} href="#support">
             Support
           </a>
-          <a className={styles.cta} href="#downloads">
+          <a className={cta.cta} href="#downloads">
             Download
           </a>
         </div>

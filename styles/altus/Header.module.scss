@@ -49,21 +49,6 @@
   }
 }
 
-.cta {
-  background-color: hsl(219, 37%, 26%);
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.935rem;
-  line-height: 1rem;
-  padding: 0.5rem 0.85rem;
-  border-radius: 3px;
-  transition: 0.1s background-color;
-
-  &:hover {
-    background-color: hsl(219, 37%, 20%);
-  }
-}
-
 @media screen and (min-width: 48rem) {
   .container {
     justify-content: space-between;

@@ -1,7 +1,10 @@
 .header {
+  position: sticky;
+  top: 0;
   background: #050810;
   border-bottom: 1px solid hsl(224, 53%, 10%);
   color: #fff;
+  z-index: 50;
 }
 
 .container {
