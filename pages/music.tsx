@@ -62,6 +62,8 @@ export default function Music() {
                   webp
                   src={require(`../public/img/music/${featured?.id}.png`)}
                   alt={`Cover art for ${featured?.title}`}
+                  sizes={[500, 1000, 2000, 3000]}
+                  breakpoints={[768, 1366, 2560]}
                 />
               </a>
             </Link>
@@ -102,6 +104,8 @@ export default function Music() {
                           webp
                           src={require(`../public/img/music/${release.id}.png`)}
                           alt={`Cover art for ${release.title}`}
+                          sizes={[500, 1000, 2000, 3000]}
+                          breakpoints={[768, 1366, 2560]}
                         />
                       </a>
                     </Link>
