@@ -5,9 +5,10 @@ type ButtonProps = {
   children: any;
   href: string;
   external?: boolean;
+  outlined?: boolean;
 };
 
-const Button = ({ children, href, external }: ButtonProps) => {
+const Button = ({ children, href, external, outlined }: ButtonProps) => {
   if (external) {
     return (
       <a
@@ -15,6 +16,7 @@ const Button = ({ children, href, external }: ButtonProps) => {
         href={href}
         target="_blank"
         rel="noreferrer noopener"
+        data-outlined={outlined}
       >
         {children}
       </a>
@@ -22,7 +24,9 @@ const Button = ({ children, href, external }: ButtonProps) => {
   } else {
     return (
       <Link href={href}>
-        <a className={styles.button}>{children}</a>
+        <a className={styles.button} data-outlined={outlined}>
+          {children}
+        </a>
       </Link>
     );
   }
