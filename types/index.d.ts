@@ -21,7 +21,11 @@ type MusicRelease = {
   date: string;
   title: string;
   genre: string | [string, string];
-  tracklist: string[];
+  tracklist: {
+    name: string;
+    link: string;
+    length: string;
+  }[];
   links: {
     bandcamp: string;
     apple: string;
