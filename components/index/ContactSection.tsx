@@ -5,6 +5,21 @@ import Button from "../Button";
 const ContactSection = () => (
   <section className={styles.contactSection} id="contact">
     <h1 className={common.heading}>Get In Touch</h1>
+    <p>
+      If you would like to collaborate with me or hire me for a project, you can
+      get in touch with me using any of the following:
+    </p>
+    <div className={styles.links}>
+      <Button href="mail:amanharwara@protonmail.com" external={true}>
+        E-mail (amanharwara@protonmail.com)
+      </Button>
+      <Button href="https://mastodon.social/@amanharwara" external={true}>
+        Mastodon (@amanharwara)
+      </Button>
+      <Button href="https://instagram.com/aman.harwara" external={true}>
+        Instagram (@aman.harwara)
+      </Button>
+    </div>
   </section>
 );
 

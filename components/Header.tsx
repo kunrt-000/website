@@ -34,7 +34,7 @@ const Header = () => {
               </a>
             </Link>
             <Link href="/#contact" passHref={true}>
-              <a className={cta.cta}>Get In Touch</a>
+              <a className={cta.cta}>Contact Me</a>
             </Link>
           </nav>
           <div className={styles.menuButton}>
