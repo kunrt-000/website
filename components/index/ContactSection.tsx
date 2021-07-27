@@ -13,10 +13,18 @@ const ContactSection = () => (
       <Button href="mail:amanharwara@protonmail.com" external={true}>
         E-mail (amanharwara@protonmail.com)
       </Button>
-      <Button href="https://mastodon.social/@amanharwara" external={true}>
+      <Button
+        href="https://mastodon.social/@amanharwara"
+        external={true}
+        outlined
+      >
         Mastodon (@amanharwara)
       </Button>
-      <Button href="https://instagram.com/aman.harwara" external={true}>
+      <Button
+        href="https://instagram.com/aman.harwara"
+        external={true}
+        outlined
+      >
         Instagram (@aman.harwara)
       </Button>
     </div>

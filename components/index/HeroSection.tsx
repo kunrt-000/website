@@ -17,9 +17,9 @@ const HeroSection = () => (
         <Button href="/#work" external={false}>
           View My Work
         </Button>
-        <a href="#contact" className={styles.secondaryCTA}>
+        <Button href="/#contact" external={false} outlined>
           Contact Me
-        </a>
+        </Button>
       </div>
     </div>
     <div className={styles.right}>
