@@ -13,5 +13,6 @@ module.exports = withPlugins([
     images: {
       disableStaticImages: true,
     },
+    target: "experimental-serverless-trace",
   },
 ]);
