@@ -1,6 +1,6 @@
 import styles from "@/styles/index/RecentPostCard.module.scss";
 import Link from "next/link";
-import Image from "next/image";
+import Img from "react-optimized-image";
 import tagIcons from "@/data/blog";
 
 type RecentPostProps = {
@@ -24,7 +24,8 @@ const RecentPostCard = ({
         <div className={styles.image}>
           {image ? (
             <div className={styles.img}>
-              <Image
+              <Img
+                webp
                 src={require(`../../public/img/blog/${image}`)}
                 alt={`Thumbnail for the post: ${title}`}
               />

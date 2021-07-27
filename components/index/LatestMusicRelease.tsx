@@ -18,8 +18,8 @@ const LatestMusicRelease = () => {
               webp
               src={require(`../../public/img/music/${release.id}.png`)}
               alt={`Cover art for ${release.title}`}
-              sizes={[500, 1000, 2000, 3000]}
-              breakpoints={[768, 1366, 2560]}
+              sizes={[500, 1000, 2000]}
+              breakpoints={[768, 1366]}
             />
           </div>
           <div className={styles.meta}>

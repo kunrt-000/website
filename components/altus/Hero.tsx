@@ -1,6 +1,6 @@
 import styles from "@/styles/altus/Hero.module.scss";
 import Button from "../Button";
-import Image from "next/image";
+import Img from "react-optimized-image";
 import defaultPic from "@/img/altus/default.png";
 import darkPic from "@/img/altus/dark.png";
 
@@ -22,13 +22,18 @@ const Hero = () => (
     <div className={styles.right}>
       <div className={styles.heroImages}>
         <div className={styles.heroImageDefault}>
-          <Image
+          <Img
+            webp
             src={defaultPic}
             alt="Screenshot of Altus with the default theme"
           />
         </div>
         <div className={styles.heroImageDark}>
-          <Image src={darkPic} alt="Screenshot of Altus with the dark theme" />
+          <Img
+            webp
+            src={darkPic}
+            alt="Screenshot of Altus with the dark theme"
+          />
         </div>
       </div>
     </div>

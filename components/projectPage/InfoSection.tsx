@@ -1,12 +1,12 @@
 import styles from "@/styles/project/InfoSection.module.scss";
 import Button from "../Button";
-import Image from "next/image";
+import Img from "react-optimized-image";
 
 const InfoSection = ({ project }: { project: WorkProject }) => (
   <section className={styles.infoSection}>
     <div className={styles.image}>
       <div className={styles.icon}>
-        <Image
+        <Img
           src={require(`../../public/icons/${project.id}/${project.id}.svg`)}
           alt={`Icon for ${project.title}`}
         />

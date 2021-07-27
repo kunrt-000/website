@@ -3,7 +3,7 @@ import styles from "@/styles/index/WorkSection.module.scss";
 import work from "@/data/work";
 import Button from "../Button";
 import ArrowRight from "../icons/ArrowRight";
-import Image from "next/image";
+import Img from "react-optimized-image";
 import Link from "next/link";
 
 const WorkSection = () => (
@@ -19,7 +19,7 @@ const WorkSection = () => (
           <Link href={`/work/${project.id}`} passHref={true}>
             <a>
               <div className={styles.image}>
-                <Image
+                <Img
                   src={require(`../../public/icons/${project.id}/${project.id}.svg`)}
                   alt={`Project icon for ${project.title}`}
                 />

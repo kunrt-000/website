@@ -46,6 +46,10 @@
   .heroImages {
     position: relative;
     padding-bottom: 6.5rem;
+
+    img {
+      width: 100%;
+    }
   }
   .heroImageDark {
     position: absolute;
