@@ -111,7 +111,7 @@ export default function Music() {
                     </Link>
                   </div>
                 ) : (
-                  <div className={styles.release} key={i}></div>
+                  <div className={styles.release} data-empty key={i}></div>
                 )
               )}
             </div>
