@@ -8,18 +8,18 @@ const HeroSection = () => (
     <div className={styles.left}>
       <div className={styles.preHeading}>Hi! I&apos;m Aman Harwara,</div>
       <h1 className={heading.mwHeading}>
-        A multi-faceted programmer &amp; artist
+        A multi-faceted programmer &amp; musician
       </h1>
       <p className={styles.subHeading}>
         I create beautiful &amp; perfomant websites, make ambient music and
         write articles &amp; essays about a variety of topics.
       </p>
       <div className={styles.callToAction}>
-        <Button href="/#work" external={false}>
+        {/* <Button href="/#work" external={false}>
           View My Work
-        </Button>
-        <Button href="/#contact" external={false} outlined>
-          Contact Me
+        </Button> */}
+        <Button href="/#contact" external={false}>
+          Get In Touch
         </Button>
       </div>
     </div>
@@ -27,8 +27,8 @@ const HeroSection = () => (
       <div className={styles.rect}>
         <div className={styles.center}>
           <Img
-            src={require(`../../public/icons/altus/altus.svg`)}
-            alt="Altus logo"
+            src={require(`../../public/icons/chartr/chartr.svg`)}
+            alt="Chartr logo"
           />
         </div>
       </div>
@@ -44,7 +44,7 @@ const HeroSection = () => (
       <div className={styles.rect}>
         <div className={styles.center}>
           <Img
-            src={require(`../../public/icons/chartr/chartr.svg`)}
+            src={require(`../../public/icons/altus/altus.svg`)}
             alt="Altus logo"
           />
         </div>

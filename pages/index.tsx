@@ -18,7 +18,7 @@ export default function Home({ posts }: { posts: BlogPost[] }) {
         <meta name="title" content="Aman Harwara" />
         <meta
           name="description"
-          content="Aman Harwara is a multi-faceted programmer, web designer, artist and writer."
+          content="Aman Harwara is a multi-faceted programmer, web designer, musician and writer."
         />
 
         <meta property="og:type" content="website" />
@@ -26,7 +26,7 @@ export default function Home({ posts }: { posts: BlogPost[] }) {
         <meta property="og:title" content="Aman Harwara" />
         <meta
           property="og:description"
-          content="Aman Harwara is a multi-faceted programmer, web designer, artist and writer."
+          content="Aman Harwara is a multi-faceted programmer, web designer, musician and writer."
         />
         <meta property="og:image" content="" />
 
@@ -35,15 +35,15 @@ export default function Home({ posts }: { posts: BlogPost[] }) {
         <meta property="twitter:title" content="Aman Harwara" />
         <meta
           property="twitter:description"
-          content="Aman Harwara is a multi-faceted programmer, web designer, artist and writer."
+          content="Aman Harwara is a multi-faceted programmer, web designer, musician and writer."
         />
         <meta property="twitter:image" content="" />
       </Head>
       <Header />
       <HeroSection />
+      <WorkSection />
       {posts.length > 0 ? <RecentWritings posts={posts} /> : <></>}
       <LatestMusicRelease />
-      <WorkSection />
       <ContactSection />
       <Footer />
     </div>
