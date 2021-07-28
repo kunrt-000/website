@@ -10,8 +10,8 @@ const ContactSection = () => (
       get in touch with me using any of the following:
     </p>
     <div className={styles.links}>
-      <Button href="mail:amanharwara@protonmail.com" external={true}>
-        E-mail (amanharwara@protonmail.com)
+      <Button href="mail:amanharwara@pm.me" external={true}>
+        E-mail (amanharwara@pm.me)
       </Button>
       <Button
         href="https://mastodon.social/@amanharwara"

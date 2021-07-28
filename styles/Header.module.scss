@@ -24,8 +24,15 @@
   color: #fff;
 }
 
-.right nav {
-  display: none;
+.right {
+  nav {
+    display: none;
+  }
+}
+
+.menuButtonCheck {
+  visibility: hidden;
+  position: absolute;
 }
 
 .menuButton {
@@ -34,6 +41,34 @@
   svg {
     width: 1.75rem;
     height: 1.75rem;
+  }
+}
+
+.menuButtonCheck:checked ~ nav {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  top: calc(100% + 1px);
+  left: 0;
+  width: 100%;
+  background: hsl(224, 52%, 5%);
+
+  .item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 1rem 0;
+
+    &:hover {
+      background: #080e1b;
+    }
+  }
+
+  :last-child {
+    margin: 0.5rem 0 1rem;
   }
 }
 
