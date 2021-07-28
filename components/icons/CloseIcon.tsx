@@ -11,9 +11,11 @@ const CloseIcon = () => (
       transform: "rotate(360deg)",
     }}
     preserveAspectRatio="xMidYMid meet"
-    viewBox="0 0 32 32"
+    viewBox="0 0 24 24"
   >
-    <path d="M24 9.4L22.6 8L16 14.6L9.4 8L8 9.4l6.6 6.6L8 22.6L9.4 24l6.6-6.6l6.6 6.6l1.4-1.4l-6.6-6.6L24 9.4z" />
+    <g>
+      <path d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5z" />
+    </g>
   </svg>
 );
 
