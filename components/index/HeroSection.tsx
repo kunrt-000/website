@@ -14,14 +14,6 @@ const HeroSection = () => (
         I create beautiful &amp; perfomant websites, make ambient music and
         write articles &amp; essays about a variety of topics.
       </p>
-      <div className={styles.callToAction}>
-        {/* <Button href="/#work" external={false}>
-          View My Work
-        </Button> */}
-        <Button href="/#contact" external={false}>
-          Get In Touch
-        </Button>
-      </div>
     </div>
     <div className={styles.right}>
       <div className={styles.rect}>
