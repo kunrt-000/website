@@ -7,7 +7,7 @@ import LatestMusicRelease from "@/components/index/LatestMusicRelease";
 import WorkSection from "@/components/index/WorkSection";
 import ContactSection from "@/components/index/ContactSection";
 import Footer from "@/components/Footer";
-import { GetStaticProps, GetStaticPropsContext } from "next";
+import { GetStaticProps } from "next";
 import paginatedResults from "util/paginatedResults";
 
 export default function Home({ posts }: { posts: BlogPost[] }) {
