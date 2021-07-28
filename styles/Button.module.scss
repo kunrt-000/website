@@ -1,0 +1,26 @@
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(219, 37%, 26%);
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  transition: 0.1s background-color;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 0.75rem 1.35rem;
+
+  &[data-outlined] {
+    background: transparent;
+    border: 1px solid hsl(219, 37%, 26%);
+
+    &:hover {
+      background-color: hsl(219, 37%, 26%);
+    }
+  }
+
+  &:hover {
+    background-color: hsl(219, 37%, 20%);
+  }
+}

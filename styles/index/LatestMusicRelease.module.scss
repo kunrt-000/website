@@ -1,0 +1,97 @@
+.latestMusic {
+  color: #fff;
+  margin: auto;
+  padding: 1rem 1.5rem 2.5rem;
+}
+
+.release {
+  display: inline-flex;
+  flex-flow: column;
+  cursor: pointer;
+
+  &:hover {
+    .title {
+      text-decoration: underline;
+    }
+    .cover::after {
+      background: hsla(221, 54%, 7%, 0.5);
+    }
+  }
+}
+
+.cover {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+}
+
+.cover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: 0.1s background;
+}
+
+.meta {
+  margin: 1rem 0;
+}
+
+.title {
+  font-size: 1.95rem;
+  font-weight: bold;
+  line-height: 130%;
+  letter-spacing: -0.022em;
+  margin: 0.5rem 0;
+}
+
+.date,
+.genre {
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  color: #dfdfdf;
+}
+
+@media screen and (min-width: 48rem) {
+  .latestMusic {
+    width: 100%;
+    max-width: 48rem;
+  }
+  .release {
+    flex-flow: row;
+    align-items: center;
+    margin: 1rem 0 2rem;
+  }
+  .cover {
+    width: 15rem;
+    height: 15rem;
+    margin-right: 2rem;
+  }
+  .title {
+    font-size: 2.45rem;
+    margin: 0.75rem 0;
+  }
+  .date,
+  .genre {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .latestMusic {
+    max-width: 64rem;
+    padding: 1.5rem 4rem 2.5rem;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .latestMusic {
+    max-width: 80rem;
+    padding: 1.5rem 5rem 3.5rem;
+  }
+}

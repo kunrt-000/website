@@ -1,0 +1,158 @@
+.page {
+  background: #050810;
+}
+
+.heading {
+  font-weight: 500;
+  letter-spacing: -0.022em;
+  margin: 0 0 1rem;
+  font-size: 1.65rem;
+}
+
+.section {
+  color: #fff;
+  position: relative;
+  margin: auto;
+  padding: 2rem 1.5rem 2.5rem;
+}
+
+.featured {
+  display: flex;
+  flex-flow: column;
+}
+
+.cover {
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+
+  img {
+    width: 100%;
+  }
+}
+
+.title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  margin: 0.85rem 0 0.5rem;
+  letter-spacing: -0.022em;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.meta {
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  color: #dfdfdf;
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: #dfdfdf;
+  margin-bottom: 1rem;
+}
+
+.releases {
+  display: flex;
+  flex-flow: column;
+}
+
+.release {
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  aspect-ratio: 1 / 1;
+  position: relative;
+
+  &[data-empty] {
+    display: none;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: 0.1s background;
+  }
+
+  &:hover {
+    a::after {
+      background: hsla(221, 54%, 7%, 0.5);
+    }
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .section {
+    width: 100%;
+    max-width: 48rem;
+  }
+  .heading {
+    font-size: 1.75rem;
+  }
+  .featured {
+    flex-flow: row;
+    align-items: center;
+  }
+  .cover {
+    max-width: 20rem;
+    margin-right: 2rem;
+  }
+  .title {
+    margin-top: 0;
+    font-size: 2.75rem;
+  }
+  .meta {
+    font-size: 1.1rem;
+  }
+  .description {
+    max-width: 75%;
+    margin: 1.25rem 0;
+  }
+  .row {
+    display: flex;
+    flex-flow: row;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+  .release {
+    margin-bottom: 0;
+    width: 100%;
+
+    &[data-empty] {
+      display: block;
+    }
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .section {
+    max-width: 64rem;
+    padding: 1.5rem 4rem 2.5rem;
+  }
+  .heading {
+    font-size: 2.25rem;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .section {
+    max-width: 80rem;
+    padding: 2.5rem 5rem 3.5rem;
+  }
+}

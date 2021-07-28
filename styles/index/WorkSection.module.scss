@@ -1,0 +1,138 @@
+.workSection {
+  color: #fff;
+  margin: auto;
+  padding: 1rem 1.5rem 2.5rem;
+}
+
+.projectList {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.project {
+  display: flex;
+  flex-flow: column;
+  background: #080e1b;
+  border: 1px solid #0c1327;
+  border-radius: 5px;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #050810;
+  padding: 2rem 0;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: 0.1s background;
+  }
+
+  &:hover {
+    &::after {
+      background: hsla(221, 54%, 7%, 0.25);
+    }
+  }
+
+  img {
+    width: 7rem;
+    height: 7rem;
+  }
+}
+
+.meta {
+  padding: 1rem;
+}
+
+.title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.022em;
+  margin-bottom: 0.25rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.techStack {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  color: #dfdfdf;
+}
+
+.summary {
+  margin: 1rem 0;
+  color: #dfdfdf;
+}
+
+.icon {
+  display: flex;
+  stroke: #fff;
+  margin-left: 0.75rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .workSection {
+    width: 100%;
+    max-width: 48rem;
+  }
+  .project {
+    flex-flow: row;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+  .image {
+    width: 20rem;
+    height: 100%;
+
+    img {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+  .meta {
+    padding: 2rem;
+  }
+  .title {
+    font-size: 2.45rem;
+  }
+  .summary {
+    margin: 2rem 0;
+    line-height: 140%;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .workSection {
+    max-width: 64rem;
+    padding: 1.5rem 4rem 2.5rem;
+  }
+  .summary {
+    font-size: 1.05rem;
+    max-width: 85%;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .workSection {
+    max-width: 80rem;
+    padding: 1.5rem 5rem 3.5rem;
+  }
+}
