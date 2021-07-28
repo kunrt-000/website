@@ -1,0 +1,25 @@
+.mwHeading {
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: -0.022em;
+  margin: 1rem 0;
+}
+
+@media screen and (min-width: 48rem) {
+  .mwHeading {
+    font-size: 2.35rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .mwHeading {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .mwHeading {
+    font-size: 3.5rem;
+  }
+}

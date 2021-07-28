@@ -1,4 +1,5 @@
 import styles from "@/styles/index/HeroSection.module.scss";
+import heading from "@/styles/typography/mwHeading.module.scss";
 import Button from "../Button";
 import Img from "react-optimized-image";
 
@@ -6,7 +7,7 @@ const HeroSection = () => (
   <section className={styles.heroSection}>
     <div className={styles.left}>
       <div className={styles.preHeading}>Hi! I&apos;m Aman Harwara,</div>
-      <h1 className={styles.heading}>
+      <h1 className={heading.mwHeading}>
         A multi-faceted programmer &amp; artist
       </h1>
       <p className={styles.subHeading}>
