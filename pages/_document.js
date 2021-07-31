@@ -4,7 +4,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head></Head>
+        <Head>
+          <meta property="og:image" content="/img/og_image.png" />
+        </Head>
         <body>
           <Main />
           <NextScript />
