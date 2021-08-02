@@ -1,5 +1,4 @@
 import styles from "@/styles/Header.module.scss";
-import cta from "@/styles/HeaderCTA.module.scss";
 import Link from "next/link";
 import MenuIcon from "./icons/MenuIcon";
 import { useRouter } from "next/router";
@@ -48,7 +47,7 @@ const Header = () => {
               </a>
             </Link>
             <Link href="/#contact" passHref={true}>
-              <a className={cta.cta}>Contact Me</a>
+              <a className={styles.cta}>Contact Me</a>
             </Link>
           </nav>
         </div>

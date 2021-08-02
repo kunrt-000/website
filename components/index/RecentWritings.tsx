@@ -1,11 +1,10 @@
-import common from "@/styles/Index.module.scss";
 import styles from "@/styles/index/RecentWritings.module.scss";
 import Button from "../Button";
 import RecentPostCard from "./RecentPostCard";
 
 const RecentWritings = ({ posts }: { posts: BlogPost[] }) => (
   <section className={styles.recentWritings}>
-    <h1 className={common.heading}>Recent Writings</h1>
+    <h1>Recent Writings</h1>
     <div className={styles.posts}>
       {posts.map((post) => (
         <RecentPostCard

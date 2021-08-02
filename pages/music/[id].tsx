@@ -1,7 +1,5 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import Head from "next/head";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import styles from "@/styles/release/ReleasePage.module.scss";
 import music from "@/data/music";
 import Img from "react-optimized-image";
@@ -36,7 +34,6 @@ const ReleasePage = ({ release }: { release: MusicRelease }) => (
       <meta property="twitter:description" content={`${release.description}`} />
       <meta property="twitter:image" content="" />
     </Head>
-    <Header />
     <section className={styles.section} data-split>
       <div className={styles.image}>
         <Img
@@ -95,7 +92,6 @@ const ReleasePage = ({ release }: { release: MusicRelease }) => (
         ))}
       </div>
     </section>
-    <Footer />
   </div>
 );
 

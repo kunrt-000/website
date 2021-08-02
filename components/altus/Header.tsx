@@ -28,7 +28,7 @@ const Header = () => (
           <a className={styles.item} href="#support">
             Support
           </a>
-          <a className={cta.cta} href="#downloads">
+          <a className={styles.cta} href="#downloads">
             Download
           </a>
         </div>

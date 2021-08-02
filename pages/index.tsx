@@ -1,18 +1,15 @@
 import Head from "next/head";
-import styles from "@/styles/Index.module.scss";
-import Header from "@/components/Header";
 import HeroSection from "@/components/index/HeroSection";
 import RecentWritings from "@/components/index/RecentWritings";
 import LatestMusicRelease from "@/components/index/LatestMusicRelease";
 import WorkSection from "@/components/index/WorkSection";
 import ContactSection from "@/components/index/ContactSection";
-import Footer from "@/components/Footer";
 import { GetStaticProps } from "next";
 import paginatedResults from "util/paginatedResults";
 
 export default function Home({ posts }: { posts: BlogPost[] }) {
   return (
-    <div id="index-page" className={styles.page}>
+    <div id="index-page">
       <Head>
         <title>Aman Harwara</title>
         <meta name="title" content="Aman Harwara" />
@@ -39,13 +36,11 @@ export default function Home({ posts }: { posts: BlogPost[] }) {
         />
         <meta property="twitter:image" content="" />
       </Head>
-      <Header />
       <HeroSection />
       <WorkSection />
       {posts.length > 0 ? <RecentWritings posts={posts} /> : <></>}
       <LatestMusicRelease />
       <ContactSection />
-      <Footer />
     </div>
   );
 }

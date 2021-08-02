@@ -1,11 +1,14 @@
 import Head from "next/head";
 import Img from "react-optimized-image";
-import styles from "@/styles/Music.module.scss";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import music from "@/data/music";
 import Button from "@/components/Button";
 import Link from "next/link";
+import styles from "@/styles/Music.module.scss";
+import section from "@/styles/components/Section.module.scss";
+import flex from "@/styles/util/Flex.module.scss";
+import padding from "@/styles/util/Padding.module.scss";
+import margin from "@/styles/util/Margin.module.scss";
+import heading from "@/styles/typography/Heading.module.scss";
 
 const createRows = (array: Array<any>, itemsPerRow: number) => {
   let groupedArray = [];
@@ -24,7 +27,7 @@ export default function Music() {
   let grouped = createRows(music, 4);
 
   return (
-    <div id="index-page" className={styles.page}>
+    <div id="music-page">
       <Head>
         <title>Music - Aman Harwara</title>
         <meta name="title" content="Aman Harwara" />
@@ -51,10 +54,13 @@ export default function Music() {
         />
         <meta property="twitter:image" content="" />
       </Head>
-      <Header />
-      <section className={styles.section}>
-        <h1 className={styles.heading}>Featured</h1>
-        <div className={styles.featured}>
+      <section className={`${section.section} ${padding.px} ${padding.py}`}>
+        <h1 className={`${heading.mw} ${heading.mw_m} ${margin.my_100}`}>
+          Featured
+        </h1>
+        <div
+          className={`${styles.featured} ${flex.flex} ${flex.column_s} ${flex.row_m}`}
+        >
           <div className={styles.cover}>
             <Link href={`/music/${featured?.id}`} passHref={true}>
               <a>
@@ -90,11 +96,14 @@ export default function Music() {
           </div>
         </div>
       </section>
-      <section className={styles.section}>
-        <h1 className={styles.heading}>All Releases</h1>
-        <div className={styles.releases}>
+      <section className={`${section.section} ${padding.fullwidth}`}>
+        <h1 className={`${heading.mw} ${heading.mw_m}`}>All Releases</h1>
+        <div className={`${flex.flex} ${flex.column_s}`}>
           {grouped.map((group, i) => (
-            <div className={styles.row} key={i}>
+            <div
+              className={`${styles.row} ${flex.flex} ${flex.column_s} ${flex.row_m}`}
+              key={i}
+            >
               {group.map((release, i) =>
                 release ? (
                   <div className={styles.release} key={release.id}>
@@ -118,7 +127,6 @@ export default function Music() {
           ))}
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

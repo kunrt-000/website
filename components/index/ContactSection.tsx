@@ -1,15 +1,17 @@
-import common from "@/styles/Index.module.scss";
 import styles from "@/styles/index/ContactSection.module.scss";
 import Button from "../Button";
+import section from "@/styles/components/Section.module.scss";
+import padding from "@/styles/util/Padding.module.scss";
+import margin from "@/styles/util/Margin.module.scss";
 
 const ContactSection = () => (
-  <section className={styles.contactSection} id="contact">
-    <h1 className={common.heading}>Get In Touch</h1>
+  <section className={`${section.section} ${padding.fullwidth}`} id="contact">
+    <h1>Get In Touch</h1>
     <p>
       If you would like to collaborate with me or hire me for a project, you can
       get in touch with me using any of the following:
     </p>
-    <div className={styles.links}>
+    <div className={`${styles.links} ${margin.my_100}`}>
       <Button href="mail:amanharwara@pm.me" external={true}>
         E-mail (amanharwara@pm.me)
       </Button>

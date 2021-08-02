@@ -2,8 +2,6 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import work from "@/data/work";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import styles from "@/styles/project/ProjectPage.module.scss";
 import InfoSection from "@/components/projectPage/InfoSection";
 
@@ -40,10 +38,8 @@ const ProjectPage = ({ project }: { project: WorkProject }) => {
         <meta property="twitter:description" content={`${project.summary}`} />
         <meta property="twitter:image" content="" />
       </Head>
-      <Header />
       <InfoSection project={project} />
       <DynamicContent />
-      <Footer />
     </div>
   );
 };

@@ -1,0 +1,22 @@
+.section {
+  width: 100%;
+  margin: auto;
+}
+
+@media screen and (min-width: 48rem) {
+  .section {
+    max-width: 48rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .section {
+    max-width: 64rem;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .section {
+    max-width: 80rem;
+  }
+}

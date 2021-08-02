@@ -1,11 +1,9 @@
 import styles from "@/styles/altus/Altus.module.scss";
 import Head from "next/head";
-import Header from "@/components/altus/Header";
 import Hero from "@/components/altus/Hero";
 import Features from "@/components/altus/Features";
 import Support from "@/components/altus/Support";
 import Downloads from "@/components/altus/Downloads";
-import Footer from "@/components/altus/Footer";
 import { GetServerSideProps } from "next";
 
 type DownloadsProps = {
@@ -56,12 +54,10 @@ const Altus = ({ downloadProps }: { downloadProps: DownloadsProps }) => (
 
       <link rel="shortcut icon" href="/icons/altus/favicon.ico" />
     </Head>
-    <Header />
     <Hero />
     <Features />
     <Support />
     <Downloads version={downloadProps.version} links={downloadProps.links} />
-    <Footer />
   </div>
 );
 
