@@ -33,7 +33,7 @@ const Altus = () => (
     <div className={styles.margin}>
       <Img
         webp
-        src={require(`../public/img/altus/dark.png`)}
+        src={require(`../public/img/altus/thumb.png`)}
         alt="Altus with dark theme"
       />
     </div>

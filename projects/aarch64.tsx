@@ -26,7 +26,7 @@ const AArch64 = () => (
       <div className={styles.right}>
         <Img
           webp
-          src={require(`../public/img/aarch64/blog_home.png`)}
+          src={require(`../public/img/aarch64/thumb.png`)}
           alt="AArch64 Blog homepage"
         />
       </div>

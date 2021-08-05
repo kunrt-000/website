@@ -32,7 +32,7 @@ const Chartr = () => (
     <div className={styles.margin}>
       <Img
         webp
-        src={require(`../public/img/chartr/collage.png`)}
+        src={require(`../public/img/chartr/thumb.png`)}
         alt="Album collage on Chartr"
       />
     </div>

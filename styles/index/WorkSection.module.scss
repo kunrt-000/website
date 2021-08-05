@@ -1,17 +1,29 @@
 .project {
-  background: #0d1426;
-  border: 1px solid #0c1327;
-  border-radius: 5px;
+  width: 100%;
+  border: 2px solid #0c1327;
+
+  &:hover {
+    background: #0d1426;
+
+    .image::after {
+      background: hsla(221, 54%, 7%, 0.25);
+    }
+  }
 
   &:not(:last-child) {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 }
 
 .image {
-  background: #090e1b;
-  padding: 2rem 0;
+  display: block;
+  width: 100%;
   position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
 
   &::after {
     content: "";
@@ -22,17 +34,6 @@
     height: 100%;
     background: transparent;
     transition: 0.1s background;
-  }
-
-  &:hover {
-    &::after {
-      background: hsla(221, 54%, 7%, 0.25);
-    }
-  }
-
-  img {
-    width: 7rem;
-    height: 7rem;
   }
 }
 
@@ -46,10 +47,6 @@
   line-height: 130%;
   letter-spacing: -0.022em;
   margin-bottom: 0.25rem;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 .techStack {
@@ -64,23 +61,27 @@
   color: #dfdfdf;
 }
 
-.icon {
-  display: flex;
-  stroke: #fff;
-  margin-left: 0.75rem;
+.label {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.15rem;
+
+  svg {
+    stroke: #fff;
+    margin-left: 0.5rem;
+  }
 }
 
 @media screen and (min-width: 48rem) {
-  .project:not(:last-child) {
-    margin-bottom: 2rem;
-  }
   .image {
-    width: 20rem;
+    min-width: 50%;
     height: 100%;
 
     img {
-      width: 10rem;
-      height: 10rem;
+      position: absolute;
+      width: auto;
+      height: 100%;
     }
   }
   .meta {
