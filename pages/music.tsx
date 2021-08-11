@@ -4,9 +4,7 @@ import music from "@/data/music";
 import Button from "@/components/Button";
 import Link from "next/link";
 import styles from "@/styles/Music.module.scss";
-import section from "@/styles/components/Section.module.scss";
 import flex from "@/styles/util/Flex.module.scss";
-import padding from "@/styles/util/Padding.module.scss";
 import margin from "@/styles/util/Margin.module.scss";
 import heading from "@/styles/typography/Heading.module.scss";
 

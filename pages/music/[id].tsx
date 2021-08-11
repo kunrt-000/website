@@ -1,13 +1,12 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import Head from "next/head";
-import styles from "@/styles/release/ReleasePage.module.scss";
 import music from "@/data/music";
 import Img from "react-optimized-image";
 import Button from "@/components/Button";
 import PlayIcon from "@/components/icons/PlayIcon";
 
 const ReleasePage = ({ release }: { release: MusicRelease }) => (
-  <div id="release-page" className={styles.page}>
+  <div id="release-page">
     <Head>
       <title>{release.title} | Aman Harwara</title>
       <meta name="title" content={`${release.title} | Aman Harwara`} />
@@ -58,14 +57,28 @@ const ReleasePage = ({ release }: { release: MusicRelease }) => (
             : release.genre}
         </div>
         <p className="mb-5 2xl:w-[75%] leading-normal">{release.description}</p>
-        <div className={styles.links}>
-          <Button href={release.links.bandcamp} external={true}>
+        <div>
+          <Button
+            className="mb-4 md:mr-4"
+            href={release.links.bandcamp}
+            external={true}
+          >
             Buy on Bandcamp
           </Button>
-          <Button href={release.links.spotify} external={true} outlined>
+          <Button
+            className="mb-4 md:mr-4"
+            href={release.links.spotify}
+            external={true}
+            outlined
+          >
             Listen on Spotify
           </Button>
-          <Button href={release.links.apple} external={true} outlined>
+          <Button
+            className="mb-4 md:mr-4"
+            href={release.links.apple}
+            external={true}
+            outlined
+          >
             Listen on Apple Music
           </Button>
         </div>
@@ -73,7 +86,7 @@ const ReleasePage = ({ release }: { release: MusicRelease }) => (
     </section>
     <section className="container mx-auto px-6 md:px-16 py-4 md:py-6">
       <h1>Tracklist</h1>
-      <div className={styles.tracklist}>
+      <div>
         {release.tracklist.map((track, i) => (
           <a
             href={track.link}
@@ -90,8 +103,10 @@ const ReleasePage = ({ release }: { release: MusicRelease }) => (
                 {i}
               </div>
             </div>
-            <div className={styles.name}>{track.name}</div>
-            <div className={styles.trackLength}>{track.length}</div>
+            <div className="font-semibold flex-grow md:pl-4">{track.name}</div>
+            <div className="font-medium text-sm text-gray-300 pr-3">
+              {track.length}
+            </div>
           </a>
         ))}
       </div>
