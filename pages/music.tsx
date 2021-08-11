@@ -54,7 +54,7 @@ export default function Music() {
         />
         <meta property="twitter:image" content="" />
       </Head>
-      <section className={`${section.section} ${padding.px} ${padding.py}`}>
+      <section className="container mx-auto px-6 md:px-16 py-8 md:py-12">
         <h1 className={`${heading.mw} ${heading.mw_m} ${margin.my_100}`}>
           Featured
         </h1>
@@ -96,7 +96,7 @@ export default function Music() {
           </div>
         </div>
       </section>
-      <section className={`${section.section} ${padding.fullwidth}`}>
+      <section className="container mx-auto px-6 md:px-16 py-8 md:py-12">
         <h1 className={`${heading.mw} ${heading.mw_m}`}>All Releases</h1>
         <div className={`${flex.flex} ${flex.column_s}`}>
           {grouped.map((group, i) => (

@@ -1,41 +1,38 @@
-import styles from "@/styles/index/WorkSection.module.scss";
 import work from "@/data/work";
 import ArrowRight from "../icons/ArrowRight";
 import Img from "react-optimized-image";
 import Link from "next/link";
-import section from "@/styles/components/Section.module.scss";
-import padding from "@/styles/util/Padding.module.scss";
-import flex from "@/styles/util/Flex.module.scss";
 
 const WorkSection = () => (
   <section
-    className={`${section.section} ${padding.px} ${padding.py}`}
+    className="container mx-auto px-6 md:px-16 py-8 pt-4 md:py-12"
     id="work"
   >
-    <h1>My Work</h1>
-    <div className={`${flex.flex} ${flex.rwrap_s}`}>
+    <h1 className="font-medium">My Work</h1>
+    <div className="flex flex-wrap">
       {work.map((project, i) => (
         <Link href={`/work/${project.id}`} passHref={true} key={project.id}>
-          <a
-            className={`${styles.project} ${flex.flex} ${flex.column_s} ${flex.row_m}`}
-            data-featured={i === 0}
-          >
-            <div
-              className={`${styles.image} ${flex.flex} ${flex.alignCenter} ${flex.justifyCenter}`}
-            >
+          <a className="flex flex-col md:flex-row items-center w-full 2xl:min-h-[20rem] border-2 border-tertiary mb-5 md:mb-8 transition-colors duration-150 hover:bg-tertiary">
+            <div className="project-thumb">
               <Img
                 webp
                 src={require(`../../public/img/${project.id}/thumb.png`)}
                 alt={`Project icon for ${project.title}`}
               />
             </div>
-            <div className={styles.meta}>
-              <div className={styles.title}>{project.title}</div>
-              <div className={styles.techStack}>{project.techStack}</div>
-              <div className={styles.summary}>{project.summary}</div>
-              <div className={styles.label}>
+            <div className="p-4 md:p-8 md:w-[40%]">
+              <div className="font-bold text-3xl md:text-4xl tracking-snug leading-snug mb-2">
+                {project.title}
+              </div>
+              <div className="font-semibold tracking-snug text-base text-gray-200">
+                {project.techStack}
+              </div>
+              <div className="my-4 md:my-8 text-base text-gray-200 md:leading-snug lg:max-w-85p">
+                {project.summary}
+              </div>
+              <div className="inline-flex items-center font-medium text-lg mb-1 text-white stroke-current">
                 <span>Read More</span>
-                <ArrowRight />
+                <ArrowRight className="ml-2" />
               </div>
             </div>
           </a>

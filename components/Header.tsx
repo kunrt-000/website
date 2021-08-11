@@ -1,57 +1,54 @@
-import styles from "@/styles/Header.module.scss";
 import Link from "next/link";
-import MenuIcon from "./icons/MenuIcon";
 import { useRouter } from "next/router";
-import { useState } from "react";
-import CloseIcon from "./icons/CloseIcon";
 
 const Header = () => {
   const router = useRouter();
-  const [checked, setChecked] = useState(false);
 
   return (
-    <header className={styles.header}>
-      <div className={styles.container}>
-        <div className={styles.left}>
+    <header className="bg-primary border-b border-tertiary sticky top-0 z-50">
+      <nav className="container mx-auto flex items-center justify-between flex-wrap bg-teal px-6 md:px-16 py-3">
+        <div className="flex items-center flex-no-shrink mr-6">
           <Link href="/" passHref={true}>
-            Aman Harwara
+            <a className="font-semibold text-xl tracking-tight">Aman Harwara</a>
           </Link>
         </div>
-        <div className={styles.right}>
-          <label htmlFor="menu-button" className={styles.menuButton}>
-            {!checked ? <MenuIcon /> : <CloseIcon />}
-          </label>
-          <input
-            type="checkbox"
-            className={styles.menuButtonCheck}
-            name="menu-button"
-            id="menu-button"
-            checked={checked}
-            onChange={(e) => setChecked(e.target.checked)}
-          />
-          <nav className={styles.nav} onClick={() => setChecked(false)}>
+        <label
+          htmlFor="menu-check"
+          className="menu-icon lg:hidden relative flex items-center px-3 py-2 border rounded hover:underline hover:border-white"
+        >
+          <svg
+            className="h-3 w-3 fill-current"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </label>
+        <input
+          className="absolute top-0 left-0 invisible"
+          type="checkbox"
+          id="menu-check"
+        />
+        <div className="menu hidden w-full block lg:flex lg:items-center lg:w-auto">
+          <div className="text-sm lg:flex-grow">
             <Link href="/" passHref={true}>
-              <a className={styles.item} data-active={router.pathname === "/"}>
-                Home
-              </a>
+              <a className="menu-item">Home</a>
             </Link>
             <Link href="/#work" passHref={true}>
-              <a className={styles.item}>Work</a>
+              <a className="menu-item">Work</a>
             </Link>
             <Link href="/music" passHref={true}>
-              <a
-                className={styles.item}
-                data-active={router.pathname.includes("/music")}
-              >
-                Music
-              </a>
+              <a className="menu-item">Music</a>
             </Link>
             <Link href="/#contact" passHref={true}>
-              <a className={styles.cta}>Contact Me</a>
+              <a className="inline-block text-sm px-3.5 py-2 leading-snug rounded bg-blue-800 hover:bg-blue-700 text-white mt-4 lg:mt-0">
+                Contact Me
+              </a>
             </Link>
-          </nav>
+          </div>
         </div>
-      </div>
+      </nav>
     </header>
   );
 };

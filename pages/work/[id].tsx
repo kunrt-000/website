@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import work from "@/data/work";
-import styles from "@/styles/project/ProjectPage.module.scss";
 import InfoSection from "@/components/projectPage/InfoSection";
 
 const ProjectPage = ({ project }: { project: WorkProject }) => {
@@ -11,7 +10,7 @@ const ProjectPage = ({ project }: { project: WorkProject }) => {
   );
 
   return (
-    <div id="project-page" className={styles.page}>
+    <div id="project-page">
       <Head>
         <title>{project.title} | Aman Harwara</title>
         <meta name="title" content={`${project.title} | Aman Harwara`} />

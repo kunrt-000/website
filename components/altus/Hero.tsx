@@ -2,7 +2,7 @@ import styles from "@/styles/altus/Hero.module.scss";
 import Button from "../Button";
 import Img from "react-optimized-image";
 import defaultPic from "@/img/altus/default.png";
-import darkPic from "@/img/altus/dark.png";
+import darkPic from "@/img/altus/thumb.png";
 
 const Hero = () => (
   <section className={styles.heroSection}>

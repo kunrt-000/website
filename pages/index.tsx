@@ -38,18 +38,18 @@ export default function Home({ posts }: { posts: BlogPost[] }) {
       </Head>
       <HeroSection />
       <WorkSection />
-      {posts.length > 0 ? <RecentWritings posts={posts} /> : <></>}
+      {/* {posts.length > 0 ? <RecentWritings posts={posts} /> : <></>} */}
       <LatestMusicRelease />
       <ContactSection />
     </div>
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+/* export const getStaticProps: GetStaticProps = async () => {
   let { posts } = paginatedResults(1);
-  //let allPosts = getAllPosts();
-  //const rss = generateRSS(allPosts);
-  //fs.writeFileSync("./public/feed.xml", rss);
+  let allPosts = getAllPosts();
+  const rss = generateRSS(allPosts);
+  fs.writeFileSync("./public/feed.xml", rss);
 
   return {
     props: {
@@ -57,3 +57,4 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
+ */

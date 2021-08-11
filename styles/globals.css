@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "Inter";
   font-style: normal;
@@ -61,4 +65,29 @@ a {
 
 #__next {
   background: #090e1b;
+}
+
+#menu-check:checked ~ .menu {
+  display: block;
+}
+
+.menu-item {
+  @apply text-base block mt-4 lg:inline-block lg:mt-0 hover:underline mr-4 md:mr-6;
+}
+
+.project-thumb {
+  @apply px-4 py-5 md:px-10 md:py-7 border-b-2 md:border-0 md:border-r-2 bg-primary border-tertiary w-full min-w-1/2 md:max-w-[60%] md:h-full flex-grow overflow-hidden relative;
+}
+
+.project-thumb img {
+  transition: transform 0.15s;
+}
+
+:hover > .project-thumb img {
+  transform: scale(1.025);
+}
+
+.project-thumb picture {
+  display: flex;
+  width: 100%;
 }

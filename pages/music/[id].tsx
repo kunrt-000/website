@@ -34,28 +34,30 @@ const ReleasePage = ({ release }: { release: MusicRelease }) => (
       <meta property="twitter:description" content={`${release.description}`} />
       <meta property="twitter:image" content="" />
     </Head>
-    <section className={styles.section} data-split>
-      <div className={styles.image}>
+    <section className="container mx-auto flex flex-col md:flex-row md:items-center px-6 md:px-16 py-8 md:py-12">
+      <div className="w-full min-h-[15rem] relative mb-4 md:mb-0 md:mr-5 md:flex-shrink-0 md:w-[20rem] md:h-[20rem]">
         <Img
           src={require(`../../public/img/music/${release.id}.png`)}
           alt={`Cover art for for ${release.title}`}
         />
       </div>
-      <div className={styles.meta}>
-        <div className={styles.date}>
+      <div className="md:ml-5">
+        <div className="mb-3 text-gray-200 font-medium">
           {new Date(release.date).toLocaleString("en-US", {
             month: "long",
             day: "numeric",
             year: "numeric",
           })}
         </div>
-        <h1 className={styles.title}>{release.title}</h1>
-        <div className={styles.genre}>
+        <h1 className="my-3.5 font-semibold text-[2.5rem] tracking-snug">
+          {release.title}
+        </h1>
+        <div className="mb-4 text-gray-200 font-medium text-lg">
           {typeof release.genre === "object"
             ? `${release.genre[0]}, ${release.genre[1]}`
             : release.genre}
         </div>
-        <p className={styles.description}>{release.description}</p>
+        <p className="mb-5 2xl:w-[75%] leading-normal">{release.description}</p>
         <div className={styles.links}>
           <Button href={release.links.bandcamp} external={true}>
             Buy on Bandcamp
@@ -69,7 +71,7 @@ const ReleasePage = ({ release }: { release: MusicRelease }) => (
         </div>
       </div>
     </section>
-    <section className={styles.section}>
+    <section className="container mx-auto px-6 md:px-16 py-4 md:py-6">
       <h1>Tracklist</h1>
       <div className={styles.tracklist}>
         {release.tracklist.map((track, i) => (
@@ -77,14 +79,16 @@ const ReleasePage = ({ release }: { release: MusicRelease }) => (
             href={track.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.track}
+            className="group flex items-center w-full p-3.5 rounded-md hover:bg-tertiary"
             key={i}
           >
-            <div className={styles.play}>
-              <div className={styles.playIcon}>
-                <PlayIcon />
+            <div className="relative w-[2rem] h-[2rem] transition-opacity">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 text-white fill-current group-hover:opacity-100">
+                <PlayIcon className="w-[1.5rem] h-[1.5rem]" />
               </div>
-              <div className={styles.number}>{i}</div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:opacity-0">
+                {i}
+              </div>
             </div>
             <div className={styles.name}>{track.name}</div>
             <div className={styles.trackLength}>{track.length}</div>
