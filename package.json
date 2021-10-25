@@ -9,22 +9,31 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.2.2",
+    "@tailwindcss/typography": "^0.4.1",
     "gray-matter": "^4.0.3",
-    "next": "11.1.1",
+    "next": "11.1.2",
     "next-compose-plugins": "^2.2.1",
     "next-optimized-images": "^3.0.0-canary.10",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "rehype-react": "^7.0.3",
+    "rehype-slug": "^5.0.0",
+    "remark-gfm": "^3.0.0",
+    "remark-parse": "^10.0.0",
+    "remark-rehype": "^10.0.0",
+    "remark-toc": "^8.0.0",
     "reseter.css": "^2.0.0",
-    "sass": "^1.35.2"
+    "sass": "^1.42.1",
+    "unified": "^10.1.0"
   },
   "devDependencies": {
     "@types/react": "17.0.14",
-    "autoprefixer": "^10.3.1",
-    "eslint": "7.31.0",
-    "eslint-config-next": "11.0.1",
-    "postcss": "^8.3.6",
-    "tailwindcss": "^2.2.7",
-    "typescript": "4.3.5"
+    "autoprefixer": "^10.3.7",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
+    "postcss": "^8.3.9",
+    "tailwindcss": "^2.2.16",
+    "typescript": "4.4.3"
   }
 }
