@@ -19,6 +19,7 @@ const getAllPosts = (): BlogPost[] => {
         date: frontmatter.data.date,
         slug: post.replace(".md", ""),
         image: frontmatter.data.image ? frontmatter.data.image : null,
+        content: frontmatter.content,
       };
     })
     .sort((a, b) => {

@@ -91,3 +91,13 @@ a {
   display: flex;
   width: 100%;
 }
+
+.image-cover picture,
+.image-cover img {
+  @apply w-full h-full object-cover;
+  max-height: inherit;
+}
+
+.scroll-pt-5 {
+  scroll-padding-top: 5rem;
+}

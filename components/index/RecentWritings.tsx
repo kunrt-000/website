@@ -3,7 +3,7 @@ import Button from "../Button";
 import RecentPostCard from "./RecentPostCard";
 
 const RecentWritings = ({ posts }: { posts: BlogPost[] }) => (
-  <section className={styles.recentWritings}>
+  <section className="container mx-auto px-6 md:px-16 py-8 pt-4 md:py-12">
     <h1>Recent Writings</h1>
     <div className={styles.posts}>
       {posts.map((post) => (

@@ -19,28 +19,31 @@ const RecentPostCard = ({
   image,
 }: RecentPostProps) => (
   <Link href={`/blog/${slug}`} passHref={true}>
-    <a className={styles.postLink}>
-      <div className={styles.post}>
-        <div className={styles.image}>
-          {image ? (
-            <div className={styles.img}>
-              <Img
-                webp
-                src={require(`../../public/img/blog/${image}`)}
-                alt={`Thumbnail for the post: ${title}`}
-              />
-            </div>
-          ) : (
-            <div className={styles.icon}>
-              {tagIcons[tag as keyof typeof tagIcons]()}
-            </div>
-          )}
+    <a className="flex flex-col border-2 border-tertiary transition-colors duration-150 hover:bg-tertiary">
+      <div className={styles.image}>
+        {image ? (
+          <div className={styles.img}>
+            <Img
+              webp
+              src={require(`../../public/img/blog/${image}`)}
+              alt={`Thumbnail for the post: ${title}`}
+            />
+          </div>
+        ) : (
+          <div className={styles.icon}>
+            {tagIcons[tag as keyof typeof tagIcons]()}
+          </div>
+        )}
+      </div>
+      <div className="p-7">
+        <div className="text-gray-400 font-semibold uppercase">{tag}</div>
+        <div
+          className="my-2 font-medium text-3xl leading-tight line-clamp-3"
+          title={title}
+        >
+          {title}
         </div>
-        <div className={styles.meta}>
-          <div className={styles.tag}>{tag}</div>
-          <div className={styles.title}>{title}</div>
-          <div className={styles.summary}>{summary}</div>
-        </div>
+        <div className="text-gray-300 leading-snug">{summary}</div>
       </div>
     </a>
   </Link>

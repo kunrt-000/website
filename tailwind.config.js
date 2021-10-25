@@ -11,6 +11,9 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
+      fontSize: {
+        "5.5xl": "3.5rem",
+      },
       colors: {
         primary: "#090e1b",
         secondary: "#0d1426",
@@ -22,10 +25,16 @@ module.exports = {
       maxWidth: {
         "85p": "85%",
       },
+      spacing: {
+        160: "40rem",
+      },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/typography"),
+  ],
 };
