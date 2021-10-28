@@ -4,7 +4,12 @@ import matter from "gray-matter";
 const getAllPosts = (): BlogPost[] => {
   let posts: Array<any> = [];
   try {
-    posts = fs.readdirSync("posts");
+    posts = fs
+      .readdirSync("posts", {
+        withFileTypes: true,
+      })
+      .filter((file) => file.isFile() && /\.mdx?$/.test(file.name))
+      .map((file) => file.name);
   } catch (e) {
     console.error(e);
   }
@@ -18,7 +23,6 @@ const getAllPosts = (): BlogPost[] => {
         summary: frontmatter.data.summary,
         date: frontmatter.data.date,
         slug: post.replace(".md", ""),
-        image: frontmatter.data.image ? frontmatter.data.image : null,
         content: frontmatter.content,
       };
     })
