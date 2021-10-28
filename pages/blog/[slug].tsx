@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import getAllPosts from "util/getAllPosts";
 import fs from "fs";
-import Img from "react-optimized-image";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
@@ -59,12 +58,6 @@ const BlogPost = ({ post }: { post: BlogPost }) => {
         />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.summary} />
-        <meta
-          property="og:image"
-          content={
-            post.image ? `https://amanharwara.com/img/blog/${post.image}` : ""
-          }
-        />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta
@@ -73,12 +66,6 @@ const BlogPost = ({ post }: { post: BlogPost }) => {
         />
         <meta property="twitter:title" content={post.title} />
         <meta property="twitter:description" content={post.summary} />
-        <meta
-          property="twitter:image"
-          content={
-            post.image ? `https://amanharwara.com/img/blog/${post.image}` : ""
-          }
-        />
       </Head>
       <section className="bg-gray-50 text-black">
         <article>
