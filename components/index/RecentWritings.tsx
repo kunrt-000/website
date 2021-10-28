@@ -13,11 +13,6 @@ const RecentWritings = ({ posts }: { posts: BlogPost[] }) => (
           tag={post.tag}
           title={post.title}
           summary={post.summary}
-          {...(post.image
-            ? {
-                image: post.image,
-              }
-            : {})}
         />
       ))}
     </div>
