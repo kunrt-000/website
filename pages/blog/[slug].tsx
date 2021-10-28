@@ -86,24 +86,15 @@ const BlogPost = ({ post }: { post: BlogPost }) => {
             <div className="text-gray-700 text-lg leading-none font-semibold uppercase">
               {post.tag}
             </div>
-            <h1 className="inline-block my-4 text-3.5xl md:text-5.5xl leading-tight md:leading-snug font-bold">
+            <h1 className="block my-4 text-3.5xl md:text-5.5xl leading-tight md:leading-snug font-bold">
               {post.title}
             </h1>
-            <h2 className="inline-block my-2 text-xl font-medium text-gray-800 ">
+            <h2 className="block my-2 text-xl font-medium text-gray-800 ">
               {post.summary}
             </h2>
-          </div>
-          {post.image && (
-            <div className="w-full max-h-160 image-cover">
-              <Img
-                webp
-                src={require(`../../public/img/blog/${post.image}`)}
-                alt={`Thumbnail for the post: ${post.title}`}
-              />
+            <div className="prose mt-10">
+              {markdownProcessor.processSync(post.content).result}
             </div>
-          )}
-          <div className="container mx-auto prose px-6 md:px-0 py-8 md:py-14">
-            {markdownProcessor.processSync(post.content).result}
           </div>
         </article>
       </section>
