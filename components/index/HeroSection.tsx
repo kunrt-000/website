@@ -10,8 +10,8 @@ const HeroSection = () => (
         A multi-faceted programmer &amp; musician
       </h1>
       <p className="text-lg text-gray-200 leading-normal mb-5">
-        I create beautiful &amp; perfomant websites, make ambient music and
-        write articles &amp; essays about a variety of topics.
+        I create beautiful &amp; performant websites, build software and make
+        music.
       </p>
       <Button href="/#contact">
         <span>Contact Me</span>
