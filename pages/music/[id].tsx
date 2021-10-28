@@ -65,22 +65,26 @@ const ReleasePage = ({ release }: { release: MusicRelease }) => (
           >
             Buy on Bandcamp
           </Button>
-          <Button
-            className="mb-4 md:mr-4"
-            href={release.links.spotify}
-            external={true}
-            outlined
-          >
-            Listen on Spotify
-          </Button>
-          <Button
-            className="mb-4 md:mr-4"
-            href={release.links.apple}
-            external={true}
-            outlined
-          >
-            Listen on Apple Music
-          </Button>
+          {release.links.spotify && (
+            <Button
+              className="mb-4 md:mr-4"
+              href={release.links.spotify}
+              external={true}
+              outlined
+            >
+              Listen on Spotify
+            </Button>
+          )}
+          {release.links.apple && (
+            <Button
+              className="mb-4 md:mr-4"
+              href={release.links.apple}
+              external={true}
+              outlined
+            >
+              Listen on Apple Music
+            </Button>
+          )}
         </div>
       </div>
     </section>
@@ -100,7 +104,7 @@ const ReleasePage = ({ release }: { release: MusicRelease }) => (
                 <PlayIcon className="w-[1.5rem] h-[1.5rem]" />
               </div>
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:opacity-0">
-                {i}
+                {i + 1}
               </div>
             </div>
             <div className="font-semibold flex-grow md:pl-4">{track.name}</div>

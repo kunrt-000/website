@@ -21,7 +21,7 @@ const createRows = (array: Array<any>, itemsPerRow: number) => {
 };
 
 export default function Music() {
-  let featured = music.find((release) => release.id === "ode-to-messier");
+  let featured = music.find((release) => release.id === "frescade");
   let grouped = createRows(music, 4);
 
   return (

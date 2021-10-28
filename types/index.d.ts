@@ -28,8 +28,8 @@ type MusicRelease = {
   }[];
   links: {
     bandcamp: string;
-    apple: string;
-    spotify: string;
+    apple?: string;
+    spotify?: string;
   };
   description: string;
 };
