@@ -48,7 +48,7 @@ export default function Home({ posts }: { posts: BlogPost[] }) {
 
 export const getStaticProps: GetStaticProps = async () => {
   let { posts } = paginatedResults(1);
-  let allPosts = getAllPosts();
+  //let allPosts = getAllPosts();
   //const rss = generateRSS(allPosts);
   //fs.writeFileSync("./public/feed.xml", rss);
 
