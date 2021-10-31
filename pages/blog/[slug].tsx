@@ -104,8 +104,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = fs
-    .readdirSync("posts")
-    .map((post) => `/blog/${post.replace(".md", "")}`);
+    .readdirSync("posts", {
+      withFileTypes: true,
+    })
+    .filter((file) => file.isFile() && /\.mdx?$/.test(file.name))
+    .map((file) => file.name)
+    .map((file) => `/blog/${file.replace(".md", "")}`);
 
   return {
     paths,
