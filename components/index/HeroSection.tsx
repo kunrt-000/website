@@ -6,9 +6,9 @@ const HeroSection = () => (
   <section className="container mx-auto flex md:flex-row md:items-center md:justify-between px-6 md:px-16 py-8 md:py-12">
     <div className="lg:w-1/2">
       <div className="text-lg text-gray-200">Hi! I&apos;m Aman Harwara,</div>
-      <h1 className="font-medium text-4xl md:text-5xl tracking-snug leading-tight md:leading-snug my-4 md:mt-3 md:my-6">
+      <div className="font-medium text-4xl md:text-5xl tracking-snug leading-tight md:leading-snug my-4 md:mt-3 md:my-6">
         A multi-faceted programmer &amp; musician
-      </h1>
+      </div>
       <p className="text-lg text-gray-200 leading-normal mb-5">
         I create beautiful &amp; performant websites, build software and make
         music.

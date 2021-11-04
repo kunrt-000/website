@@ -13,7 +13,7 @@ const ContactSection = () => (
     <ul className="my-4" aria-label="List of ways to contact me">
       <li className="inline-flex mb-4 md:mb-0 md:mr-4">
         <Button href="mail:amanharwara@pm.me" external={true}>
-          E-mail (amanharwara@pm.me)
+          E-mail <span aria-hidden="true">(amanharwara@pm.me)</span>
         </Button>
       </li>
       <li className="inline-flex mr-4 mb-4 md:mb-0">
