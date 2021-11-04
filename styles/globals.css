@@ -71,6 +71,10 @@ a {
   display: block;
 }
 
+.menu ul {
+  margin: 0;
+}
+
 .menu-item {
   @apply text-base block mt-4 lg:inline-block lg:mt-0 hover:underline mr-4 md:mr-6;
 }

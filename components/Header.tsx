@@ -30,23 +30,29 @@ const Header = () => {
           type="checkbox"
           id="menu-check"
         />
-        <div className="menu hidden w-full block lg:flex lg:items-center lg:w-auto">
-          <div className="text-sm lg:flex-grow">
-            <Link href="/" passHref={true}>
-              <a className="menu-item">Home</a>
-            </Link>
-            <Link href="/#work" passHref={true}>
-              <a className="menu-item">Work</a>
-            </Link>
-            <Link href="/music" passHref={true}>
-              <a className="menu-item">Music</a>
-            </Link>
-            <Link href="/#contact" passHref={true}>
-              <a className="inline-block text-sm px-3.5 py-2 leading-snug rounded bg-blue-800 hover:bg-blue-700 text-white mt-4 lg:mt-0">
-                Contact Me
-              </a>
-            </Link>
-          </div>
+        <div className="menu hidden w-full lg:flex lg:items-center lg:w-auto">
+          <ul className="text-sm lg:flex-grow" aria-label="Primary navigation">
+            <li className="menu-item">
+              <Link href="/" passHref={true}>
+                <a>Home</a>
+              </Link>
+            </li>
+            <li className="menu-item">
+              <Link href="/#work" passHref={true}>
+                <a>Work</a>
+              </Link>
+            </li>
+            <li className="menu-item">
+              <Link href="/music" passHref={true}>
+                <a>Music</a>
+              </Link>
+            </li>
+            <li className="inline-block text-sm px-3.5 py-2 leading-snug rounded bg-blue-800 hover:bg-blue-700 text-white mt-4 lg:mt-0">
+              <Link href="/#contact" passHref={true}>
+                <a>Contact Me</a>
+              </Link>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
