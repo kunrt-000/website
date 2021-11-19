@@ -18,6 +18,7 @@ module.exports = {
         primary: "#090e1b",
         secondary: "#0d1426",
         tertiary: "#0c1327",
+        contrast: "#090A11",
       },
       minWidth: {
         "1/2": "50%",
