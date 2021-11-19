@@ -7,6 +7,7 @@ import styles from "@/styles/Music.module.scss";
 import flex from "@/styles/util/Flex.module.scss";
 import margin from "@/styles/util/Margin.module.scss";
 import heading from "@/styles/typography/Heading.module.scss";
+import FeaturedMusicRelease from "@/components/FeaturedMusicRelease";
 
 const createRows = (array: Array<any>, itemsPerRow: number) => {
   let groupedArray = [];
@@ -52,48 +53,11 @@ export default function Music() {
         />
         <meta property="twitter:image" content="" />
       </Head>
-      <section className="container mx-auto px-6 md:px-16 py-8 md:py-12">
-        <h1 className={`${heading.mw} ${heading.mw_m} ${margin.my_100}`}>
-          Featured
-        </h1>
-        <div
-          className={`${styles.featured} ${flex.flex} ${flex.column_s} ${flex.row_m}`}
-        >
-          <div className={styles.cover}>
-            <Link href={`/music/${featured?.id}`} passHref={true}>
-              <a>
-                <Img
-                  webp
-                  src={require(`../public/img/music/${featured?.id}.png`)}
-                  alt={`Cover art for ${featured?.title}`}
-                  sizes={[500, 1000, 2000]}
-                  breakpoints={[768, 1366]}
-                />
-              </a>
-            </Link>
-          </div>
-          <div className={styles.info}>
-            <Link href={`/music/${featured?.id}`} passHref={true}>
-              <a>
-                <div className={styles.title}>{featured?.title}</div>
-              </a>
-            </Link>
-            <div className={styles.meta}>
-              {featured?.date} ·{" "}
-              {typeof featured?.genre === "object"
-                ? `${featured?.genre[0]} / ${featured?.genre[1]}`
-                : featured?.genre}
-            </div>
-            <div className={styles.description}>{featured?.description}</div>
-            <Button
-              href={featured?.links?.bandcamp ? featured?.links?.bandcamp : ""}
-              external={true}
-            >
-              Buy on Bandcamp
-            </Button>
-          </div>
-        </div>
-      </section>
+      {featured ? (
+        <section className="container mx-auto px-6 md:px-16 py-8 md:pt-12 md:pb-0">
+          <FeaturedMusicRelease release={featured} />
+        </section>
+      ) : null}
       <section className="container mx-auto px-6 md:px-16 py-8 md:py-12">
         <h1 className={`${heading.mw} ${heading.mw_m}`}>All Releases</h1>
         <div className={`${flex.flex} ${flex.column_s}`}>
