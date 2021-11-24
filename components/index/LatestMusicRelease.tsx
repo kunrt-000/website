@@ -6,7 +6,7 @@ const LatestMusicRelease = () => {
   const release: MusicRelease = music[0];
 
   return (
-    <section className="container mx-auto px-6 md:px-16 py-8">
+    <section className="container mx-auto px-6 md:px-16 py-8 md:pb-24">
       <h1 className="font-medium">Latest Music Release</h1>
       <FeaturedMusicRelease release={release} />
       <div>

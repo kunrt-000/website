@@ -2,9 +2,9 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  background: #fff;
+  color: #000;
   border: 1px solid transparent;
-  border-radius: 3px;
   transition: 0.1s background-color;
   font-size: 1.05rem;
   font-weight: 600;
@@ -13,9 +13,11 @@
   &[data-outlined] {
     background: transparent;
     border: 1px solid hsl(219, 37%, 26%);
+    color: #fff;
 
     &:hover {
       background: hsl(219, 37%, 26%);
+      text-decoration: none;
     }
   }
 }

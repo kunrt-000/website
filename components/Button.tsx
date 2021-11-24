@@ -19,7 +19,7 @@ const Button = ({
   if (external) {
     return (
       <a
-        className={`${styles.button} bg-blue-800 hover:bg-blue-700 ${className}`}
+        className={`${styles.button} hover:underline ${className}`}
         href={href}
         target="_blank"
         rel="noreferrer noopener"
@@ -32,7 +32,7 @@ const Button = ({
     return (
       <Link href={href}>
         <a
-          className={`${styles.button} bg-blue-800 hover:bg-blue-700 ${className}`}
+          className={`${styles.button} hover:underline ${className}`}
           data-outlined={outlined}
         >
           {children}

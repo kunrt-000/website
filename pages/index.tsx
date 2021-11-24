@@ -41,7 +41,6 @@ export default function Home({ posts }: { posts: BlogPost[] }) {
       <WorkSection />
       {posts.length > 0 ? <RecentWritings posts={posts} /> : <></>}
       <LatestMusicRelease />
-      <ContactSection />
     </div>
   );
 }

@@ -47,11 +47,6 @@ const Header = () => {
                 <a>Music</a>
               </Link>
             </li>
-            <li className="inline-block text-sm px-3.5 py-2 leading-snug rounded bg-blue-800 hover:bg-blue-700 text-white mt-4 lg:mt-0">
-              <Link href="/#contact" passHref={true}>
-                <a>Contact Me</a>
-              </Link>
-            </li>
           </ul>
         </div>
       </nav>
