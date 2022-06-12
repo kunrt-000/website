@@ -1,14 +1,9 @@
 import Head from "next/head";
 import HeroSection from "@/components/index/HeroSection";
-import RecentWritings from "@/components/index/RecentWritings";
 import LatestMusicRelease from "@/components/index/LatestMusicRelease";
 import WorkSection from "@/components/index/WorkSection";
-import ContactSection from "@/components/index/ContactSection";
-import { GetStaticProps } from "next";
-import paginatedResults from "util/paginatedResults";
-import getAllPosts from "util/getAllPosts";
 
-export default function Home({ posts }: { posts: BlogPost[] }) {
+export default function Home() {
   return (
     <div id="index-page">
       <Head>
@@ -39,21 +34,7 @@ export default function Home({ posts }: { posts: BlogPost[] }) {
       </Head>
       <HeroSection />
       <WorkSection />
-      {posts.length > 0 ? <RecentWritings posts={posts} /> : <></>}
       <LatestMusicRelease />
     </div>
   );
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-  let { posts } = paginatedResults(1);
-  //let allPosts = getAllPosts();
-  //const rss = generateRSS(allPosts);
-  //fs.writeFileSync("./public/feed.xml", rss);
-
-  return {
-    props: {
-      posts: posts.slice(0, 3),
-    },
-  };
-};

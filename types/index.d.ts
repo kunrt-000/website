@@ -1,12 +1,3 @@
-type BlogPost = {
-  slug: string;
-  tag: string;
-  title: string;
-  summary: string;
-  date: string;
-  content: string;
-};
-
 type WorkProject = {
   id: string;
   title: string;
