@@ -28,7 +28,7 @@ const FeaturedMusicRelease = ({ release }: Props) => {
           <a>
             <Img
               webp
-              src={require(`../public/img/music/${release.id}.png`)}
+              src={require(`../images/music/${release.id}.png`)}
               alt={`Cover art for ${release.title}`}
               sizes={[500, 1000, 2000]}
               breakpoints={[768, 1366]}

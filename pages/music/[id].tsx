@@ -36,7 +36,7 @@ const ReleasePage = ({ release }: { release: MusicRelease }) => (
     <section className="container mx-auto flex flex-col md:flex-row md:items-center px-6 md:px-16 py-8 md:py-12">
       <div className="w-full min-h-[15rem] relative mb-4 md:mb-0 md:mr-5 md:flex-shrink-0 md:w-[20rem] md:h-[20rem]">
         <Img
-          src={require(`../../public/img/music/${release.id}.png`)}
+          src={require(`../../images/music/${release.id}.png`)}
           alt={`Cover art for for ${release.title}`}
         />
       </div>
