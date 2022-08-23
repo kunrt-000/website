@@ -4,17 +4,9 @@ import Linux from "../icons/altus/Linux";
 import MacOS from "../icons/altus/macOS";
 import Windows from "../icons/altus/Windows";
 import Button from "../Button";
+import { AltusDownloadsProps } from "types/altus";
 
-type DownloadsProps = {
-  version: string;
-  links: {
-    windows: string;
-    linux: string;
-    macOS: string;
-  };
-};
-
-const Downloads = ({ version, links }: DownloadsProps) => (
+const Downloads = ({ version, links }: AltusDownloadsProps) => (
   <section id="downloads" className={styles.downloadSection}>
     <h1 className={common.heading}>Downloads</h1>
     <div className={styles.downloads}>
@@ -47,10 +39,22 @@ const Downloads = ({ version, links }: DownloadsProps) => (
           <div className={styles.icon}>
             <MacOS />
           </div>
-          <div className={styles.title}>macOS</div>
+          <div className={styles.title}>macOS (Arm)</div>
           <div className={styles.version}>{version}</div>
         </div>
-        <Button href={links.macOS} external={true}>
+        <Button href={links.macOSarm} external={true}>
+          Download
+        </Button>
+      </div>
+      <div className={styles.item}>
+        <div className={styles.meta}>
+          <div className={styles.icon}>
+            <MacOS />
+          </div>
+          <div className={styles.title}>macOS (Intel)</div>
+          <div className={styles.version}>{version}</div>
+        </div>
+        <Button href={links.macOSintel} external={true}>
           Download
         </Button>
       </div>

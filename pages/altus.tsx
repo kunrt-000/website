@@ -5,17 +5,9 @@ import Features from "@/components/altus/Features";
 import Support from "@/components/altus/Support";
 import Downloads from "@/components/altus/Downloads";
 import { GetServerSideProps } from "next";
+import { AltusDownloadsProps } from "types/altus";
 
-type DownloadsProps = {
-  version: any;
-  links: {
-    windows: any;
-    linux: any;
-    macOS: any;
-  };
-};
-
-const Altus = ({ downloadProps }: { downloadProps: DownloadsProps }) => (
+const Altus = ({ downloadProps }: { downloadProps: AltusDownloadsProps }) => (
   <div id="altus-page" className={styles.page}>
     <Head>
       <title>Altus — Feature-rich desktop WhatsApp client</title>
@@ -73,32 +65,43 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   const data = await res.json();
 
-  let version = data && data.tag_name ? `v${data.tag_name}` : "latest";
-  let windows =
+  const version = data && data.tag_name ? `v${data.tag_name}` : "latest";
+  const windows =
     data && data.assets
       ? data.assets.find((asset: any) =>
           asset.browser_download_url.includes("exe")
         ).browser_download_url
       : "https://github.com/amanharwara/altus/releases/latest";
-  let linux =
+  const linux =
     data && data.assets
       ? data.assets.find((asset: any) =>
           asset.browser_download_url.includes("AppImage")
         ).browser_download_url
       : "https://github.com/amanharwara/altus/releases/latest";
-  let macOS =
+  const macOSarm =
     data && data.assets
-      ? data.assets.find((asset: any) =>
-          asset.browser_download_url.includes("dmg")
+      ? data.assets.find(
+          (asset: any) =>
+            asset.browser_download_url.includes("dmg") &&
+            asset.browser_download_url.includes("arm64")
+        ).browser_download_url
+      : "https://github.com/amanharwara/altus/releases/latest";
+  const macOSintel =
+    data && data.assets
+      ? data.assets.find(
+          (asset: any) =>
+            asset.browser_download_url.includes("dmg") &&
+            !asset.browser_download_url.includes("arm64")
         ).browser_download_url
       : "https://github.com/amanharwara/altus/releases/latest";
 
-  let downloadProps = {
+  const downloadProps: AltusDownloadsProps = {
     version,
     links: {
       windows,
       linux,
-      macOS,
+      macOSarm,
+      macOSintel,
     },
   };
 
