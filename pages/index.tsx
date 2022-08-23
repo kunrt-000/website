@@ -1,6 +1,5 @@
 import Head from "next/head";
 import HeroSection from "@/components/index/HeroSection";
-import LatestMusicRelease from "@/components/index/LatestMusicRelease";
 import WorkSection from "@/components/index/WorkSection";
 
 export default function Home() {
@@ -34,7 +33,7 @@ export default function Home() {
       </Head>
       <HeroSection />
       <WorkSection />
-      <LatestMusicRelease />
+      {/* <LatestMusicRelease /> */}
     </div>
   );
 }
