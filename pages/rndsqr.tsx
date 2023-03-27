@@ -102,7 +102,7 @@ const drawAllSquares = (
   canvas: HTMLCanvasElement | null,
   context: CanvasRenderingContext2D | null
 ) => {
-  const alwaysReturn = Math.floor(Math.random() * 2);
+  const alwaysReturn = /* Math.floor(Math.random() * 2) */ false;
   const limitColors = Math.floor(Math.random() * 2);
   const randomizeLimits = Math.floor(Math.random() * 2);
   const squareSize = 10;
@@ -176,7 +176,7 @@ const RandomSquare = () => {
         <title>Random Square</title>
       </Head>
       <section className="container mx-auto px-6 md:px-16 py-8 md:py-12">
-        <h1 className="m-0 mb-8">Your Own Randomized Square</h1>
+        <h1 className="m-0 mb-8">Randomized Square</h1>
         <div className="flex flex-col items-start md:flex-row">
           <div>
             <div className="flex mb-4">
