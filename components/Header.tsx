@@ -43,8 +43,10 @@ const Header = () => {
               </Link>
             </li>
             <li className="menu-item">
-              <Link href="/music" passHref={true}>
-                <a>Music</a>
+              <Link href="https://amanharwara.bandcamp.com" passHref={true}>
+                <a target="_blank" rel="noreferrer noopener">
+                  Music
+                </a>
               </Link>
             </li>
           </ul>
