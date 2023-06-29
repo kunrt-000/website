@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  item: CollectionEntry<"music">;
+  loadImageEager?: boolean;
+}
+
+const { item, loadImageEager } = Astro.props;
+---
+
+<div>
+  <a
+    href={`/music/${item.id}`}
+    class="block w-full hover:bg-slate-950/50 hover:shadow-[0_0_0_1.25rem_theme(colors.slate.950_/_50%)] focus:outline-none focus:bg-slate-950/50 focus:shadow-[0_0_0_1.25rem_theme(colors.slate.950_/_50%)] transition-[background-color,box-shadow] duration-[50ms]"
+  >
+    <div class="bg-zinc-700 aspect-square">
+      <img
+        src={`/assets/music/${item.id}.webp`}
+        alt={`Cover art for ${item.data.title}`}
+        class="w-full h-full"
+        decoding={loadImageEager ? undefined : "async"}
+        loading={loadImageEager ? undefined : "lazy"}
+      />
+    </div>
+    <div class="text-2xl font-medium mt-4">{item.data.title}</div>
+    <div class="text-lg font-medium mt-1 text-zinc-300">
+      {item.data.genre[0]}
+    </div>
+    <div class="mt-1 text-zinc-300">
+      {
+        new Date(item.data.date).toLocaleDateString(undefined, {
+          dateStyle: "long",
+        })
+      }
+    </div>
+  </a>
+</div>

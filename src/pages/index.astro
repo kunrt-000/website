@@ -1,0 +1,111 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Grid from "../layouts/Grid.astro";
+import ArrowRight from "../icons/ArrowRight.astro";
+import Github from "../icons/Github.astro";
+import Bandcamp from "../icons/Bandcamp.astro";
+import Instagram from "../icons/Instagram.astro";
+import Altus from "../icons/Altus.astro";
+import Chartr from "../icons/Chartr.astro";
+
+import { getCollection } from "astro:content";
+import Header from "../components/Header.astro";
+import MusicItem from "../components/MusicItem.astro";
+import LinkButton from "../components/LinkButton.astro";
+
+const music = (await getCollection("music"))
+  .sort((a, b) => {
+    const aDate = new Date(a.data.date).getTime();
+    const bDate = new Date(b.data.date).getTime();
+    return bDate - aDate;
+  })
+  .slice(0, 2);
+---
+
+<Layout title="Aman Harwara">
+  <Grid>
+    <div class="order-1 col-span-3 lg:order-2 lg:col-span-2">
+      <Header />
+      <div class="mt-12 sm:mt-16 font-medium">
+        <div class="text-2xl mb-12 sm:mb-16">
+          I'm a software developer from India, usually working with web
+          technologies. I also dabble in making ambient & electronic music.
+        </div>
+        <div class="text-xl">
+          <LinkButton
+            href="https://github.com/amanharwara"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github className="w-7 h-7" /> Github
+          </LinkButton>
+          <LinkButton
+            href="https://amanharwara.bandcamp.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Bandcamp
+              className="w-7 h-7 transition-colors duration-[125ms] group-hover:text-[#42a0bd]"
+            /> Bandcamp
+          </LinkButton>
+          <LinkButton
+            href="https://instagram.com/aman.harwara"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Instagram
+              className="w-7 h-7 transition-colors duration-[125ms] group-hover:text-pink-400"
+            /> Instagram
+          </LinkButton>
+        </div>
+      </div>
+    </div>
+    <div class="order-3 col-span-2">
+      <div class="flex flex-col gap-12 mb-12">
+        <a
+          href="https://github.com/amanharwara/altus"
+          class="block w-full hover:bg-slate-950/50 hover:shadow-[0_0_0_1.25rem_theme(colors.slate.950_/_50%)] focus:outline-none focus:bg-slate-950/50 focus:shadow-[0_0_0_1.25rem_theme(colors.slate.950_/_50%)] transition-[background-color,box-shadow] duration-[50ms]"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div
+            class="bg-[#24224e] w-full flex items-center justify-center aspect-square"
+          >
+            <Altus className="w-20 h-20" />
+          </div>
+          <div class="text-2xl font-medium mt-4">Altus</div>
+          <div class="text-lg font-medium mt-1 text-zinc-300">Desktop app</div>
+          <div class="mt-1 text-zinc-300">Svelte + Electron</div>
+        </a>
+        <a
+          href="https://topchart.amanharwara.com"
+          class="block w-full hover:bg-slate-950/50 hover:shadow-[0_0_0_1.25rem_theme(colors.slate.950_/_50%)] focus:outline-none focus:bg-slate-950/50 focus:shadow-[0_0_0_1.25rem_theme(colors.slate.950_/_50%)] transition-[background-color,box-shadow] duration-[50ms]"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div
+            class="bg-gray-800 w-full flex items-center justify-center aspect-square"
+          >
+            <Chartr className="w-20 h-20" />
+          </div>
+          <div class="text-2xl font-medium mt-4">Topchart</div>
+          <div class="text-lg font-medium mt-1 text-zinc-300">Web app</div>
+          <div class="mt-1 text-zinc-300">Next.js + Typescript</div>
+        </a>
+      </div>
+      <LinkButton class="text-xl font-medium" href="/software">
+        <ArrowRight className="w-7 h-7 text-zinc-400" /> All software
+      </LinkButton>
+    </div>
+    <div class="order-4 col-span-2">
+      <div class="flex flex-col gap-12 mb-12">
+        {music.map((project) => <MusicItem item={project} loadImageEager />)}
+      </div>
+      <LinkButton class="text-xl font-medium" href="/music">
+        <ArrowRight className="w-7 h-7 text-zinc-400" /> All music
+      </LinkButton>
+    </div>
+  </Grid>
+</Layout>
+
+<style lang="scss"></style>

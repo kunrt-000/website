@@ -1,0 +1,13 @@
+---
+interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+
+const props = Astro.props;
+---
+
+<a
+	class={"group flex border-t-2 border-zinc-400 items-center gap-3 hover:bg-slate-800/50 py-3 px-4 " +
+		props.class}
+	{...props}
+>
+	<slot />
+</a>

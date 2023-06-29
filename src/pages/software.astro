@@ -1,0 +1,87 @@
+---
+import Header from "../components/Header.astro";
+import LinkButton from "../components/LinkButton.astro";
+import Grid from "../layouts/Grid.astro";
+import Layout from "../layouts/Layout.astro";
+
+import Star from "../icons/Star.astro";
+import Fork from "../icons/Fork.astro";
+
+import { Octokit } from "octokit";
+
+const octokit = new Octokit();
+
+const repos = await octokit.rest.repos.listForUser({
+	username: "amanharwara",
+	per_page: 100,
+	type: "owner",
+});
+
+let sortedRepos = new Array<(typeof repos)["data"][number]>();
+
+if (repos.status === 200) {
+	sortedRepos = repos.data
+		.filter((repo) => !repo.private && !repo.fork)
+		.sort((a, b) => {
+			if (a.name === "altus") return -1;
+			if (b.name === "altus") return 1;
+
+			if (a.name === "topchart") return -1;
+			if (b.name === "topchart") return 1;
+
+			return (b.stargazers_count || 0) - (a.stargazers_count || 0);
+		});
+}
+---
+
+<Layout title="Software projects | Aman Harwara">
+	<Grid>
+		<Header>
+			<h2 class="text-2xl text-blue-400 font-medium" slot="subheading">
+				Software
+			</h2>
+		</Header>
+		<div
+			class="order-3 col-span-2 sm:col-span-4 lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-16"
+		>
+			{
+				sortedRepos.map((repo) => (
+					<a
+						class="hover:bg-slate-950/50 hover:shadow-[0_0_0_1.25rem_theme(colors.slate.950_/_50%)] focus:outline-none focus:bg-slate-950/50 focus:shadow-[0_0_0_1.25rem_theme(colors.slate.950_/_50%)] transition-[background-color,box-shadow] duration-[50ms] select-none"
+						href={repo.html_url}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<div class="text-3xl leading-none font-semibold mb-3">
+							{repo.name}
+						</div>
+						{repo.description && (
+							<div class="text-sm mb-3 text-zinc-300">{repo.description}</div>
+						)}
+						{repo.language && (
+							<div class="text-xs font-medium mb-3 bg-zinc-200 text-black rounded-md px-2 py-1 max-w-max">
+								{repo.language}
+							</div>
+						)}
+						{repo.stargazers_count || repo.forks_count ? (
+							<div class="text-sm flex items-center gap-6 font-medium text-zinc-400">
+								{repo.stargazers_count && (
+									<div class="flex items-center gap-1">
+										<Star className="w-4 h-4" />
+										{repo.stargazers_count}
+									</div>
+								)}
+								{repo.forks_count && (
+									<div class="flex items-center gap-1">
+										<Fork className="w-4 h-4" />
+										{repo.forks_count}
+									</div>
+								)}
+							</div>
+						) : null}
+					</a>
+				))
+			}
+		</div>
+	</Grid>
+</Layout>

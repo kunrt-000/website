@@ -1,0 +1,144 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Grid from "../../layouts/Grid.astro";
+import Header from "../../components/Header.astro";
+import { CollectionEntry, getCollection } from "astro:content";
+import Bandcamp from "../../icons/Bandcamp.astro";
+import Spotify from "../../icons/Spotify.astro";
+import AppleMusic from "../../icons/AppleMusic.astro";
+import Play from "../../icons/Play.astro";
+import MusicItem from "../../components/MusicItem.astro";
+import LinkButton from "../../components/LinkButton.astro";
+
+export async function getStaticPaths() {
+  const music = await getCollection("music");
+  return music.map((item) => ({
+    params: {
+      id: item.id,
+    },
+    props: {
+      item,
+      suggestions: music
+        .filter((suggestion) => suggestion.id !== item.id)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3),
+    },
+  }));
+}
+
+interface Props {
+  item: CollectionEntry<"music">;
+  suggestions: CollectionEntry<"music">[];
+}
+
+const { item, suggestions } = Astro.props;
+---
+
+<Layout title={`${item.data.title} | Aman Harwara`}>
+  <Grid>
+    <Header>
+      <h2 class="text-2xl text-pink-400 font-medium" slot="subheading">
+        Music
+      </h2>
+    </Header>
+    <div class="order-3 col-span-2">
+      <div class="bg-zinc-700 aspect-square mb-12">
+        <img
+          src={`/assets/music/${item.id}.webp`}
+          alt={`Cover art for ${item.data.title}`}
+          class="w-full h-full drop-shadow-lg"
+          decoding="async"
+          loading="lazy"
+        />
+      </div>
+      <LinkButton
+        class="font-medium text-xl gap-4"
+        href={item.data.links.bandcamp}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Bandcamp
+          className="w-7 h-7 transition-colors duration-[125ms] group-hover:text-[#42a0bd]"
+        /> Bandcamp
+      </LinkButton>
+      {
+        item.data.links.spotify && (
+          <LinkButton
+            class="font-medium text-xl gap-4"
+            href={item.data.links.spotify}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Spotify className="w-7 h-7 transition-colors duration-[125ms] group-hover:text-[#1db954]" />{" "}
+            Spotify
+          </LinkButton>
+        )
+      }
+      {
+        item.data.links.apple && (
+          <LinkButton
+            class="font-medium text-xl gap-4"
+            href={item.data.links.apple}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AppleMusic className="w-7 h-7 transition-colors duration-[125ms] group-hover:text-pink-400" />{" "}
+            Apple Music
+          </LinkButton>
+        )
+      }
+    </div>
+    <div class="order-4 col-span-2 lg:col-span-4">
+      <div class="text-[2.65rem] leading-[1.15] font-semibold mb-3.5">
+        {item.data.title}
+      </div>
+      <div class="text-xl font-medium mb-1">{item.data.genre.join(", ")}</div>
+      <div class="text-lg font-medium text-zinc-300">
+        {
+          new Date(item.data.date).toLocaleDateString(undefined, {
+            dateStyle: "long",
+          })
+        }
+      </div>
+      {
+        !!item.data.description.length && (
+          <div class="text-lg mt-6 max-w-[50ch]">{item.data.description}</div>
+        )
+      }
+      <div class="mt-10 group">
+        {
+          item.data.tracklist.map((track) => (
+            <a
+              class="group group-hover:opacity-25 group-hover:hover:opacity-100 group-hover:hover:border-zinc-700 flex border-t-2 border-zinc-400 items-center gap-4 hover:bg-slate-800/50 py-3.5 px-4 font-medium text-lg transition duration-150"
+              href={track.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Play className="w-7 h-7 flex-shrink-0 transition-colors duration-[125ms] group-hover:text-pink-400" />
+              {track.name}
+              <div class="ml-auto text-base text-zinc-400">{track.length}</div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+    <div class="order-5 col-span-2 sm:col-span-4 lg:col-span-5">
+      <div class="text-3xl font-semibold mb-8">Other music</div>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:grid-cols-[repeat(auto-fit,_minmax(10vw,1fr))] lg:gap-14"
+      >
+        {suggestions.map((suggestion) => <MusicItem item={suggestion} />)}
+      </div>
+    </div>
+  </Grid>
+</Layout>
+
+<style lang="scss">
+  :global(.main-grid) {
+    grid-gap: 4rem;
+
+    @media screen and (min-width: 1024px) {
+      grid-gap: 6rem;
+    }
+  }
+</style>

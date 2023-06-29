@@ -1,0 +1,23 @@
+---
+import Header from "../components/Header.astro";
+import LinkButton from "../components/LinkButton.astro";
+import ArrowRight from "../icons/ArrowRight.astro";
+import Grid from "../layouts/Grid.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="404: Not Found | Aman Harwara">
+  <Grid>
+    <Header />
+    <div class="order-3 col-span-3">
+      <h2 class="text-4xl font-semibold mb-4">404: Not Found</h2>
+      <p class="text-xl mb-8">
+        Looks like you've stumbled upon a page that doesn't exist.
+      </p>
+      <LinkButton href="/">
+        <ArrowRight className="w-7 h-7 inline align-middle text-zinc-400" />
+        <span class="align-middle">Go to homepage</span>
+      </LinkButton>
+    </div>
+  </Grid>
+</Layout>
