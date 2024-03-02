@@ -3,5 +3,7 @@
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
+    "strictNullChecks": true,
+    "allowJs": true,
   }
 }
