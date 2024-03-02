@@ -6,6 +6,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import Bandcamp from "../../icons/Bandcamp.astro";
 import Spotify from "../../icons/Spotify.astro";
 import AppleMusic from "../../icons/AppleMusic.astro";
+import Magnet from "../../icons/Magnet.astro";
 import Play from "../../icons/Play.astro";
 import MusicItem from "../../components/MusicItem.astro";
 import LinkButton from "../../components/LinkButton.astro";
@@ -82,8 +83,21 @@ const { item, suggestions } = Astro.props;
             target="_blank"
             rel="noopener noreferrer"
           >
-            <AppleMusic className="w-7 h-7 transition-colors duration-[125ms] group-hover:text-pink-400" />{" "}
+            <AppleMusic className="w-6 h-6 transition-colors duration-[125ms] group-hover:text-pink-400" />{" "}
             Apple Music
+          </LinkButton>
+        )
+      }
+      {
+        item.data.links.magnet && (
+          <LinkButton
+            class="font-medium text-xl gap-4"
+            href={item.data.links.magnet}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Magnet className="w-6 h-6 transition-colors duration-[125ms] group-hover:text-pink-400" />{" "}
+            Torrent (Magnet link)
           </LinkButton>
         )
       }

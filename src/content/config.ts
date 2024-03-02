@@ -18,6 +18,7 @@ const musicCollection = defineCollection({
       bandcamp: z.string(),
       spotify: z.string().optional(),
       apple: z.string().optional(),
+      magnet: z.string().optional(),
     }),
   }),
 });
