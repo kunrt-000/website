@@ -4,7 +4,6 @@ import Grid from "../layouts/Grid.astro";
 import ArrowRight from "../icons/ArrowRight.astro";
 import Github from "../icons/Github.astro";
 import Bandcamp from "../icons/Bandcamp.astro";
-import Instagram from "../icons/Instagram.astro";
 import Altus from "../icons/Altus.astro";
 import Chartr from "../icons/Chartr.astro";
 
@@ -47,15 +46,6 @@ const music = (await getCollection("music"))
             <Bandcamp
               className="w-7 h-7 transition-colors duration-[125ms] group-hover:text-[#42a0bd]"
             /> Bandcamp
-          </LinkButton>
-          <LinkButton
-            href="https://instagram.com/aman.harwara"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Instagram
-              className="w-7 h-7 transition-colors duration-[125ms] group-hover:text-pink-400"
-            /> Instagram
           </LinkButton>
         </div>
       </div>
